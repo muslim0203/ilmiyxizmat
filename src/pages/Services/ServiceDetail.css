@@ -1,0 +1,131 @@
+.service-header {
+    background: var(--gradient-hero);
+    padding: var(--spacing-20) 0;
+    text-align: center;
+    color: var(--white);
+}
+
+.service-header-icon {
+    font-size: 5rem;
+    margin-bottom: var(--spacing-4);
+}
+
+.service-header h1 {
+    color: var(--white);
+    margin-bottom: var(--spacing-4);
+}
+
+.service-header p {
+    color: var(--gray-300);
+    font-size: var(--font-size-lg);
+    max-width: 600px;
+    margin: 0 auto var(--spacing-6);
+}
+
+.service-header-price {
+    margin-bottom: var(--spacing-6);
+}
+
+.service-header-price .price {
+    font-size: var(--font-size-4xl);
+    font-weight: 800;
+    color: var(--gold);
+}
+
+.service-header-price .note {
+    display: block;
+    font-size: var(--font-size-sm);
+    color: var(--gray-300);
+}
+
+/* Features Grid */
+.service-features-grid {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: var(--spacing-8);
+    align-items: start;
+}
+
+.service-features h2 {
+    margin-bottom: var(--spacing-6);
+}
+
+.service-features ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+.service-features li {
+    font-size: var(--font-size-lg);
+    padding: var(--spacing-4);
+    background: var(--gray-100);
+    border-radius: var(--radius-lg);
+}
+
+/* Order Card */
+.service-order-card {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-8);
+    box-shadow: var(--shadow-xl);
+    border: 2px solid var(--primary-light);
+    position: sticky;
+    top: 90px;
+}
+
+.service-order-card h3 {
+    margin-bottom: var(--spacing-2);
+}
+
+.service-order-card p {
+    color: var(--gray-500);
+    margin-bottom: var(--spacing-4);
+}
+
+.price-display {
+    margin-bottom: var(--spacing-6);
+    padding: var(--spacing-4);
+    background: var(--gray-100);
+    border-radius: var(--radius-lg);
+    text-align: center;
+}
+
+.price-display .price {
+    display: block;
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.price-display .note {
+    font-size: var(--font-size-sm);
+    color: var(--gray-500);
+}
+
+.service-order-card .btn {
+    width: 100%;
+    margin-bottom: var(--spacing-3);
+}
+
+/* Other Services */
+.other-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-6);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .service-features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-order-card {
+        position: static;
+    }
+
+    .other-services-grid {
+        grid-template-columns: 1fr;
+    }
+}

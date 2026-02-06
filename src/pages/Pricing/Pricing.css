@@ -1,0 +1,117 @@
+.pricing-category {
+    margin-bottom: var(--spacing-12);
+}
+
+.pricing-category h2 {
+    margin-bottom: var(--spacing-6);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-4);
+}
+
+.pricing-card {
+    position: relative;
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-6);
+    box-shadow: var(--shadow);
+    border: 2px solid transparent;
+    transition: var(--transition);
+}
+
+.pricing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.pricing-card.popular {
+    border-color: var(--gold);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: var(--gradient-gold);
+    color: var(--white);
+    padding: var(--spacing-1) var(--spacing-3);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+}
+
+.pricing-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-3);
+}
+
+.pricing-card h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-4);
+}
+
+.pricing-price {
+    margin-bottom: var(--spacing-4);
+}
+
+.pricing-price .amount {
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.pricing-price .currency {
+    font-size: var(--font-size-sm);
+    color: var(--gray-500);
+}
+
+.pricing-price .note {
+    display: block;
+    font-size: var(--font-size-xs);
+    color: var(--gray-500);
+}
+
+.pricing-features {
+    margin-bottom: var(--spacing-4);
+}
+
+.pricing-features li {
+    font-size: var(--font-size-sm);
+    color: var(--gray-500);
+    margin-bottom: var(--spacing-2);
+}
+
+.pricing-card .btn {
+    width: 100%;
+}
+
+.pricing-note {
+    text-align: center;
+    padding: var(--spacing-8);
+    background: var(--gray-100);
+    border-radius: var(--radius-xl);
+}
+
+.pricing-note h3 {
+    margin-bottom: var(--spacing-2);
+}
+
+.pricing-note p {
+    margin-bottom: var(--spacing-4);
+    color: var(--gray-500);
+}
+
+@media (max-width: 1024px) {
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+}

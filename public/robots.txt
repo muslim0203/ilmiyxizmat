@@ -1,0 +1,12 @@
+# Ilmiyxizmat.uz Robots.txt
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/*
+Disallow: /login
+
+# Sitemaps
+Sitemap: https://ilmiyxizmat.uz/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
