@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
 import { useData } from '../../lib/useData';
+import { useSiteSettings } from '../../context/SiteSettingsContext';
 import './Home.css';
 
 const Home = () => {
+    const { settings } = useSiteSettings();
     const { items: services } = useData('services');
     const popularServices = services.filter(s => s.popular);
 
@@ -23,8 +25,8 @@ const Home = () => {
         "logo": "https://ilmiyxizmat.uz/logo.png",
         "image": "https://ilmiyxizmat.uz/og-image.jpg",
         "description": "O'zbekistonda №1 ilmiy ishlar yozish xizmati. BMI, dissertatsiya, ilmiy maqola, kurs ishi, monografiya tayyorlash va nashr qilish.",
-        "telephone": "+998901234567",
-        "email": "info@ilmiyxizmat.uz",
+        "telephone": settings.phoneRaw,
+        "email": settings.email,
         "address": {
             "@type": "PostalAddress",
             "addressCountry": "UZ",
@@ -50,8 +52,8 @@ const Home = () => {
             "bestRating": "5"
         },
         "sameAs": [
-            "https://t.me/ilmiyxizmat",
-            "https://instagram.com/ilmiyxizmat"
+            settings.telegramUrl,
+            settings.instagramUrl
         ],
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
@@ -218,7 +220,7 @@ const Home = () => {
                             <Link to="/buyurtma" className="btn btn-gold btn-lg">
                                 Buyurtma berish
                             </Link>
-                            <a href="https://t.me/ilmiyxizmat" className="btn btn-white btn-lg" target="_blank" rel="noopener noreferrer">
+                            <a href={settings.telegramUrl} className="btn btn-white btn-lg" target="_blank" rel="noopener noreferrer">
                                 Telegram orqali bog'lanish
                             </a>
                         </div>

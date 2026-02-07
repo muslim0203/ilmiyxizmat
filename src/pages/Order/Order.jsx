@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import SEO from '../../components/SEO/SEO';
 import { services } from '../../data/services';
+import { useSiteSettings } from '../../context/SiteSettingsContext';
 import './Order.css';
 
 const Order = () => {
+    const { settings } = useSiteSettings();
     const [formData, setFormData] = useState({
         name: '', phone: '', service: '', deadline: '', description: ''
     });
@@ -11,7 +13,7 @@ const Order = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const text = `🆕 YANGI BUYURTMA%0A%0A👤 Ism: ${formData.name}%0A📞 Telefon: ${formData.phone}%0A📋 Xizmat: ${formData.service}%0A📅 Muddat: ${formData.deadline}%0A📝 Tavsif: ${formData.description}`;
-        window.open(`https://t.me/ilmiyxizmat?text=${text}`, '_blank');
+        window.open(`${settings.telegramUrl}?text=${text}`, '_blank');
     };
 
     return (
@@ -73,8 +75,8 @@ const Order = () => {
                             </ul>
                             <div className="order-contact">
                                 <h4>Yoki to'g'ridan-to'g'ri bog'laning:</h4>
-                                <a href="https://t.me/ilmiyxizmat" className="btn btn-outline btn-lg">Telegram</a>
-                                <a href="tel:+998901234567" className="btn btn-outline btn-lg">Qo'ng'iroq</a>
+                                <a href={settings.telegramUrl} className="btn btn-outline btn-lg">Telegram</a>
+                                <a href={`tel:${settings.phoneRaw}`} className="btn btn-outline btn-lg">Qo'ng'iroq</a>
                             </div>
                         </div>
                     </div>

@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import SEO from '../../components/SEO/SEO';
+import { useSiteSettings } from '../../context/SiteSettingsContext';
 import './Contact.css';
 
 const Contact = () => {
+    const { settings } = useSiteSettings();
     const [formData, setFormData] = useState({
         name: '', phone: '', message: ''
     });
@@ -10,7 +12,7 @@ const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const text = `Ilmiyxizmat.uz%0A%0AIsm: ${formData.name}%0ATelefon: ${formData.phone}%0AXabar: ${formData.message}`;
-        window.open(`https://t.me/ilmiyxizmat?text=${text}`, '_blank');
+        window.open(`${settings.telegramUrl}?text=${text}`, '_blank');
     };
 
     const contactJsonLd = {
@@ -22,12 +24,12 @@ const Contact = () => {
         "mainEntity": {
             "@type": "Organization",
             "name": "Ilmiyxizmat.uz",
-            "telephone": "+998901234567",
-            "email": "info@ilmiyxizmat.uz",
+            "telephone": settings.phoneRaw,
+            "email": settings.email,
             "contactPoint": [
                 {
                     "@type": "ContactPoint",
-                    "telephone": "+998901234567",
+                    "telephone": settings.phoneRaw,
                     "contactType": "customer service",
                     "availableLanguage": ["uz", "ru"],
                     "hoursAvailable": {
@@ -45,7 +47,7 @@ const Contact = () => {
         <>
             <SEO
                 title="Aloqa - Biz bilan bog'laning"
-                description="Ilmiyxizmat.uz bilan bog'laning. Telefon: +998 90 123 45 67. Telegram: @ilmiyxizmat. Email: info@ilmiyxizmat.uz. 24/7 aloqadamiz. Bepul konsultatsiya."
+                description={`Ilmiyxizmat.uz bilan bog'laning. Telefon: ${settings.phone}. Telegram: ${settings.telegram}. Email: ${settings.email}. 24/7 aloqadamiz. Bepul konsultatsiya.`}
                 jsonLd={contactJsonLd}
             />
             <section className="page-header">
@@ -65,28 +67,28 @@ const Contact = () => {
                                 <span className="contact-icon">📞</span>
                                 <div>
                                     <strong>Telefon</strong>
-                                    <a href="tel:+998901234567">+998 90 123 45 67</a>
+                                    <a href={`tel:${settings.phoneRaw}`}>{settings.phone}</a>
                                 </div>
                             </div>
                             <div className="contact-item">
                                 <span className="contact-icon">💬</span>
                                 <div>
                                     <strong>Telegram</strong>
-                                    <a href="https://t.me/ilmiyxizmat" target="_blank" rel="noopener noreferrer">@ilmiyxizmat</a>
+                                    <a href={settings.telegramUrl} target="_blank" rel="noopener noreferrer">{settings.telegram}</a>
                                 </div>
                             </div>
                             <div className="contact-item">
                                 <span className="contact-icon">✉️</span>
                                 <div>
                                     <strong>Email</strong>
-                                    <a href="mailto:info@ilmiyxizmat.uz">info@ilmiyxizmat.uz</a>
+                                    <a href={`mailto:${settings.email}`}>{settings.email}</a>
                                 </div>
                             </div>
                             <div className="contact-item">
                                 <span className="contact-icon">🕐</span>
                                 <div>
                                     <strong>Ish vaqti</strong>
-                                    <span>Dush-Shan: 09:00 - 21:00</span>
+                                    <span>{settings.workingHours}</span>
                                 </div>
                             </div>
                         </div>

@@ -1,9 +1,11 @@
 import { useParams, Link } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
 import { useData } from '../../lib/useData';
+import { useSiteSettings } from '../../context/SiteSettingsContext';
 import './ServiceDetail.css';
 
 const ServiceDetail = () => {
+    const { settings } = useSiteSettings();
     const { slug } = useParams();
     const { items: services, getBySlug } = useData('services');
     const service = getBySlug(slug);
@@ -129,7 +131,7 @@ const ServiceDetail = () => {
                                 <span className="note">{service.priceNote}</span>
                             </div>
                             <Link to="/buyurtma" className="btn btn-gold btn-lg">Buyurtma</Link>
-                            <a href="https://t.me/ilmiyxizmat" className="btn btn-outline btn-lg" target="_blank" rel="noopener noreferrer">Telegram</a>
+                            <a href={settings.telegramUrl} className="btn btn-outline btn-lg" target="_blank" rel="noopener noreferrer">Telegram</a>
                         </div>
                     </div>
                 </div>

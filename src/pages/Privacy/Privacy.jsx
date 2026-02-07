@@ -1,6 +1,8 @@
 import SEO from '../../components/SEO/SEO';
+import { useSiteSettings } from '../../context/SiteSettingsContext';
 
 const Privacy = () => {
+    const { settings } = useSiteSettings();
     return (
         <>
             <SEO
@@ -50,8 +52,8 @@ const Privacy = () => {
                         <h2 className="mb-2">5. Bog'lanish</h2>
                         <p>
                             Maxfiylik siyosati bo'yicha savollaringiz bo'lsa, biz bilan bog'lanishingiz mumkin:<br />
-                            Email: info@ilmiyxizmat.uz<br />
-                            Tel: +998 90 123 45 67
+                            Email: {settings.email}<br />
+                            Tel: {settings.phone}
                         </p>
                     </div>
                 </div>

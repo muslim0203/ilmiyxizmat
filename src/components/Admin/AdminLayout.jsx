@@ -45,6 +45,10 @@ const AdminLayout = () => {
                     <Link to="/admin/faq" className={isActive('/admin/faq')}>
                         FAQ
                     </Link>
+                    <div style={{ borderTop: '1px solid #374151', margin: '0.5rem 0' }}></div>
+                    <Link to="/admin/settings" className={isActive('/admin/settings')}>
+                        Sozlamalar
+                    </Link>
                 </nav>
                 <div className="admin-sidebar-footer">
                     <button onClick={handleLogout} className="logout-btn">

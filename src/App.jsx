@@ -15,6 +15,7 @@ import PublicationsList from './pages/Admin/Publications/PublicationsList';
 import PublicationsForm from './pages/Admin/Publications/PublicationsForm';
 import FAQList from './pages/Admin/FAQ/FAQList';
 import FAQForm from './pages/Admin/FAQ/FAQForm';
+import Settings from './pages/Admin/Settings/Settings';
 
 // Pages
 import Home from './pages/Home/Home';
@@ -116,6 +117,9 @@ function App() {
           <Route path="faq" element={<FAQList />} />
           <Route path="faq/new" element={<FAQForm />} />
           <Route path="faq/:id" element={<FAQForm />} />
+
+          {/* Sayt sozlamalari */}
+          <Route path="settings" element={<Settings />} />
         </Route>
 
       </Routes>

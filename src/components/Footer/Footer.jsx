@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
+import { useSiteSettings } from '../../context/SiteSettingsContext';
 import './Footer.css';
 
 const Footer = () => {
+    const { settings } = useSiteSettings();
     const currentYear = new Date().getFullYear();
 
     return (
@@ -21,8 +23,8 @@ const Footer = () => {
                             O'zbekistonda ilmiy ishlar yozish, tahrirlash va nashr qilish bo'yicha professional xizmatlar. BMI, dissertatsiya, ilmiy maqola tayyorlash.
                         </p>
                         <div className="footer-contact">
-                            <a href="tel:+998901234567">📞 +998 90 123 45 67</a>
-                            <a href="mailto:info@ilmiyxizmat.uz">✉️ info@ilmiyxizmat.uz</a>
+                            <a href={`tel:${settings.phoneRaw}`}>📞 {settings.phone}</a>
+                            <a href={`mailto:${settings.email}`}>✉️ {settings.email}</a>
                         </div>
                     </div>
 
@@ -67,8 +69,8 @@ const Footer = () => {
                 <div className="footer-bottom">
                     <p>© {currentYear} Ilmiyxizmat.uz — Barcha huquqlar himoyalangan</p>
                     <div className="footer-social">
-                        <a href="https://t.me/ilmiyxizmat" target="_blank" rel="noopener noreferrer">Telegram</a>
-                        <a href="https://instagram.com/ilmiyxizmat" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href={settings.telegramUrl} target="_blank" rel="noopener noreferrer">Telegram</a>
+                        <a href={settings.instagramUrl} target="_blank" rel="noopener noreferrer">Instagram</a>
                     </div>
                 </div>
             </div>
