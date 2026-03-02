@@ -115,11 +115,9 @@ const BlogPost = () => {
             <section className="section">
                 <div className="container">
                     <article className="post-content">
-                        <p>{post.excerpt}</p>
+                        <p className="lead" style={{fontWeight: "bold"}}>{post.excerpt}</p>
                         {post.content ? (
-                            post.content.split('\n').map((paragraph, i) => (
-                                paragraph.trim() ? <p key={i}>{paragraph}</p> : null
-                            ))
+                            <div dangerouslySetInnerHTML={{ __html: post.content }} />
                         ) : (
                             <>
                                 <p>Bu maqolada {post.title.toLowerCase()} haqida batafsil ma'lumot beriladi.
