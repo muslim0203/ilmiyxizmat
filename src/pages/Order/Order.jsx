@@ -41,7 +41,7 @@ const Order = () => {
                             </div>
                             <div className="form-group">
                                 <label className="form-label">Telefon raqam *</label>
-                                <input type="tel" className="form-input" placeholder="+998 90 123 45 67"
+                                <input type="tel" className="form-input" placeholder="+998 97 007 33 96"
                                     value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} required />
                             </div>
                             <div className="form-group">

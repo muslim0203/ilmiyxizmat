@@ -14,6 +14,7 @@
     align-items: center;
     justify-content: space-between;
     height: 70px;
+    gap: var(--spacing-2);
 }
 
 /* Logo */
@@ -33,13 +34,13 @@
 }
 
 .logo-main {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 800;
     color: var(--primary);
 }
 
 .logo-sub {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--gold);
 }
@@ -48,16 +49,19 @@
 .nav-list {
     display: flex;
     align-items: center;
-    gap: var(--spacing-1);
+    gap: 0;
 }
 
 .nav-link {
-    padding: var(--spacing-2) var(--spacing-3);
+    padding: var(--spacing-1) var(--spacing-2);
     font-size: var(--font-size-sm);
     font-weight: 500;
     color: var(--gray-700);
     border-radius: var(--radius-md);
     transition: var(--transition);
+    white-space: nowrap;
+    text-align: center;
+    line-height: 1.2;
 }
 
 .nav-link:hover {
@@ -70,20 +74,62 @@
     background: rgba(30, 64, 175, 0.1);
 }
 
+/* AI Maqola special badge */
+.nav-link-ai {
+    background: linear-gradient(135deg, #7c3aed, #db2777);
+    color: #fff !important;
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    padding: 0.25rem 0.65rem;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.35);
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.nav-link-ai::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    transition: left 0.45s ease;
+}
+
+.nav-link-ai:hover::before {
+    left: 150%;
+}
+
+.nav-link-ai:hover {
+    background: linear-gradient(135deg, #6d28d9, #be185d) !important;
+    color: #fff !important;
+    box-shadow: 0 4px 16px rgba(124, 58, 237, 0.5);
+    transform: translateY(-1px);
+}
+
+.nav-link-ai.active {
+    background: linear-gradient(135deg, #5b21b6, #9d174d) !important;
+    color: #fff !important;
+}
+
 /* Header Actions */
 .header-actions {
     display: flex;
     align-items: center;
-    gap: var(--spacing-3);
+    gap: var(--spacing-1);
 }
 
 .btn-contact {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
     font-weight: 500;
     color: var(--gray-700);
-    padding: var(--spacing-2) var(--spacing-3);
+    padding: var(--spacing-1) var(--spacing-2);
     border-radius: var(--radius-md);
     transition: var(--transition);
+    white-space: nowrap;
 }
 
 .btn-contact:hover {

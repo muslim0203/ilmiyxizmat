@@ -177,6 +177,260 @@ export const blogPosts = [
             
             <p>Ko'nglingiz xotirjam bo'lishini va barcha qiyinchilik bosqichlarisiz tayyor natijaga erishishni xohlaysizmi? Biz bilan hamkorlik qiling!</p>
         `
+    },
+    {
+        id: 7,
+        slug: "ozbekistonda-ilmiy-maqola-nashr-qilish-narxlari-2026",
+        title: "O'zbekistonda ilmiy maqola nashr qilish narxlari (2026)",
+        excerpt: "OAK, xalqaro va Scopus jurnallarida ilmiy maqola nashr qilish narxlari, jurnal turlari va narxga ta'sir qiluvchi omillar haqida to'liq ma'lumot – 2026 yil yangilangan ma'lumotlar.",
+        category: "Nashr",
+        date: "2026-03-16",
+        readTime: "8 daqiqa",
+        content: `
+            <p>Ilmiy maqola nashr qilish bugungi kunda ilmiy faoliyat bilan shug'ullanayotgan <strong>tadqiqotchilar, magistrantlar, doktorantlar</strong> va professor-o'qituvchilar uchun muhim jarayondir. O'zbekistonda ilmiy daraja olish, attestatsiyadan o'tish yoki ilmiy reytingni oshirish uchun ko'pincha ilmiy maqola nashr qilish talab qilinadi.</p>
+            <p>Quyida <strong>2026 yil</strong> holatiga ko'ra ilmiy maqolalarni nashr qilish narxlari, jurnal turlari va ularga ta'sir qiluvchi omillar haqida batafsil ma'lumot beramiz.</p>
+
+            <h2>Ilmiy maqola nashr qilish nima?</h2>
+            <p>Ilmiy maqola – bu ma'lum bir ilmiy muammo bo'yicha olib borilgan tadqiqot natijalarini ilmiy asosda bayon qiluvchi akademik ish hisoblanadi. Maqolalar odatda quyidagi jurnallarda chop etiladi:</p>
+            <ul>
+                <li><strong>OAK</strong> (Oliy Attestatsiya Komissiyasi) ro'yxatidagi jurnallar</li>
+                <li>Xalqaro ilmiy jurnallar</li>
+                <li><strong>Scopus</strong> yoki <strong>Web of Science</strong> bazasiga kiruvchi jurnallar</li>
+                <li>Universitet ilmiy jurnallari</li>
+            </ul>
+            <p>Har bir jurnal turining nashr narxi va talablari turlicha bo'ladi.</p>
+
+            <h2>O'zbekistonda ilmiy maqola nashr qilish narxlari (2026)</h2>
+            <p>2026 yil holatiga ko'ra ilmiy maqola nashr qilish narxi jurnal darajasi va indeksiga qarab farq qiladi.</p>
+
+            <h3>1. OAK jurnallarida maqola nashr qilish narxi</h3>
+            <p>O'zbekiston OAK ro'yxatidagi jurnallarda maqola chop etish eng ko'p uchraydigan variant hisoblanadi.</p>
+            <ul>
+                <li><strong>O'rtacha narxlar:</strong> 350 000 – 1 200 000 so'm</li>
+                <li><strong>Maqola hajmi</strong> va sahifa soniga qarab farq qiladi</li>
+                <li><strong>Nashr muddati:</strong> 1–4 oy</li>
+                <li>Tezkor nashr xizmati narxni oshirishi mumkin</li>
+            </ul>
+
+            <h3>2. Xalqaro jurnallarda maqola nashr qilish narxi</h3>
+            <p>Xalqaro ilmiy jurnallar (xalqaro konferensiya materiallari yoki xorijiy nashrlar) odatda biroz qimmatroq bo'ladi.</p>
+            <ul>
+                <li><strong>O'rtacha narxlar:</strong> 50 – 200 AQSh dollari</li>
+                <li>Xalqaro ilmiy bazalarda indekslanish imkoniyati</li>
+                <li>Ilmiy reyting oshishi va xalqaro hamkorlik imkoni</li>
+            </ul>
+
+            <h3>3. Scopus jurnallarida maqola nashr qilish narxi</h3>
+            <p>Scopus bazasidagi jurnallarda maqola chop etish eng yuqori darajadagi ilmiy nashr hisoblanadi.</p>
+            <ul>
+                <li><strong>O'rtacha narxlar:</strong> 300 – 1500 AQSh dollari</li>
+                <li>Ba'zi yuqori reytingli jurnallarda narx 2000 dollargacha yetishi mumkin</li>
+                <li>Xalqaro ilmiy reyting, universitet reytingi va grant loyihalarida ustunlik beradi</li>
+            </ul>
+
+            <h2>Ilmiy maqola narxiga ta'sir qiluvchi omillar</h2>
+            <ul>
+                <li><strong>Jurnal darajasi:</strong> Jurnal qanchalik nufuzli bo'lsa, nashr narxi shunchalik yuqori bo'ladi.</li>
+                <li><strong>Maqola hajmi:</strong> Ko'pincha jurnallar sahifa soniga qarab to'lov belgilaydi.</li>
+                <li><strong>Maqola tili:</strong> Ingliz tilidagi maqolalar qo'shimcha tarjima yoki tahrir xarajatlari talab qilishi mumkin.</li>
+                <li><strong>Tezkor nashr:</strong> Ba'zi jurnallar <em>express nashr</em> xizmatini taklif qiladi, bu narxni oshiradi.</li>
+            </ul>
+
+            <h2>Ilmiy maqola yozishda talab qilinadigan tuzilma</h2>
+            <p>Ko'pchilik jurnallar maqola quyidagi struktura asosida yozilishini talab qiladi:</p>
+            <ul>
+                <li>Annotatsiya</li>
+                <li>Kalit so'zlar</li>
+                <li>Kirish</li>
+                <li>Tadqiqot metodologiyasi</li>
+                <li>Natijalar</li>
+                <li>Tahlil va muhokama</li>
+                <li>Xulosa</li>
+                <li>Foydalanilgan adabiyotlar</li>
+            </ul>
+            <p>Ko'plab xalqaro jurnallar <strong>IMRAD</strong> formatini (Introduction, Methods, Results, Discussion) talab qiladi.</p>
+
+            <h2>Ilmiy maqola chop etishda uchraydigan muammolar</h2>
+            <p>Tadqiqotchilar ko'pincha quyidagi muammolarga duch kelishadi:</p>
+            <ul>
+                <li>Jurnal tanlashdagi qiyinchilik</li>
+                <li>Maqola format talablariga mos kelmasligi</li>
+                <li>Plagiat darajasi yuqori chiqishi</li>
+                <li>Tahrir va tarjima muammolari</li>
+                <li>Nashr jarayonining uzoq davom etishi</li>
+            </ul>
+            <p>Shu sababli ko'pchilik <strong>ilmiy konsultatsiya xizmatlaridan</strong> foydalanadi. <strong>Ilmiyxizmat.uz</strong> jamoasi maqola yozish, formatlash, tarjima va nashr qildirishda professional yordam ko'rsatadi.</p>
+
+            <h2>Xulosa: O'zbekistonda ilmiy maqola narxlari 2026</h2>
+            <ul>
+                <li><strong>OAK jurnallari</strong> – 350 000 dan 1 200 000 so'mgacha</li>
+                <li><strong>Xalqaro jurnallar</strong> – 50–200 AQSh dollari</li>
+                <li><strong>Scopus jurnallari</strong> – 300–1500 AQSh dollari</li>
+            </ul>
+            <p>Tadqiqotchilar maqola nashr qilishdan oldin jurnal talablari, indekslash bazasi va nashr muddatini diqqat bilan o'rganishlari tavsiya etiladi. Yordam kerak bo'lsa, <strong>Ilmiyxizmat.uz</strong> mutaxassislari bilan bog'laning!</p>
+        `
+    },
+    {
+        id: 8,
+        slug: "bmi-nima-bitiruv-malakaviy-ishi-haqida-tolik-malumot",
+        title: "BMI nima? Bitiruv malakaviy ishi haqida to'liq ma'lumot (2026)",
+        excerpt: "BMI — Bitiruv malakaviy ishi nima, qanday yoziladi, qanday tuzilmaga ega va qanday talablar mavjud? Bakalavr talabalari uchun to'liq qo'llanma.",
+        category: "Ilmiy ishlar",
+        date: "2026-03-16",
+        readTime: "7 daqiqa",
+        content: `
+            <p><strong>BMI nima?</strong> — Bu savol har yili minglab bakalavr talabalari uchun eng dolzarb savolga aylanadi. BMI — <strong>Bitiruv Malakaviy Ishi</strong> degan ma'noni anglatib, bakalavr (4 yillik) ta'limining yakuniy bosqichida tayyorlanadigan ilmiy-amaliy ishdir.</p>
+            <p>BMI talabaning 4 yil davomida orttirgan bilimi va ko'nikmalarini ko'rsatadigan asosiy hujjat hisoblanadi. Uni muvaffaqiyatli himoya qilish talabaga bakalavr diplomini olish imkonini beradi.</p>
+
+            <h2>BMI — Bitiruv Malakaviy Ishi nima?</h2>
+            <p>BMI — bu talaba tomonidan mustaqil ravishda olib borilgan ilmiy tadqiqot bo'lib, muayyan muammo bo'yicha nazariy va amaliy tahlilni o'z ichiga oladi. Ish bitiruvchi tomonidan ilmiy rahbar nazoratida yoziladi va Davlat Attestatsiya Komissiyasi (DAK) oldida himoya qilinadi.</p>
+
+            <h2>BMI tuzilmasi qanday bo'ladi?</h2>
+            <p>O'zbekistonda standard BMI quyidagi tuzilmaga ega:</p>
+            <ul>
+                <li><strong>Kirish (3–5 bet):</strong> Mavzuning dolzarbligi, tadqiqot obyekti, predmeti, maqsad va vazifalari</li>
+                <li><strong>I-bob — Nazariy qism (15–20 bet):</strong> Mavzu bo'yicha adabiyotlar tahlili, mavjud nazariy yondashuvlar</li>
+                <li><strong>II-bob — Amaliy/Tahliliy qism (20–25 bet):</strong> Tadqiqot natijalari, jadvallar, grafiklar, hisob-kitoblar</li>
+                <li><strong>III-bob — Taklif va tavsiyalar (10–15 bet):</strong> Muammoga yechimlar, innovatsion takliflar</li>
+                <li><strong>Xulosa (3–5 bet):</strong> Olingan natijalar xulosasi</li>
+                <li><strong>Foydalanilgan adabiyotlar:</strong> GOST formatida manba ro'yxati</li>
+                <li><strong>Ilovalar:</strong> Jadvallar, so'rovnomalar, hisobotlar</li>
+            </ul>
+
+            <h2>BMI uchun asosiy talablar</h2>
+            <ul>
+                <li><strong>Hajmi:</strong> Odatda 50–80 bet (ilovalar hisobga olinmagan holda)</li>
+                <li><strong>Shrift:</strong> Times New Roman, 14 pt (12 pt ba'zi yo'nalishlarda)</li>
+                <li><strong>Qatorlar oralig'i:</strong> 1.5 interval</li>
+                <li><strong>Chegaralar:</strong> Chapdan 3 sm, o'ngdan 1.5 sm, yuqori/pastdan 2 sm</li>
+                <li><strong>Antiplagiat:</strong> Kamida 60–70% originallik talab qilinadi</li>
+            </ul>
+
+            <h2>BMI yozishda eng ko'p uchraydigan xatolar</h2>
+            <ul>
+                <li>Mavzuni kech tanlash — vaqt qolmaydi</li>
+                <li>Plagiat foizining yuqori chiqishi</li>
+                <li>Adabiyotlar ro'yxatini noto'g'ri formatlash (GOST talablariga rioya qilmaslik)</li>
+                <li>Amaliy bob bo'sh yoki juda umumiy yozilishi</li>
+                <li>Xulosaning kirish qismini takrorlashi</li>
+            </ul>
+
+            <h2>BMI yozishda yordam kerakmi?</h2>
+            <p><strong>Ilmiyxizmat.uz</strong> jamoasi BMI yozish, formatlash, antiplagiat foizini oshirish va himoyaga tayyorgarlik ko'rishda professional yordam ko'rsatadi. Mutaxassislarimiz bilan bog'laning — bepul konsultatsiya oling!</p>
+        `
+    },
+    {
+        id: 9,
+        slug: "monografiya-nima-va-qanday-yoziladi",
+        title: "Monografiya nima? Monografiya yozish bo'yicha to'liq qo'llanma (2026)",
+        excerpt: "Monografiya nima, kimlar yozadi, qanday tuzilmaga ega, nashr qilish narxi qancha? O'zbekistonda monografiya yozish va nashr qilish bo'yicha batafsil ma'lumot.",
+        category: "Ilmiy ishlar",
+        date: "2026-03-16",
+        readTime: "8 daqiqa",
+        content: `
+            <p><strong>Monografiya nima?</strong> — Bu savol ko'plab doktorantlar, ilmiy xodimlar va professor-o'qituvchilar tomonidan beriladi. Monografiya — bitta muallif yoki muallif jamoasi tomonidan yozilgan, bitta ilmiy mavzuni chuqur va har tomonlama yorituvchi ilmiy kitob turidir.</p>
+
+            <h2>Monografiya — bu nima?</h2>
+            <p><strong>Monografiya</strong> (yunoncha: <em>monos</em> — bitta, <em>grapho</em> — yozaman) — ma'lum bir ilmiy muammo yoki mavzuni tizimli, chuqur va keng qamrovli tarzda tadqiq etuvchi, odatda <strong>alohida kitob yoki broshyura</strong> shaklida nashr etiladigan ilmiy ish turidir.</p>
+            <p>Monografiya oddiy ilmiy maqoladan farqli o'laroq, mavzuni keng ko'lamda qamrab oladi va mustaqil ilmiy hissa sifatida baholanadi.</p>
+
+            <h2>Monografiyani kimlar yozadi?</h2>
+            <ul>
+                <li><strong>Doktorantlar (PhD, DSc)</strong> — ilmiy daraja olish uchun</li>
+                <li><strong>Professor-o'qituvchilar</strong> — ilmiy unvon olish va attestatsiyadan o'tish uchun</li>
+                <li><strong>Ilmiy xodimlar</strong> — tadqiqot natijalarini nashr qilish uchun</li>
+                <li><strong>Muallif jamoalari</strong> — birgalikda tadqiqot o'tkazganlar</li>
+            </ul>
+
+            <h2>Monografiya tuzilmasi</h2>
+            <ul>
+                <li><strong>Sarlavha sahifasi:</strong> Muallif(lar), tashkilot, nashr yili</li>
+                <li><strong>Annotatsiya</strong> (o'zbek, rus, ingliz tillarida)</li>
+                <li><strong>Kirish:</strong> Mavzuning dolzarbligi, tadqiqot maqsadi, yangiligi</li>
+                <li><strong>Asosiy qismlar (boblar):</strong> 3–5 ta bob, har birida 3–4 ta bo'lim</li>
+                <li><strong>Xulosa:</strong> Ilmiy natijalar va tavsiyalar</li>
+                <li><strong>Foydalanilgan adabiyotlar</strong> (GOST formatida, 50–150+ manba)</li>
+                <li><strong>Ilovalar:</strong> Jadvallar, grafiklar, fotolavhalar</li>
+            </ul>
+
+            <h2>O'zbekistonda monografiya hajmi va talablari</h2>
+            <ul>
+                <li><strong>Minimal hajm:</strong> Odatda 100–150 bet (ba'zan ko'proq)</li>
+                <li><strong>Nashr tirajz:</strong> Kamida 300–500 nusxa</li>
+                <li><strong>ISBN raqami:</strong> Rasmiy nashr uchun majburiy</li>
+                <li><strong>Recenziya (taqriz):</strong> Kamida 2 ta ilmiy darajali mutaxassis taqrizi</li>
+                <li><strong>Antiplagiat:</strong> 80–85% originallik tavsiya etiladi</li>
+            </ul>
+
+            <h2>Monografiya nashr qilish narxi (2026)</h2>
+            <ul>
+                <li><strong>O'zbekistonda nashr:</strong> 2 000 000 – 8 000 000 so'm (hajm va tirajga qarab)</li>
+                <li><strong>Xalqaro nashr:</strong> 500 – 2000 AQSh dollari</li>
+                <li><strong>Elektron nashr (e-monografiya):</strong> Arzonroq variant mavjud</li>
+            </ul>
+
+            <h2>Monografiya yozishda yordam</h2>
+            <p><strong>Ilmiyxizmat.uz</strong> jamoasi monografiya yozish, tahrirlash, GOST formatida rasmiylashtirish va nashr qilishda to'liq yordam beradi. Bepul konsultatsiya uchun bog'laning!</p>
+        `
+    },
+    {
+        id: 10,
+        slug: "gost-nima-ilmiy-ishlarda-gost-standarti",
+        title: "GOST nima? Ilmiy ishlarda GOST standarti va qoidalari (2026)",
+        excerpt: "GOST nima, ilmiy ishlarda qanday ishlatiladi, dissertatsiya va maqolalar uchun GOST talablari qanday? O'zbekiston va MDH davlatlarida GOST standartiga amal qilish bo'yicha qo'llanma.",
+        category: "Formatlash",
+        date: "2026-03-16",
+        readTime: "6 daqiqa",
+        content: `
+            <p><strong>GOST nima?</strong> — Ko'plab talabalar, magistrantlar va tadqiqotchilar uchun bu savol tez-tez paydo bo'ladi. GOST — <strong>Gosudarstvennyy Standart</strong> (Davlat Standarti) ning qisqartmasi bo'lib, Sovet Ittifoqi davridan beri MDH davlatlarida, shu jumladan O'zbekistonda ham ilmiy va texnik hujjatlarni rasmiylashtirish uchun qo'llaniladigan standartlar tizimini anglatadi.</p>
+
+            <h2>GOST — bu nima?</h2>
+            <p><strong>GOST</strong> (rus. Государственный стандарт) — ilmiy maqolalar, dissertatsiyalar, kitoblar, hisobotlar va boshqa hujjatlarni rasmiylashtirish uchun qo'llaniladigan davlat standarti. O'zbekistonda ilmiy ishlar uchun asosan quyidagi GOST standartlari qo'llaniladi:</p>
+            <ul>
+                <li><strong>GOST 7.32</strong> — Ilmiy-tadqiqot ishlari hisoboti tuzilishi va rasmiylashtirish qoidalari</li>
+                <li><strong>GOST 7.1</strong> — Bibliografik yozuv va tavsif standartlari</li>
+                <li><strong>GOST 7.0.5-2008</strong> — Matn ichidagi havolalar (snoskalar) standarti</li>
+                <li><strong>GOST R 7.0.100-2018</strong> — Adabiyotlar ro'yxatini tuzish yangi standarti</li>
+            </ul>
+
+            <h2>Ilmiy ishlarda GOST bo'yicha asosiy talablar</h2>
+            <h3>Shrift va sahifa parametrlari</h3>
+            <ul>
+                <li><strong>Shrift:</strong> Times New Roman, 14 pt (dissertatsiya), 12 pt (maqola)</li>
+                <li><strong>Qatorlar oralig'i:</strong> 1.5 interval (dissertatsiya uchun)</li>
+                <li><strong>Chapdan chegara:</strong> 3 sm</li>
+                <li><strong>O'ngdan chegara:</strong> 1.5 sm</li>
+                <li><strong>Yuqoridan va pastdan:</strong> 2 sm</li>
+                <li><strong>Birinchi qator:</strong> 1.25 sm ichkariga (xat boshi)</li>
+                <li><strong>Sahifa raqami:</strong> O'ng pastki burchakda yoki markazda</li>
+            </ul>
+
+            <h3>GOST bo'yicha adabiyotlar ro'yxati (bibliografiya)</h3>
+            <p>Adabiyotlar ro'yxati <strong>GOST 7.1</strong> yoki <strong>GOST 7.0.5-2008</strong> bo'yicha tuziladi:</p>
+            <ul>
+                <li><strong>Kitob uchun:</strong> Familiya I.O. Kitob nomi. – Shahar: Nashriyot, Yil. – X b.</li>
+                <li><strong>Maqola uchun:</strong> Familiya I.O. Maqola nomi // Jurnal nomi. – Yil. – T. X, № X. – B. X–X.</li>
+                <li><strong>Internet manba:</strong> Familiya I.O. Manba nomi [Elektron resurs]. – URL: ... (murojaat: sana)</li>
+            </ul>
+
+            <h3>GOST bo'yicha matn ichidagi havolalar</h3>
+            <p>GOST 7.0.5-2008 bo'yicha matn ichidagi havolalar <strong>kvadrat qavsda raqam</strong> ko'rinishida beriladi:</p>
+            <ul>
+                <li><strong>[1]</strong> — oddiy havola</li>
+                <li><strong>[2, s. 45]</strong> — sahifa ko'rsatilgan</li>
+                <li><strong>[3, 4]</strong> — bir nechta manba</li>
+            </ul>
+
+            <h2>GOST va APA 7 farqi qanday?</h2>
+            <ul>
+                <li><strong>GOST</strong> — MDH va O'zbekiston ilmiy muhitida, OAK jurnallari va dissertatsiyalarda qo'llaniladi</li>
+                <li><strong>APA 7</strong> — Xalqaro, xususan Scopus va Web of Science jurnallarida qo'llaniladi</li>
+                <li>GOST'da havolalar raqamli [1], APA da muallif–yil (Karimov, 2023) shaklida beriladi</li>
+            </ul>
+
+            <h2>GOST formatida hujjat tayyorlashda yordam kerakmi?</h2>
+            <p><strong>Ilmiyxizmat.uz</strong> jamoasi dissertatsiya, BMI, maqola yoki monografiyangizni GOST standartlariga to'liq moslashtiradi. Bepul konsultatsiya uchun hoziroq murojaat qiling!</p>
+        `
     }
 ];
 

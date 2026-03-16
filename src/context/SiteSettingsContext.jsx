@@ -8,10 +8,10 @@ const STORAGE_KEY = 'site_settings';
 
 // Default sozlamalar
 const DEFAULT_SETTINGS = {
-    phone: '+998 90 123 45 67',
-    phoneRaw: '+998901234567',
-    telegram: '@ilmiyxizmat',
-    telegramUrl: 'https://t.me/ilmiyxizmat',
+    phone: '+998 97 007 33 96',
+    phoneRaw: '+998970073396',
+    telegram: '@zarifjon0203',
+    telegramUrl: 'https://t.me/zarifjon0203',
     email: 'info@ilmiyxizmat.uz',
     instagram: 'ilmiyxizmat',
     instagramUrl: 'https://instagram.com/ilmiyxizmat',

@@ -32,6 +32,7 @@ import ScientificWorks from './pages/ScientificWorks/ScientificWorks';
 import ScientificWorkDetail from './pages/ScientificWorks/ScientificWorkDetail';
 import Nashr from './pages/Nashr/Nashr';
 import NashrDetail from './pages/Nashr/NashrDetail';
+import AIArticle from './pages/AIArticle/AIArticle';
 import Privacy from './pages/Privacy/Privacy';
 import Terms from './pages/Terms/Terms';
 
@@ -76,6 +77,8 @@ function App() {
 
           <Route path="nashr" element={<Nashr />} />
           <Route path="nashr/:slug" element={<NashrDetail />} />
+
+          <Route path="ai-maqola" element={<AIArticle />} />
 
           <Route path="privacy-policy" element={<Privacy />} />
           <Route path="terms" element={<Terms />} />

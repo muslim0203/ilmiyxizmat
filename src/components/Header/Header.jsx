@@ -10,6 +10,7 @@ const Header = () => {
         { path: '/ilmiy-ishlar', label: 'Ilmiy ishlar' },
         { path: '/nashr', label: 'Nashr' },
         { path: '/narxlar', label: 'Narxlar' },
+        { path: '/ai-maqola', label: '✨ AI Maqola', isAI: true },
         { path: '/blog', label: 'Blog' },
         { path: '/biz-haqimizda', label: 'Biz haqimizda' },
     ];
@@ -32,7 +33,7 @@ const Header = () => {
                                 <li key={link.path}>
                                     <Link
                                         to={link.path}
-                                        className={`nav-link ${location.pathname === link.path ? 'active' : ''}`}
+                                        className={`nav-link ${link.isAI ? 'nav-link-ai' : ''} ${location.pathname === link.path ? 'active' : ''}`}
                                     >
                                         {link.label}
                                     </Link>
@@ -45,7 +46,7 @@ const Header = () => {
                         <Link to="/aloqa" className="btn-contact">
                             📞 Aloqa
                         </Link>
-                        <Link to="/buyurtma" className="btn btn-gold">
+                        <Link to="/buyurtma" className="btn btn-gold" style={{ padding: '0.4rem 0.8rem', fontSize: '14px', whiteSpace: 'nowrap' }}>
                             Buyurtma berish
                         </Link>
                     </div>

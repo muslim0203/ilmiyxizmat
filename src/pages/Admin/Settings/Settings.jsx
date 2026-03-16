@@ -21,10 +21,10 @@ const Settings = () => {
         if (window.confirm('Barcha sozlamalar boshlang\'ich holatga qaytariladi. Davom etsinmi?')) {
             resetSettings();
             setFormData({
-                phone: '+998 90 123 45 67',
-                phoneRaw: '+998901234567',
-                telegram: '@ilmiyxizmat',
-                telegramUrl: 'https://t.me/ilmiyxizmat',
+                phone: '+998 97 007 33 96',
+                phoneRaw: '+998970073396',
+                telegram: '@zarifjon0203',
+                telegramUrl: 'https://t.me/zarifjon0203',
                 email: 'info@ilmiyxizmat.uz',
                 instagram: 'ilmiyxizmat',
                 instagramUrl: 'https://instagram.com/ilmiyxizmat',
@@ -106,7 +106,7 @@ const Settings = () => {
                             type="text"
                             value={formData.phone}
                             onChange={(e) => handleChange('phone', e.target.value)}
-                            placeholder="+998 90 123 45 67"
+                            placeholder="+998 97 007 33 96"
                         />
                         <p style={hintStyle}>Saytda foydalanuvchilarga ko'rinadigan format</p>
                     </div>
@@ -118,7 +118,7 @@ const Settings = () => {
                             type="text"
                             value={formData.phoneRaw}
                             onChange={(e) => handleChange('phoneRaw', e.target.value)}
-                            placeholder="+998901234567"
+                            placeholder="+998970073396"
                         />
                         <p style={hintStyle}>Bo'sh joysiz, tel: linki uchun ishlatiladi</p>
                     </div>
@@ -142,7 +142,7 @@ const Settings = () => {
                             type="text"
                             value={formData.telegram}
                             onChange={(e) => handleChange('telegram', e.target.value)}
-                            placeholder="@ilmiyxizmat"
+                            placeholder="@zarifjon0203"
                         />
                     </div>
 
@@ -153,7 +153,7 @@ const Settings = () => {
                             type="url"
                             value={formData.telegramUrl}
                             onChange={(e) => handleChange('telegramUrl', e.target.value)}
-                            placeholder="https://t.me/ilmiyxizmat"
+                            placeholder="https://t.me/zarifjon0203"
                         />
                     </div>
 

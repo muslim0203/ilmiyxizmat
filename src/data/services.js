@@ -261,7 +261,7 @@ export const services = [
       "Retsenziya",
       "Nashr kafolati"
     ],
-    price: "1 000 000",
+    price: "350 000",
     priceNote: "dan boshlab",
     popular: true,
     metaTitle: "OAK jurnalga maqola chiqarish | Ilmiyxizmat.uz",
@@ -280,7 +280,7 @@ export const services = [
       "Sertifikat",
       "To'plam nashr"
     ],
-    price: "300 000",
+    price: "80 000",
     priceNote: "dan boshlab",
     popular: false,
     metaTitle: "Konferensiyaga maqola chiqarish | Ilmiyxizmat.uz",
