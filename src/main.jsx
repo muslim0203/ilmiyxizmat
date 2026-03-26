@@ -3,8 +3,11 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter, useLocation } from 'react-router-dom'
 import { HelmetProvider } from '@dr.pogodin/react-helmet'
 import { SiteSettingsProvider } from './context/SiteSettingsContext.jsx'
+import { installGoogleAdsClickTracking } from './analytics/googleAdsConversion.js'
 import App from './App.jsx'
 import './index.css'
+
+installGoogleAdsClickTracking()
 
 // ScrollToTop component to handle scroll restoration manually
 const ScrollToTop = () => {
