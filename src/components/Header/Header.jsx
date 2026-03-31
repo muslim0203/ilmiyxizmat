@@ -10,7 +10,6 @@ const Header = () => {
         { path: '/ilmiy-ishlar', label: 'Ilmiy ishlar' },
         { path: '/nashr', label: 'Nashr' },
         { path: '/narxlar', label: 'Narxlar' },
-        { path: '/ai-maqola', label: '✨ AI Maqola', isAI: true },
         { path: '/blog', label: 'Blog' },
         { path: '/biz-haqimizda', label: 'Biz haqimizda' },
     ];
