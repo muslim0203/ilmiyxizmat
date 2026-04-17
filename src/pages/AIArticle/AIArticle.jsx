@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
-import { Document, Packer, Paragraph, TextRun, HeadingLevel } from 'docx';
+import {
+    Document, Packer, Paragraph, TextRun, HeadingLevel,
+    AlignmentType, BorderStyle, convertInchesToTwip,
+    PageOrientation, ShadingType, UnderlineType,
+} from 'docx';
 import { saveAs } from 'file-saver';
-import { GoogleGenAI } from '@google/genai';
+import api from '../../lib/apiClient';
 import SEO from '../../components/SEO/SEO';
 import './AIArticle.css';
 
@@ -39,19 +43,11 @@ const AIArticle = () => {
             return;
         }
 
-        const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-        if (!apiKey) {
-            setError('API kaliti topilmadi (VITE_GEMINI_API_KEY). Iltimos, administrator bilan bog\'laning yoki .env faylga qo\'shing.');
-            return;
-        }
-
         setIsGenerating(true);
         setError('');
         setArticleResult('');
 
         try {
-            const ai = new GoogleGenAI({ apiKey: apiKey });
-
             const prompt = `You are an expert academic writer. Write a complete, high-quality scientific article strictly following this structure.
 
 Topic: "${topic}"
@@ -95,10 +91,8 @@ OTHER CRITICAL RULES:
 - Do NOT add markdown code blocks or extra formatting symbols.
 - Output ONLY the article text, nothing else.`;
 
-            const response = await ai.models.generateContent({
-                model: 'gemini-2.5-flash',
-                contents: prompt,
-            });
+            // API key endi backend da yashirin — to'g'ridan-to'g'ri Gemini ga emas, proxy orqali
+            const response = await api.post('/api/gemini/generate', { prompt });
 
             if (response.text) {
                 setArticleResult(response.text);
@@ -117,15 +111,6 @@ OTHER CRITICAL RULES:
         if (!articleResult) return;
 
         try {
-            const {
-                AlignmentType,
-                BorderStyle,
-                convertInchesToTwip,
-                PageOrientation,
-                ShadingType,
-                UnderlineType,
-            } = await import('docx');
-
             // ── helpers ──────────────────────────────────────────────────────
             const twip = (cm) => Math.round(cm * 567);   // 1 cm ≈ 567 twips
             const pt = (p) => p * 2;                   // half-points (1pt = 2 half-points)

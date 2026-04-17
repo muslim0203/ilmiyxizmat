@@ -1,18 +1,21 @@
 import { useState } from 'react';
 import SEO from '../../components/SEO/SEO';
-import { services } from '../../data/services';
+import { useData } from '../../lib/useData';
 import { useSiteSettings } from '../../context/SiteSettingsContext';
 import './Order.css';
 
 const Order = () => {
     const { settings } = useSiteSettings();
+    const { items: services } = useData('services');
     const [formData, setFormData] = useState({
         name: '', phone: '', service: '', deadline: '', description: ''
     });
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const text = `🆕 YANGI BUYURTMA%0A%0A👤 Ism: ${formData.name}%0A📞 Telefon: ${formData.phone}%0A📋 Xizmat: ${formData.service}%0A📅 Muddat: ${formData.deadline}%0A📝 Tavsif: ${formData.description}`;
+        const text = encodeURIComponent(
+            `🆕 YANGI BUYURTMA\n\n👤 Ism: ${formData.name}\n📞 Telefon: ${formData.phone}\n📋 Xizmat: ${formData.service}\n📅 Muddat: ${formData.deadline}\n📝 Tavsif: ${formData.description}`
+        );
         window.open(`${settings.telegramUrl}?text=${text}`, '_blank');
     };
 

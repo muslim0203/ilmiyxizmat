@@ -30,7 +30,7 @@ const ScientificWorksForm = () => {
                 });
             }
         }
-    }, [id]);
+    }, [id, isEditMode, getById]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -50,7 +50,7 @@ const ScientificWorksForm = () => {
         setFormData(prev => ({ ...prev, slug }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const dataToSave = {
@@ -65,8 +65,12 @@ const ScientificWorksForm = () => {
             dataToSave.id = Number(id);
         }
 
-        save(dataToSave);
-        navigate('/admin/scientific-works');
+        try {
+            await save(dataToSave);
+            navigate('/admin/scientific-works');
+        } catch (err) {
+            alert('Saqlashda xatolik: ' + err.message);
+        }
     };
 
     return (

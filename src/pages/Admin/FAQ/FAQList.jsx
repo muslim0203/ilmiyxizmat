@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useData } from '../../../lib/useData';
 
 const FAQList = () => {
-    const { items: faqs, remove } = useData('faq');
+    const { items: faqs, loading, remove } = useData('faq');
 
     const handleDelete = (id) => {
         if (!window.confirm('Haqiqatan ham o\'chirmoqchimisiz?')) return;
@@ -20,7 +20,9 @@ const FAQList = () => {
             </div>
 
             <div className="admin-table-container">
-                {faqs.length === 0 ? (
+            {loading ? (
+                <div style={{ textAlign: 'center', padding: '2rem', color: '#6b7280' }}>Yuklanmoqda...</div>
+            ) : faqs.length === 0 ? (
                     <div className="empty-state">
                         <p>Hozircha savollar yo'q. Yangi savol qo'shing.</p>
                     </div>

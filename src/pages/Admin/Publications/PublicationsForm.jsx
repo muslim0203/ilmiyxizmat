@@ -30,7 +30,7 @@ const PublicationsForm = () => {
                 });
             }
         }
-    }, [id]);
+    }, [id, isEditMode, getById]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -50,7 +50,7 @@ const PublicationsForm = () => {
         setFormData(prev => ({ ...prev, slug }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const dataToSave = {
@@ -62,8 +62,12 @@ const PublicationsForm = () => {
             dataToSave.id = Number(id);
         }
 
-        save(dataToSave);
-        navigate('/admin/publications');
+        try {
+            await save(dataToSave);
+            navigate('/admin/publications');
+        } catch (err) {
+            alert('Saqlashda xatolik: ' + err.message);
+        }
     };
 
     return (
@@ -185,5 +189,6 @@ const PublicationsForm = () => {
         </div>
     );
 };
+
 
 export default PublicationsForm;

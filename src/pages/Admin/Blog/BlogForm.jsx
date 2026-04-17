@@ -25,7 +25,7 @@ const BlogForm = () => {
                 setFormData({ ...post });
             }
         }
-    }, [id]);
+    }, [id, isEditMode, getById]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -45,7 +45,7 @@ const BlogForm = () => {
         setFormData(prev => ({ ...prev, slug }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const dataToSave = { ...formData };
@@ -53,8 +53,12 @@ const BlogForm = () => {
             dataToSave.id = Number(id);
         }
 
-        save(dataToSave);
-        navigate('/admin/blog');
+        try {
+            await save(dataToSave);
+            navigate('/admin/blog');
+        } catch (err) {
+            alert('Saqlashda xatolik: ' + err.message);
+        }
     };
 
     return (
@@ -163,5 +167,7 @@ const BlogForm = () => {
         </div>
     );
 };
+
+
 
 export default BlogForm;

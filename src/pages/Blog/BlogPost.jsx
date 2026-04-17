@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import DOMPurify from 'dompurify';
 import SEO from '../../components/SEO/SEO';
 import { useData } from '../../lib/useData';
 import './BlogPost.css';
@@ -117,7 +118,7 @@ const BlogPost = () => {
                     <article className="post-content">
                         <p className="lead" style={{fontWeight: "bold"}}>{post.excerpt}</p>
                         {post.content ? (
-                            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                            <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content) }} />
                         ) : (
                             <>
                                 <p>Bu maqolada {post.title.toLowerCase()} haqida batafsil ma'lumot beriladi.

@@ -20,7 +20,7 @@ const FAQForm = () => {
                 setFormData({ ...faq });
             }
         }
-    }, [id]);
+    }, [id, isEditMode, getById]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -30,7 +30,7 @@ const FAQForm = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const dataToSave = { ...formData };
@@ -38,8 +38,12 @@ const FAQForm = () => {
             dataToSave.id = Number(id);
         }
 
-        save(dataToSave);
-        navigate('/admin/faq');
+        try {
+            await save(dataToSave);
+            navigate('/admin/faq');
+        } catch (err) {
+            alert('Saqlashda xatolik: ' + err.message);
+        }
     };
 
     return (

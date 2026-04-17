@@ -1,49 +1,41 @@
 import { createContext, useContext, useEffect, useState } from 'react';
+import api, { tokenStorage } from '../lib/apiClient';
 
 const AuthContext = createContext({});
-
 export const useAuth = () => useContext(AuthContext);
 
-// Hardcoded admin parol — kerak bo'lsa o'zgartiring
-const ADMIN_PASSWORD = 'admin123';
-const SESSION_KEY = 'admin_session';
-
 export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(null);
+    const [user,    setUser]    = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // LocalStorage dan session tekshirish
-        const session = localStorage.getItem(SESSION_KEY);
-        if (session === 'authenticated') {
-            setUser({ role: 'admin' });
-        }
-        setLoading(false);
+        const token = tokenStorage.get();
+        if (!token) { setLoading(false); return; }
+        api.get('/api/auth/me')
+            .then(data => setUser({ role: data.role }))
+            .catch(() => tokenStorage.remove())
+            .finally(() => setLoading(false));
     }, []);
 
     const signIn = async (password) => {
-        if (password === ADMIN_PASSWORD) {
-            localStorage.setItem(SESSION_KEY, 'authenticated');
+        try {
+            const { token } = await api.post('/api/auth/login', { password });
+            tokenStorage.set(token);
             setUser({ role: 'admin' });
             return { error: null };
+        } catch (err) {
+            return { error: { message: err.message || "Parol noto'g'ri!" } };
         }
-        return { error: { message: 'Parol noto\'g\'ri!' } };
     };
 
     const signOut = async () => {
-        localStorage.removeItem(SESSION_KEY);
+        tokenStorage.remove();
         setUser(null);
-    };
-
-    const value = {
-        signIn,
-        signOut,
-        user,
-        loading,
+        api.post('/api/auth/logout', {}).catch(() => {});
     };
 
     return (
-        <AuthContext.Provider value={value}>
+        <AuthContext.Provider value={{ signIn, signOut, user, loading }}>
             {!loading && children}
         </AuthContext.Provider>
     );

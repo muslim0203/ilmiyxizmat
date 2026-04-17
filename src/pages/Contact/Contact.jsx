@@ -11,7 +11,9 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const text = `Ilmiyxizmat.uz%0A%0AIsm: ${formData.name}%0ATelefon: ${formData.phone}%0AXabar: ${formData.message}`;
+        const text = encodeURIComponent(
+            `Ilmiyxizmat.uz\n\nIsm: ${formData.name}\nTelefon: ${formData.phone}\nXabar: ${formData.message}`
+        );
         window.open(`${settings.telegramUrl}?text=${text}`, '_blank');
     };
 

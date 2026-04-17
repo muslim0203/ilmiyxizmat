@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useData } from '../../../lib/useData';
 
 const PublicationsList = () => {
-    const { items: publications, remove } = useData('publications');
+    const { items: publications, loading, remove } = useData('publications');
 
     const handleDelete = (id) => {
         if (!window.confirm('Haqiqatan ham o\'chirmoqchimisiz?')) return;
@@ -20,7 +20,9 @@ const PublicationsList = () => {
             </div>
 
             <div className="admin-table-container">
-                {publications.length === 0 ? (
+            {loading ? (
+                <div style={{ textAlign: 'center', padding: '2rem', color: '#6b7280' }}>Yuklanmoqda...</div>
+            ) : publications.length === 0 ? (
                     <div className="empty-state">
                         <p>Hozircha nashrlar yo'q.</p>
                     </div>

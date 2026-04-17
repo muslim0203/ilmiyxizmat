@@ -8,7 +8,7 @@ const ProtectedRoute = ({ children }) => {
     const location = useLocation();
 
     if (loading) {
-        return <div className="loading-spinner">Loading...</div>; // You might want a better loading UI
+        return <div className="loading-spinner">Yuklanmoqda...</div>;
     }
 
     if (!user) {

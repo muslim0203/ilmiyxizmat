@@ -3,11 +3,15 @@ import { Link } from 'react-router-dom';
 import { useData } from '../../../lib/useData';
 
 const ServicesList = () => {
-    const { items: services, remove } = useData('services');
+    const { items: services, loading, remove } = useData('services');
 
-    const handleDelete = (id) => {
-        if (!window.confirm('Haqiqatan ham o\'chirmoqchimisiz?')) return;
-        remove(id);
+    const handleDelete = async (id) => {
+        if (!window.confirm("Haqiqatan ham o'chirmoqchimisiz?")) return;
+        try {
+            await remove(id);
+        } catch (err) {
+            alert('O\'chirishda xatolik: ' + err.message);
+        }
     };
 
     return (
@@ -20,10 +24,10 @@ const ServicesList = () => {
             </div>
 
             <div className="admin-table-container">
-                {services.length === 0 ? (
-                    <div className="empty-state">
-                        <p>Hozircha xizmatlar yo'q.</p>
-                    </div>
+                {loading ? (
+                    <div className="empty-state"><p>Yuklanmoqda...</p></div>
+                ) : services.length === 0 ? (
+                    <div className="empty-state"><p>Hozircha xizmatlar yo'q.</p></div>
                 ) : (
                     <table className="admin-table">
                         <thead>
@@ -51,7 +55,7 @@ const ServicesList = () => {
                                             color: service.popular ? '#166534' : '#374151',
                                             fontSize: '0.8rem'
                                         }}>
-                                            {service.popular ? 'Ha' : 'Yo\'q'}
+                                            {service.popular ? 'Ha' : "Yo'q"}
                                         </span>
                                     </td>
                                     <td>
