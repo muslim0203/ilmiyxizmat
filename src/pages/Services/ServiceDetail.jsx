@@ -30,11 +30,11 @@ const ServiceDetail = () => {
         "@type": "Service",
         "name": service.title,
         "description": service.metaDescription || service.description,
-        "url": `https://ilmiyxizmat.uz/xizmatlar/${service.slug}`,
+        "url": `https://www.ilmiyxizmat.uz/xizmatlar/${service.slug}`,
         "provider": {
             "@type": "Organization",
             "name": "Ilmiyxizmat.uz",
-            "url": "https://ilmiyxizmat.uz"
+            "url": "https://www.ilmiyxizmat.uz"
         },
         "areaServed": {
             "@type": "Country",
@@ -59,29 +59,43 @@ const ServiceDetail = () => {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Bosh sahifa",
-                "item": "https://ilmiyxizmat.uz"
+                "item": "https://www.ilmiyxizmat.uz"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Xizmatlar",
-                "item": "https://ilmiyxizmat.uz/xizmatlar"
+                "item": "https://www.ilmiyxizmat.uz/xizmatlar"
             },
             {
                 "@type": "ListItem",
                 "position": 3,
                 "name": service.title,
-                "item": `https://ilmiyxizmat.uz/xizmatlar/${service.slug}`
+                "item": `https://www.ilmiyxizmat.uz/xizmatlar/${service.slug}`
             }
         ]
     };
+
+    // FAQPage JSON-LD - Google natijalarida savol-javob ko'rinishini beradi
+    const faqJsonLd = service.faq?.length ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": service.faq.map(item => ({
+            "@type": "Question",
+            "name": item.question,
+            "acceptedAnswer": { "@type": "Answer", "text": item.answer }
+        }))
+    } : null;
+
+    const schemas = [serviceJsonLd, breadcrumbJsonLd];
+    if (faqJsonLd) schemas.push(faqJsonLd);
 
     return (
         <>
             <SEO
                 title={service.metaTitle || service.title}
                 description={service.metaDescription || service.description}
-                jsonLd={[serviceJsonLd, breadcrumbJsonLd]}
+                jsonLd={schemas}
             />
 
             {/* Breadcrumb */}
@@ -137,8 +151,46 @@ const ServiceDetail = () => {
                 </div>
             </section>
 
+            {/* Batafsil ma'lumot - SEO uchun asosiy matn */}
+            {service.content?.length > 0 && (
+                <section className="section service-article-section">
+                    <div className="container">
+                        <article className="service-article">
+                            {service.content.map((block, index) => (
+                                <div key={index} className="service-article-block">
+                                    <h2>{block.heading}</h2>
+                                    {block.paragraphs?.map((text, i) => <p key={i}>{text}</p>)}
+                                    {block.list?.length > 0 && (
+                                        <ul>
+                                            {block.list.map((item, i) => <li key={i}>{item}</li>)}
+                                        </ul>
+                                    )}
+                                </div>
+                            ))}
+                        </article>
+                    </div>
+                </section>
+            )}
+
+            {/* FAQ */}
+            {service.faq?.length > 0 && (
+                <section className="section section-light">
+                    <div className="container">
+                        <h2 className="text-center mb-8">Ko'p beriladigan savollar</h2>
+                        <div className="service-faq">
+                            {service.faq.map((item, index) => (
+                                <details key={index} className="service-faq-item">
+                                    <summary>{item.question}</summary>
+                                    <p>{item.answer}</p>
+                                </details>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
+
             {/* Other Services */}
-            <section className="section section-light">
+            <section className="section">
                 <div className="container">
                     <h2 className="text-center mb-8">Boshqa xizmatlar</h2>
                     <div className="other-services-grid">

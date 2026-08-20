@@ -11,13 +11,13 @@ const Nashr = () => {
         "@type": "ItemList",
         "name": "Ilmiy nashr xizmatlari",
         "description": "Ilmiy maqolalarni OAK jurnallari, xalqaro konferensiyalarda nashr qilish va sertifikat olish xizmatlari.",
-        "url": "https://ilmiyxizmat.uz/nashr",
+        "url": "https://www.ilmiyxizmat.uz/nashr",
         "numberOfItems": publications.length,
         "itemListElement": publications.map((pub, index) => ({
             "@type": "ListItem",
             "position": index + 1,
             "name": pub.title,
-            "url": `https://ilmiyxizmat.uz/nashr/${pub.slug}`
+            "url": `https://www.ilmiyxizmat.uz/nashr/${pub.slug}`
         }))
     };
 

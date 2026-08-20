@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useCallback, useEffect } from 'react';
-import api from '../lib/apiClient';
+import api, { isApiEnabled } from '../lib/apiClient';
 
 const SiteSettingsContext = createContext({});
 export const useSiteSettings = () => useContext(SiteSettingsContext);
@@ -20,9 +20,10 @@ export const SiteSettingsProvider = ({ children }) => {
     const [settings, setSettings] = useState(DEFAULT_SETTINGS);
 
     useEffect(() => {
+        if (!isApiEnabled()) return;   // backend yo'q - default sozlamalar bilan ishlaymiz
         api.get('/api/settings')
             .then(data => { if (data) setSettings(prev => ({ ...prev, ...data })); })
-            .catch(() => console.warn('SiteSettings: API ulanmadi, default ishlatilmoqda.'));
+            .catch(() => { /* backend ulanmadi - default sozlamalar qoladi */ });
     }, []);
 
     const updateSettings = useCallback(async (newSettings) => {

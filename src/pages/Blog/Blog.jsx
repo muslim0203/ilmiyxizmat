@@ -11,11 +11,11 @@ const Blog = () => {
         "@type": "Blog",
         "name": "Ilmiyxizmat.uz Blog",
         "description": "Ilmiy ishlar, BMI yozish, dissertatsiya, ilmiy maqola haqida foydali maqolalar va qo'llanmalar.",
-        "url": "https://ilmiyxizmat.uz/blog",
+        "url": "https://www.ilmiyxizmat.uz/blog",
         "publisher": {
             "@type": "Organization",
             "name": "Ilmiyxizmat.uz",
-            "url": "https://ilmiyxizmat.uz"
+            "url": "https://www.ilmiyxizmat.uz"
         }
     };
 

@@ -5,34 +5,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Primary SEO Meta Tags -->
+  <!--
+    MUHIM: title, description, canonical, og va twitter teglari bu yerda EMAS.
+    Ular har bir sahifa uchun SEO komponenti (react-helmet) tomonidan qo'yiladi va
+    build vaqtida prerender skripti head placeholder o'rniga joylashtiradi.
+    Bu yerga qattiq kodlansa, har sahifada IKKITA canonical va IKKITA description
+    paydo bo'ladi, natijada Google barcha sahifalarni bosh sahifaga birlashtiradi.
+  -->
   <title>Ilmiyxizmat.uz - Ilmiy ishlar yozish xizmati | BMI, Dissertatsiya, Ilmiy maqola</title>
-  <meta name="description"
-    content="Ilmiyxizmat.uz - O'zbekistonda ilmiy ishlar yozish xizmati. BMI yozish, magistrlik va doktorlik dissertatsiyalari, Scopus va OAK ilmiy maqola, antiplagiatdan o'tish va kurs ishi tayyorlash xizmatlari." />
-  <meta name="keywords"
-    content="ilmiy ish yozish, diplom ishi yozish, BMI yozish, bmi nima, bitiruv malakaviy ishi, dissertatsiya yozish, magistrlik dissertatsiyasi, doktorlik dissertatsiyasi, ilmiy maqola yozish, ilmiy maqola nashr qilish narxi, scopus maqola chiqarish, oak jurnallari, oak antiplagiat, kurs ishi yozish, kurs ishi qanday yoziladi, antiplagiatdan o'tish, antiplagiat tekshirish, ilmiy nashr, monografiya, monografiya nima, gost nima, gost standarti, apa format, referat yozish, ilmiyxizmat, ilmiyxizmat.uz" />
   <meta name="author" content="Ilmiyxizmat.uz" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <link rel="canonical" href="https://ilmiyxizmat.uz/" />
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ilmiyxizmat.uz/" />
-  <meta property="og:title" content="Ilmiyxizmat.uz - Ilmiy ishlar yozish xizmati | BMI, Dissertatsiya, Ilmiy maqola" />
-  <meta property="og:description"
-    content="O'zbekistonda №1 ilmiy ishlar yozish xizmati. BMI, dissertatsiya, ilmiy maqola va boshqa ilmiy ishlarni yuqori sifatda tayyorlab beramiz." />
-  <meta property="og:image" content="https://ilmiyxizmat.uz/og-image.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:site_name" content="Ilmiyxizmat.uz" />
-  <meta property="og:locale" content="uz_UZ" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Ilmiyxizmat.uz - Ilmiy ishlar yozish xizmati" />
-  <meta name="twitter:description"
-    content="BMI, dissertatsiya, ilmiy maqola va boshqa ilmiy ishlarni yuqori sifatda tayyorlab beramiz." />
-  <meta name="twitter:image" content="https://ilmiyxizmat.uz/og-image.jpg" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -50,8 +32,8 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Ilmiyxizmat.uz",
-      "url": "https://ilmiyxizmat.uz",
-      "logo": "https://ilmiyxizmat.uz/logo.png",
+      "url": "https://www.ilmiyxizmat.uz",
+      "logo": "https://www.ilmiyxizmat.uz/logo.png",
       "description": "O'zbekistonda ilmiy ishlar yozish, tahrirlash va nashr qilish bo'yicha professional xizmatlar.",
       "contactPoint": {
         "@type": "ContactPoint",
@@ -77,12 +59,12 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Ilmiyxizmat.uz",
-      "url": "https://ilmiyxizmat.uz",
+      "url": "https://www.ilmiyxizmat.uz",
       "description": "Ilmiy ishlar yozish, tahrirlash va nashr qilish xizmatlari",
       "inLanguage": "uz",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://ilmiyxizmat.uz/xizmatlar?q={search_term_string}",
+        "target": "https://www.ilmiyxizmat.uz/xizmatlar?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     }
@@ -96,10 +78,11 @@
     gtag('js', new Date());
     gtag('config', 'AW-696352609');
   </script>
+  <!--app-head-->
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root"><!--app-html--></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
 

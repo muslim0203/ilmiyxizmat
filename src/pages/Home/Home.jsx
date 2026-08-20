@@ -21,9 +21,9 @@ const Home = () => {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "Ilmiyxizmat.uz",
-        "url": "https://ilmiyxizmat.uz",
-        "logo": "https://ilmiyxizmat.uz/logo.png",
-        "image": "https://ilmiyxizmat.uz/og-image.jpg",
+        "url": "https://www.ilmiyxizmat.uz",
+        "logo": "https://www.ilmiyxizmat.uz/logo.png",
+        "image": "https://www.ilmiyxizmat.uz/og-image.jpg",
         "description": "O'zbekistonda №1 ilmiy ishlar yozish xizmati. BMI, dissertatsiya, ilmiy maqola, kurs ishi, monografiya tayyorlash va nashr qilish.",
         "telephone": settings.phoneRaw,
         "email": settings.email,
@@ -44,7 +44,7 @@ const Home = () => {
             "opens": "09:00",
             "closes": "21:00"
         },
-        "priceRange": "200000 - 5000000 UZS",
+        "priceRange": "50000 - 5000000 UZS",
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
@@ -64,7 +64,7 @@ const Home = () => {
                     "itemOffered": {
                         "@type": "Service",
                         "name": "BMI yozish",
-                        "url": "https://ilmiyxizmat.uz/xizmatlar/bmi-yozish"
+                        "url": "https://www.ilmiyxizmat.uz/xizmatlar/bmi-yozish"
                     }
                 },
                 {
@@ -72,7 +72,7 @@ const Home = () => {
                     "itemOffered": {
                         "@type": "Service",
                         "name": "Magistrlik dissertatsiyasi yozish",
-                        "url": "https://ilmiyxizmat.uz/xizmatlar/magistrlik-dissertatsiyasi-yozish"
+                        "url": "https://www.ilmiyxizmat.uz/xizmatlar/magistrlik-dissertatsiyasi-yozish"
                     }
                 },
                 {
@@ -80,7 +80,7 @@ const Home = () => {
                     "itemOffered": {
                         "@type": "Service",
                         "name": "Ilmiy maqola yozish",
-                        "url": "https://ilmiyxizmat.uz/xizmatlar/ilmiy-maqola-yozish"
+                        "url": "https://www.ilmiyxizmat.uz/xizmatlar/ilmiy-maqola-yozish"
                     }
                 }
             ]
@@ -90,7 +90,7 @@ const Home = () => {
     return (
         <>
             <SEO
-                title="Bosh sahifa"
+                title="Ilmiy ishlar yozish xizmati - Ilmiyxizmat.uz"
                 description="Ilmiyxizmat.uz - O'zbekistonda №1 ilmiy ishlar yozish xizmati. BMI yozish, magistrlik va doktorlik dissertatsiyasi, ilmiy maqola, kurs ishi tayyorlash. 5000+ bajarilgan ish, 98% mijozlar mamnuniyati. Bepul konsultatsiya!"
                 jsonLd={homeJsonLd}
             />

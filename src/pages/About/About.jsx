@@ -14,7 +14,7 @@ const About = () => {
         "@type": "AboutPage",
         "name": "Ilmiyxizmat.uz haqida",
         "description": "Ilmiyxizmat.uz jamoasi haqida ma'lumot. 2017 yildan buyon faoliyat yuritamiz.",
-        "url": "https://ilmiyxizmat.uz/biz-haqimizda",
+        "url": "https://www.ilmiyxizmat.uz/biz-haqimizda",
         "mainEntity": {
             "@type": "Organization",
             "name": "Ilmiyxizmat.uz",

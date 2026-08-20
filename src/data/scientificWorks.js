@@ -102,8 +102,8 @@ export const scientificWorks = [
         ],
         duration: "6-12 oy",
         relatedService: "monografiya-tayyorlash",
-        metaTitle: "Monografiya nima? Qanday yoziladi? | Ilmiyxizmat.uz",
-        metaDescription: "Monografiya haqida to'liq ma'lumot. Yozish, nashr, ISBN olish."
+        metaTitle: "Monografiya nima? Talablar, hajm va tuzilma",
+        metaDescription: "Monografiya nima, unga qanday talablar qo'yiladi: hajm va bosma taboq, taqriz, ISBN va UDK, ilmiy yangilik hamda nashr tartibi."
     },
     {
         id: 7,
@@ -119,8 +119,25 @@ export const scientificWorks = [
         ],
         duration: "3-6 oy",
         relatedService: "oquv-qollanma-tayyorlash",
-        metaTitle: "O'quv qo'llanma tayyorlash | Ilmiyxizmat.uz",
-        metaDescription: "O'quv qo'llanma va darslik tayyorlash qo'llanmasi. DTM talablari."
+        metaTitle: "O'quv qo'llanma nima? Talablar, hajm va tuzilma",
+        metaDescription: "O'quv qo'llanma nima va unga qanday talablar qo'yiladi: hajm, retsenziya, UDK va ISBN, tasdiqlash tartibi hamda darslikdan farqi."
+    },
+    {
+        id: 9,
+        slug: "darslik",
+        title: "Darslik",
+        description: "Fan dasturini to'liq qamrab oladigan asosiy o'quv nashri. Ta'lim standartiga qat'iy mos bo'lishi va vakolatli organ grifiga ega bo'lishi talab etiladi.",
+        icon: "📕",
+        requirements: [
+            "O'quv dasturiga to'liq moslik",
+            "Metodik apparat: test va topshiriqlar",
+            "Kamida ikkita taqriz",
+            "Grif va ISBN rasmiylashtirish"
+        ],
+        duration: "4-8 oy",
+        relatedService: "darslik-yozish",
+        metaTitle: "Darslik nima? Talablar, tuzilma va grif olish tartibi",
+        metaDescription: "Darslik nima va u o'quv qo'llanmadan nimasi bilan farq qiladi: tuzilma, metodik apparat, taqriz, grif olish tartibi va nashr talablari."
     },
     {
         id: 8,

@@ -1,13 +1,34 @@
-const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+// Backend manzili. Production da VITE_API_URL berilmasa API butunlay o'chiriladi -
+// sayt statik ma'lumot bilan ishlaydi va bekorga so'rov yubormaydi.
+const BASE_URL = import.meta.env.VITE_API_URL
+    || (import.meta.env.DEV ? 'http://localhost:3000' : '');
+
 const TOKEN_KEY = 'admin_jwt';
+const isBrowser = typeof window !== 'undefined';
+
+// Backend ulanmasa (o'chgan, CORS bloklagan va h.k.) qayta-qayta urinmaymiz:
+// birinchi tarmoq xatosidan keyin sessiya davomida so'rov yubormaymiz.
+let apiOffline = false;
+
+export const isApiEnabled = () => Boolean(BASE_URL) && isBrowser && !apiOffline;
+
+class ApiDisabledError extends Error {
+    constructor() {
+        super('API o\'chirilgan yoki mavjud emas.');
+        this.name = 'ApiDisabledError';
+        this.disabled = true;
+    }
+}
 
 export const tokenStorage = {
-    get:    ()      => sessionStorage.getItem(TOKEN_KEY),
-    set:    (token) => sessionStorage.setItem(TOKEN_KEY, token),
-    remove: ()      => sessionStorage.removeItem(TOKEN_KEY),
+    get:    ()      => (isBrowser ? sessionStorage.getItem(TOKEN_KEY) : null),
+    set:    (token) => { if (isBrowser) sessionStorage.setItem(TOKEN_KEY, token); },
+    remove: ()      => { if (isBrowser) sessionStorage.removeItem(TOKEN_KEY); },
 };
 
 async function request(method, path, body = null) {
+    if (!isApiEnabled()) throw new ApiDisabledError();
+
     const headers = { 'Content-Type': 'application/json' };
     const token = tokenStorage.get();
     if (token) headers['Authorization'] = `Bearer ${token}`;
@@ -15,7 +36,15 @@ async function request(method, path, body = null) {
     const config = { method, headers };
     if (body !== null) config.body = JSON.stringify(body);
 
-    const response = await fetch(`${BASE_URL}${path}`, config);
+    let response;
+    try {
+        response = await fetch(`${BASE_URL}${path}`, config);
+    } catch {
+        // Tarmoq/CORS xatosi - backend yo'q deb hisoblaymiz
+        apiOffline = true;
+        throw new ApiDisabledError();
+    }
+
     if (response.status === 204) return null;
 
     const data = await response.json().catch(() => ({}));

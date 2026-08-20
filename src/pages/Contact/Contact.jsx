@@ -22,7 +22,7 @@ const Contact = () => {
         "@type": "ContactPage",
         "name": "Ilmiyxizmat.uz - Aloqa",
         "description": "Ilmiyxizmat.uz bilan bog'laning. Telefon, Telegram, email orqali.",
-        "url": "https://ilmiyxizmat.uz/aloqa",
+        "url": "https://www.ilmiyxizmat.uz/aloqa",
         "mainEntity": {
             "@type": "Organization",
             "name": "Ilmiyxizmat.uz",

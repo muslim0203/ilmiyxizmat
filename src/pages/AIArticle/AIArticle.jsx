@@ -4,7 +4,9 @@ import {
     AlignmentType, BorderStyle, convertInchesToTwip,
     PageOrientation, ShadingType, UnderlineType,
 } from 'docx';
-import { saveAs } from 'file-saver';
+// CommonJS moduli - SSR build da nomlangan eksport ishlamaydi, default orqali olamiz
+import fileSaver from 'file-saver';
+const { saveAs } = fileSaver;
 import api from '../../lib/apiClient';
 import SEO from '../../components/SEO/SEO';
 import './AIArticle.css';

@@ -6,7 +6,9 @@ export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
     const [user,    setUser]    = useState(null);
-    const [loading, setLoading] = useState(true);
+    // Token bo'lmasa tekshiradigan narsa yo'q - darhol tayyor holat.
+    // Ilgari bu doim true bo'lib, butun sayt useEffect tugaguncha bo'sh qolar edi.
+    const [loading, setLoading] = useState(() => Boolean(tokenStorage.get()));
 
     useEffect(() => {
         const token = tokenStorage.get();
@@ -36,7 +38,7 @@ export const AuthProvider = ({ children }) => {
 
     return (
         <AuthContext.Provider value={{ signIn, signOut, user, loading }}>
-            {!loading && children}
+            {children}
         </AuthContext.Provider>
     );
 };

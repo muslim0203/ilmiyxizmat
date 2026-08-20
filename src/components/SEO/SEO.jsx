@@ -12,11 +12,14 @@ const SEO = ({
 }) => {
     const location = useLocation();
     const siteName = 'Ilmiyxizmat.uz';
-    const siteUrl = 'https://ilmiyxizmat.uz';
+    const siteUrl = 'https://www.ilmiyxizmat.uz';
     const defaultDesc = "O'zbekistonda №1 ilmiy ishlar yozish xizmati. BMI, dissertatsiya, ilmiy maqola, kurs ishi tayyorlash. 5000+ bajarilgan ish.";
     const defaultImage = `${siteUrl}/og-image.jpg`;
 
-    const fullTitle = title ? `${title} | ${siteName}` : `${siteName} - Ilmiy ishlar yozish xizmati | BMI, Dissertatsiya, Ilmiy maqola`;
+    // metaTitle larda ko'pincha sayt nomi allaqachon bor - ikki marta qo'shmaymiz
+    const fullTitle = title
+        ? (title.includes(siteName) ? title : `${title} | ${siteName}`)
+        : `${siteName} - Ilmiy ishlar yozish xizmati | BMI, Dissertatsiya, Ilmiy maqola`;
     const metaDescription = description || defaultDesc;
     const metaImage = image || defaultImage;
     const canonicalUrl = `${siteUrl}${location.pathname}`;

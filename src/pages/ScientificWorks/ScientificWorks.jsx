@@ -11,13 +11,13 @@ const ScientificWorks = () => {
         "@type": "ItemList",
         "name": "Ilmiy ish turlari",
         "description": "BMI, magistrlik va doktorlik dissertatsiyalari, ilmiy maqola, monografiya va boshqa ilmiy ishlar haqida ma'lumot.",
-        "url": "https://ilmiyxizmat.uz/ilmiy-ishlar",
+        "url": "https://www.ilmiyxizmat.uz/ilmiy-ishlar",
         "numberOfItems": scientificWorks.length,
         "itemListElement": scientificWorks.map((work, index) => ({
             "@type": "ListItem",
             "position": index + 1,
             "name": work.title,
-            "url": `https://ilmiyxizmat.uz/ilmiy-ishlar/${work.slug}`
+            "url": `https://www.ilmiyxizmat.uz/ilmiy-ishlar/${work.slug}`
         }))
     };
 

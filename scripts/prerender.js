@@ -1,107 +1,85 @@
 /**
- * Prerender skripti - Build vaqtida barcha sahifalarni statik HTML ga aylantiradi.
- * 
- * Bu skript Google botga JavaScript yuklamasdan to'liq HTML kontentni ko'rish imkonini beradi.
- * 
- * Ishlatish: npm run build && node scripts/prerender.js
- * Yoki: npm run build:seo
- * 
- * Eslatma: Bu skript production serverda emas, faqat build vaqtida ishlatiladi.
- * Hosting provayderingiz (Vercel, Netlify, va h.k.) uchun prerender.io yoki 
- * boshqa prerender xizmatidan foydalanish tavsiya etiladi.
+ * Prerender - har bir manzil uchun HAQIQIY statik HTML yaratadi.
+ *
+ * Ilgari bu skript shunchaki root index.html nusxasini ko'chirar edi, ya'ni barcha
+ * sahifalar bir xil sarlavha, bir xil description va bosh sahifaga ishora qiluvchi
+ * canonical bilan chiqardi. Endi har bir sahifa react-dom/server orqali render
+ * qilinadi: Google JavaScript ni kutmasdan to'liq matnni va to'g'ri meta teglarni ko'radi.
+ *
+ * Ishlatish: vite build && vite build --ssr ... && node scripts/prerender.js
  */
-
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync } from 'node:fs';
+import { join, dirname } from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import { routes } from './routes.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const distDir = join(__dirname, '..', 'dist');
+const rootDir   = join(__dirname, '..');
+const distDir   = join(rootDir, 'dist');
+const ssrEntry  = join(rootDir, 'dist-ssr', 'entry-server.js');
 
-// Barcha prerender qilinadigan sahifalar
-const routes = [
-  '/',
-  '/biz-haqimizda',
-  '/aloqa',
-  '/savol-javob',
-  '/blog',
-  '/narxlar',
-  '/buyurtma',
-  '/xizmatlar',
-  '/ilmiy-ishlar',
-  '/nashr',
-  '/privacy-policy',
-  '/terms',
-  // Xizmatlar
-  '/xizmatlar/ilmiy-ish-yozish',
-  '/xizmatlar/bmi-yozish',
-  '/xizmatlar/kurs-ishi-yozish',
-  '/xizmatlar/magistrlik-dissertatsiyasi-yozish',
-  '/xizmatlar/doktorlik-dissertatsiyasi-yordam',
-  '/xizmatlar/ilmiy-maqola-yozish',
-  '/xizmatlar/monografiya-tayyorlash',
-  '/xizmatlar/oquv-qollanma-tayyorlash',
-  '/xizmatlar/tahrir-korrektura',
-  '/xizmatlar/antiplagiat-tekshirish',
-  '/xizmatlar/apa-7-formatlash',
-  '/xizmatlar/gost-formatlash',
-  '/xizmatlar/annotatsiya-kalit-soz',
-  '/xizmatlar/oak-jurnalga-chiqarish',
-  '/xizmatlar/konferensiyaga-chiqarish',
-  // Ilmiy ishlar
-  '/ilmiy-ishlar/bitiruv-malakaviy-ishi-bmi',
-  '/ilmiy-ishlar/kurs-ishi',
-  '/ilmiy-ishlar/magistrlik-dissertatsiyasi',
-  '/ilmiy-ishlar/doktorlik-dissertatsiyasi',
-  '/ilmiy-ishlar/ilmiy-maqola',
-  '/ilmiy-ishlar/monografiya',
-  '/ilmiy-ishlar/oquv-qollanma',
-  '/ilmiy-ishlar/metodik-qollanma',
-  // Nashr
-  '/nashr/oak-jurnallar',
-  '/nashr/konferensiyalar',
-  '/nashr/sertifikatli-nashr',
-  // Blog
-  '/blog/apa-7-format',
-  '/blog/gost-format',
-  '/blog/antiplagiat-foizi',
-  '/blog/bmi-nima',
-  '/blog/ilmiy-maqola-qanday-yoziladi',
-  '/blog/monografiya-nima',
-  '/blog/oak-jurnal-talablari',
-  '/blog/annotatsiya-kalit-soz',
-];
+const HEAD_PLACEHOLDER = '<!--app-head-->';
+const HTML_PLACEHOLDER = '<!--app-html-->';
+const TEMPLATE_TITLE_RE = /[ \t]*<title>[\s\S]*?<\/title>\n?/;
 
-/**
- * Har bir route uchun index.html nusxasini yaratadi.
- * Bu SPA fallback uchun kerak - server barcha route'larga index.html qaytaradi,
- * lekin crawler'lar uchun har bir sahifaning o'z HTML fayli bo'ladi.
- */
-function generateStaticFiles() {
-  const indexHtml = readFileSync(join(distDir, 'index.html'), 'utf-8');
-  
-  let created = 0;
-  
-  for (const route of routes) {
-    if (route === '/') continue; // Root index.html allaqachon mavjud
-    
-    const routePath = join(distDir, route);
-    const filePath = join(routePath, 'index.html');
-    
-    // Papka yaratish
-    if (!existsSync(routePath)) {
-      mkdirSync(routePath, { recursive: true });
+async function main() {
+    if (!existsSync(ssrEntry)) {
+        console.error(`❌ SSR bundle topilmadi: ${ssrEntry}`);
+        console.error('   Avval bajaring: vite build --ssr src/entry-server.jsx --outDir dist-ssr');
+        process.exit(1);
     }
-    
-    // index.html nusxasini yaratish
-    writeFileSync(filePath, indexHtml);
-    created++;
-  }
-  
-  console.log(`\n✅ Prerender: ${created} ta statik HTML sahifa yaratildi.`);
-  console.log(`📁 Natija: ${distDir}\n`);
-  console.log('💡 Eslatma: To\'liq SSR uchun hosting provayderingizda');
-  console.log('   prerender.io yoki shunga o\'xshash xizmatdan foydalaning.\n');
+
+    const template = readFileSync(join(distDir, 'index.html'), 'utf-8');
+
+    if (!template.includes(HEAD_PLACEHOLDER) || !template.includes(HTML_PLACEHOLDER)) {
+        console.error(`❌ index.html da ${HEAD_PLACEHOLDER} yoki ${HTML_PLACEHOLDER} yo'q.`);
+        process.exit(1);
+    }
+
+    const { render } = await import(pathToFileURL(ssrEntry).href);
+
+    let ok = 0;
+    const failed = [];
+
+    for (const { path: route } of routes) {
+        try {
+            const { html, head } = await render(route);
+
+            // Template dagi zaxira <title> ni olib tashlaymiz - aks holda sahifada
+            // ikkita title bo'lib qoladi (biri bosh sahifaniki).
+            const base = head.includes('<title')
+                ? template.replace(TEMPLATE_TITLE_RE, '')
+                : template;
+
+            const page = base
+                .replace(HEAD_PLACEHOLDER, head)
+                .replace(HTML_PLACEHOLDER, html);
+
+            const outFile = route === '/'
+                ? join(distDir, 'index.html')
+                : join(distDir, route, 'index.html');
+
+            mkdirSync(dirname(outFile), { recursive: true });
+            writeFileSync(outFile, page);
+            ok++;
+        } catch (err) {
+            failed.push({ route, message: err.message });
+        }
+    }
+
+    // SSR bundle deploy ga kerak emas
+    rmSync(join(rootDir, 'dist-ssr'), { recursive: true, force: true });
+
+    console.log(`\n✅ Prerender: ${ok}/${routes.length} ta sahifa statik HTML ga aylantirildi.`);
+
+    if (failed.length) {
+        console.error(`\n❌ ${failed.length} ta sahifa render bo'lmadi:`);
+        for (const f of failed) console.error(`   ${f.route} — ${f.message}`);
+        process.exit(1);
+    }
 }
 
-generateStaticFiles();
+main().catch(err => {
+    console.error('❌ Prerender xatosi:', err);
+    process.exit(1);
+});

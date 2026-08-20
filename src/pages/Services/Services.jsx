@@ -11,13 +11,13 @@ const Services = () => {
         "@type": "ItemList",
         "name": "Ilmiy xizmatlar",
         "description": "Ilmiyxizmat.uz professional ilmiy xizmatlar ro'yxati",
-        "url": "https://ilmiyxizmat.uz/xizmatlar",
+        "url": "https://www.ilmiyxizmat.uz/xizmatlar",
         "numberOfItems": services.length,
         "itemListElement": services.map((service, index) => ({
             "@type": "ListItem",
             "position": index + 1,
             "name": service.title,
-            "url": `https://ilmiyxizmat.uz/xizmatlar/${service.slug}`
+            "url": `https://www.ilmiyxizmat.uz/xizmatlar/${service.slug}`
         }))
     };
 

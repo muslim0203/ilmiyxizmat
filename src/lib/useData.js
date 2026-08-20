@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
-import api from './apiClient';
+import api, { isApiEnabled } from './apiClient';
 import { services }        from '../data/services';
 import { blogPosts }       from '../data/blogPosts';
 import { scientificWorks } from '../data/scientificWorks';
@@ -31,19 +31,20 @@ export function useData(section) {
     const [error,   setError]   = useState(null);
 
     const refresh = useCallback(async () => {
-        if (!endpoint) { setLoading(false); return; }
+        if (!endpoint || !isApiEnabled()) { setLoading(false); return; }
         setLoading(true);
         setError(null);
         try {
             const data = await api.get(endpoint);
-            setItems(Array.isArray(data) ? data : []);
+            // Bo'sh javob kelsa statik ma'lumotni saqlab qolamiz - aks holda
+            // backend DB si bo'sh bo'lganda sahifa butunlay bo'sh chiqadi.
+            if (Array.isArray(data) && data.length > 0) setItems(data);
         } catch (err) {
-            console.warn('useData: API xatosi, fallback ishlatilmoqda.', err.message);
-            setError(err.message);
+            if (!err.disabled) setError(err.message);
         } finally {
             setLoading(false);
         }
-    }, [section, endpoint]);
+    }, [endpoint]);
 
     useEffect(() => { refresh(); }, [refresh]);
 

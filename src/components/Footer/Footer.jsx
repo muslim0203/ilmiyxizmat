@@ -35,6 +35,9 @@ const Footer = () => {
                             <li><Link to="/xizmatlar/bmi-yozish">BMI yozish</Link></li>
                             <li><Link to="/xizmatlar/magistrlik-dissertatsiyasi-yozish">Magistrlik dissertatsiyasi</Link></li>
                             <li><Link to="/xizmatlar/ilmiy-maqola-yozish">Ilmiy maqola yozish</Link></li>
+                            <li><Link to="/xizmatlar/monografiya-tayyorlash">Monografiya yozish</Link></li>
+                            <li><Link to="/xizmatlar/oquv-qollanma-tayyorlash">O'quv qo'llanma yozish</Link></li>
+                            <li><Link to="/xizmatlar/darslik-yozish">Darslik yozish</Link></li>
                             <li><Link to="/xizmatlar/antiplagiat-tekshirish">Antiplagiat tekshirish</Link></li>
                             <li><Link to="/xizmatlar/kurs-ishi-yozish">Kurs ishi yozish</Link></li>
                             <li><Link to="/xizmatlar">Barcha xizmatlar →</Link></li>

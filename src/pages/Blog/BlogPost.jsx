@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import DOMPurify from 'dompurify';
+import { sanitizeHtml } from '../../lib/sanitizeHtml';
 import SEO from '../../components/SEO/SEO';
 import { useData } from '../../lib/useData';
 import './BlogPost.css';
@@ -29,28 +29,28 @@ const BlogPost = () => {
         "@type": "Article",
         "headline": post.title,
         "description": post.excerpt,
-        "url": `https://ilmiyxizmat.uz/blog/${post.slug}`,
+        "url": `https://www.ilmiyxizmat.uz/blog/${post.slug}`,
         "datePublished": post.date,
         "dateModified": post.date,
         "author": {
             "@type": "Organization",
             "name": "Ilmiyxizmat.uz",
-            "url": "https://ilmiyxizmat.uz"
+            "url": "https://www.ilmiyxizmat.uz"
         },
         "publisher": {
             "@type": "Organization",
             "name": "Ilmiyxizmat.uz",
-            "url": "https://ilmiyxizmat.uz",
+            "url": "https://www.ilmiyxizmat.uz",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://ilmiyxizmat.uz/logo.png"
+                "url": "https://www.ilmiyxizmat.uz/logo.png"
             }
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": `https://ilmiyxizmat.uz/blog/${post.slug}`
+            "@id": `https://www.ilmiyxizmat.uz/blog/${post.slug}`
         },
-        "image": "https://ilmiyxizmat.uz/og-image.jpg",
+        "image": "https://www.ilmiyxizmat.uz/og-image.jpg",
         "articleSection": post.category,
         "inLanguage": "uz"
     };
@@ -64,19 +64,19 @@ const BlogPost = () => {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Bosh sahifa",
-                "item": "https://ilmiyxizmat.uz"
+                "item": "https://www.ilmiyxizmat.uz"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Blog",
-                "item": "https://ilmiyxizmat.uz/blog"
+                "item": "https://www.ilmiyxizmat.uz/blog"
             },
             {
                 "@type": "ListItem",
                 "position": 3,
                 "name": post.title,
-                "item": `https://ilmiyxizmat.uz/blog/${post.slug}`
+                "item": `https://www.ilmiyxizmat.uz/blog/${post.slug}`
             }
         ]
     };
@@ -118,7 +118,7 @@ const BlogPost = () => {
                     <article className="post-content">
                         <p className="lead" style={{fontWeight: "bold"}}>{post.excerpt}</p>
                         {post.content ? (
-                            <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content) }} />
+                            <div dangerouslySetInnerHTML={{ __html: sanitizeHtml(post.content) }} />
                         ) : (
                             <>
                                 <p>Bu maqolada {post.title.toLowerCase()} haqida batafsil ma'lumot beriladi.

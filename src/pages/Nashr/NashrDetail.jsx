@@ -32,11 +32,11 @@ const NashrDetail = () => {
         "@type": "Service",
         "name": pub.title,
         "description": pub.metaDescription || pub.description,
-        "url": `https://ilmiyxizmat.uz/nashr/${pub.slug}`,
+        "url": `https://www.ilmiyxizmat.uz/nashr/${pub.slug}`,
         "provider": {
             "@type": "Organization",
             "name": "Ilmiyxizmat.uz",
-            "url": "https://ilmiyxizmat.uz"
+            "url": "https://www.ilmiyxizmat.uz"
         },
         "offers": {
             "@type": "Offer",
@@ -55,19 +55,19 @@ const NashrDetail = () => {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Bosh sahifa",
-                "item": "https://ilmiyxizmat.uz"
+                "item": "https://www.ilmiyxizmat.uz"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Nashr",
-                "item": "https://ilmiyxizmat.uz/nashr"
+                "item": "https://www.ilmiyxizmat.uz/nashr"
             },
             {
                 "@type": "ListItem",
                 "position": 3,
                 "name": pub.title,
-                "item": `https://ilmiyxizmat.uz/nashr/${pub.slug}`
+                "item": `https://www.ilmiyxizmat.uz/nashr/${pub.slug}`
             }
         ]
     };

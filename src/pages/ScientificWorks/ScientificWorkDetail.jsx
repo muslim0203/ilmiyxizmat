@@ -29,19 +29,19 @@ const ScientificWorkDetail = () => {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Bosh sahifa",
-                "item": "https://ilmiyxizmat.uz"
+                "item": "https://www.ilmiyxizmat.uz"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Ilmiy ishlar",
-                "item": "https://ilmiyxizmat.uz/ilmiy-ishlar"
+                "item": "https://www.ilmiyxizmat.uz/ilmiy-ishlar"
             },
             {
                 "@type": "ListItem",
                 "position": 3,
                 "name": work.title,
-                "item": `https://ilmiyxizmat.uz/ilmiy-ishlar/${work.slug}`
+                "item": `https://www.ilmiyxizmat.uz/ilmiy-ishlar/${work.slug}`
             }
         ]
     };

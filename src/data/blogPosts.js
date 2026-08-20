@@ -370,7 +370,7 @@ export const blogPosts = [
             </ul>
 
             <h2>Monografiya yozishda yordam</h2>
-            <p><strong>Ilmiyxizmat.uz</strong> jamoasi monografiya yozish, tahrirlash, GOST formatida rasmiylashtirish va nashr qilishda to'liq yordam beradi. Bepul konsultatsiya uchun bog'laning!</p>
+            <p><strong>Ilmiyxizmat.uz</strong> jamoasi monografiya yozish, tahrirlash, GOST formatida rasmiylashtirish va nashr qilishda to'liq yordam beradi. Batafsil ma'lumot va narxlar: <a href="/xizmatlar/monografiya-tayyorlash">monografiya yozish va nashr qilish xizmati</a>. Bepul konsultatsiya uchun bog'laning!</p>
         `
     },
     {
@@ -431,8 +431,122 @@ export const blogPosts = [
             <h2>GOST formatida hujjat tayyorlashda yordam kerakmi?</h2>
             <p><strong>Ilmiyxizmat.uz</strong> jamoasi dissertatsiya, BMI, maqola yoki monografiyangizni GOST standartlariga to'liq moslashtiradi. Bepul konsultatsiya uchun hoziroq murojaat qiling!</p>
         `
+    },
+    {
+        id: 11,
+        slug: "oquv-qollanma-qanday-yoziladi-talablar-va-tuzilma",
+        title: "O'quv qo'llanma qanday yoziladi? Talablar, tuzilma va nashr tartibi (2026)",
+        excerpt: "O'quv qo'llanma yozishning to'liq qo'llanmasi: tuzilma, hajm talablari, retsenziya, UDK va ISBN rasmiylashtirish hamda darslikdan asosiy farqlari.",
+        category: "Ilmiy ishlar",
+        date: "2026-08-10",
+        readTime: "9 daqiqa",
+        content: `
+            <p><strong>O'quv qo'llanma</strong> - oliy va o'rta maxsus ta'lim muassasalarida muayyan fan yoki modul bo'yicha tayyorlanadigan o'quv nashri. Ko'p o'qituvchilar uchun bu birinchi jiddiy nashr bo'ladi: u lavozimga tanlov, attestatsiya va ilmiy unvonga talabgorlik hujjatlarida hisobga olinadi. Ushbu maqolada o'quv qo'llanma yozishning barcha bosqichlarini ketma-ket ko'rib chiqamiz.</p>
+
+            <h2>O'quv qo'llanma va darslik o'rtasidagi farq</h2>
+            <p>Eng ko'p beriladigan savol - shu. Farqni bilmasdan boshlangan ish ko'pincha qayta yozishga olib keladi.</p>
+            <ul>
+                <li><strong>Darslik</strong> fan dasturini boshidan oxirigacha to'liq qamrab oladi, ta'lim standartiga qat'iy mos bo'lishi va vakolatli organ <strong>grifiga</strong> ega bo'lishi shart.</li>
+                <li><strong>O'quv qo'llanma</strong> darslikni to'ldiradi: ayrim mavzularni chuqurlashtiradi yoki amaliy mashg'ulotlarga mo'ljallanadi. Tasdiqlash tartibi soddaroq, muddat qisqaroq.</li>
+                <li>Birinchi nashrni boshlayotgan mualliflarga aynan o'quv qo'llanmadan boshlash tavsiya etiladi.</li>
+            </ul>
+
+            <h2>O'quv qo'llanma tuzilmasi</h2>
+            <p>Nashr quyidagi qismlardan iborat bo'ladi va bu ketma-ketlik amalda deyarli o'zgarmaydi:</p>
+            <ul>
+                <li>Titul varag'i, UDK va BBK indekslari, taqrizchilar haqida ma'lumot</li>
+                <li>So'z boshi - qo'llanmaning maqsadi va undan foydalanish bo'yicha ko'rsatma</li>
+                <li>Boblar va mavzular - o'quv dasturi ketma-ketligiga mos holda</li>
+                <li>Nazariy material: ta'riflar, sxemalar, jadval va misollar</li>
+                <li>Amaliy qism: masalalar, keyslar, laboratoriya va mustaqil ish topshiriqlari</li>
+                <li>Har bob oxirida nazorat savollari va qisqa xulosa</li>
+                <li>Glossariy, foydalanilgan hamda tavsiya etiladigan adabiyotlar</li>
+                <li>Ilovalar: formulalar, normativ hujjatlar, qo'shimcha jadvallar</li>
+            </ul>
+
+            <h2>Hajm va rasmiy talablar</h2>
+            <p>Talablar muassasaga qarab biroz farq qilsa-da, amaliyotda quyidagilar deyarli har doim so'raladi:</p>
+            <ul>
+                <li><strong>Hajm:</strong> odatda 100 betdan yuqori, fan soatlariga mutanosib</li>
+                <li><strong>Retsenziya:</strong> kamida ikkita - biri tashqi, biri ichki taqrizchidan</li>
+                <li><strong>Bayonnoma:</strong> kafedra va ilmiy-uslubiy kengash qarori</li>
+                <li><strong>Indekslar:</strong> UDK va BBK, hamda ISBN raqami</li>
+                <li><strong>Originallik:</strong> antiplagiat hisoboti bilan tasdiqlanishi</li>
+            </ul>
+
+            <h2>Yozish bosqichlari</h2>
+            <p>Tajriba shuni ko'rsatadiki, ish quyidagi tartibda olib borilganda muddat ham, sifat ham nazoratda qoladi:</p>
+            <ul>
+                <li><strong>1-bosqich.</strong> O'quv dasturi va soatlar taqsimotini tahlil qilish</li>
+                <li><strong>2-bosqich.</strong> Prospekt - boblar va mavzular rejasini tuzish</li>
+                <li><strong>3-bosqich.</strong> Adabiyotlar bazasini yig'ish, zamonaviy manbalarni tanlash</li>
+                <li><strong>4-bosqich.</strong> Boblarni ketma-ket yozish, har birini alohida yakunlash</li>
+                <li><strong>5-bosqich.</strong> Amaliy qism va nazorat savollarini ishlab chiqish</li>
+                <li><strong>6-bosqich.</strong> Ilmiy va adabiy tahrir, korrektura, antiplagiat tekshiruvi</li>
+                <li><strong>7-bosqich.</strong> Taqriz olish va bayonnomalarni rasmiylashtirish</li>
+                <li><strong>8-bosqich.</strong> Nashriyot maketi, ISBN va bosmaxona</li>
+            </ul>
+
+            <h2>Ko'p uchraydigan xatolar</h2>
+            <ul>
+                <li>Mazmun o'quv dasturiga mos kelmasligi - eng ko'p qaytarish sababi</li>
+                <li>Amaliy qismning yo'qligi yoki juda kamligi</li>
+                <li>Eskirgan adabiyotlarga tayanish</li>
+                <li>Manbalar ro'yxatining noto'g'ri rasmiylashtirilishi</li>
+                <li>Taqriz va bayonnomalarni oxirgi paytga qoldirish</li>
+            </ul>
+
+            <h2>Yordam kerakmi?</h2>
+            <p>Ilmiyxizmat.uz jamoasi o'quv qo'llanmani tuzilmasidan nashrgacha tayyorlab beradi. Batafsil ma'lumot va narxlar: <a href="/xizmatlar/oquv-qollanma-tayyorlash">o'quv qo'llanma yozish xizmati</a>. Agar sizga fan dasturini to'liq qamrab oladigan nashr kerak bo'lsa - <a href="/xizmatlar/darslik-yozish">darslik yozish xizmati</a> sahifasiga qarang.</p>
+        `
+    },
+    {
+        id: 12,
+        slug: "darslik-va-oquv-qollanma-orasidagi-farq",
+        title: "Darslik va o'quv qo'llanma o'rtasidagi farq nima? To'liq taqqoslash",
+        excerpt: "Darslik va o'quv qo'llanma maqomi, hajmi, tasdiqlash tartibi va grif talablari bo'yicha qanday farq qiladi - amaliy taqqoslash va tanlov bo'yicha maslahat.",
+        category: "Ilmiy ishlar",
+        date: "2026-08-14",
+        readTime: "7 daqiqa",
+        content: `
+            <p>Nashr tayyorlashni boshlagan har bir muallif birinchi navbatda bitta savolga javob berishi kerak: men <strong>darslik</strong> yozyapmanmi yoki <strong>o'quv qo'llanma</strong>? Bu shunchaki nom masalasi emas - undan hajm, tasdiqlash tartibi, muddat va hujjatlar to'plami kelib chiqadi.</p>
+
+            <h2>Qisqa javob</h2>
+            <p>Darslik - fanning butun dasturi uchun asosiy manba, grif talab qiladi. O'quv qo'llanma - darslikni to'ldiruvchi nashr, tasdiqlash tartibi soddaroq.</p>
+
+            <h2>Asosiy farqlar</h2>
+            <ul>
+                <li><strong>Maqsad.</strong> Darslik fan dasturini to'liq qamraydi; o'quv qo'llanma ayrim mavzularni chuqurlashtiradi yoki amaliy qismga xizmat qiladi.</li>
+                <li><strong>Grif.</strong> Darslik uchun vakolatli organ grifi zarur; o'quv qo'llanma odatda kafedra va ilmiy-uslubiy kengash qarori bilan chiqadi.</li>
+                <li><strong>Hajm.</strong> Darsliklar amalda ko'pincha 200-400 bet; o'quv qo'llanmalar 100 betdan boshlanadi.</li>
+                <li><strong>Metodik apparat.</strong> Darslikda test, topshiriq, glossariy va nazorat savollari majburiy darajada to'liq bo'ladi.</li>
+                <li><strong>Muddat.</strong> Darslik 4-8 oy, grif jarayoni bilan uzayishi mumkin; o'quv qo'llanma 3-6 oy.</li>
+                <li><strong>Muallif talabi.</strong> Darslik mualliflaridan odatda katta o'qituvchilik tajribasi va ilmiy daraja talab qilinadi.</li>
+            </ul>
+
+            <h2>Qaysi birini tanlash kerak?</h2>
+            <ul>
+                <li>Fan bo'yicha asosiy manba yaratmoqchi bo'lsangiz va grif olish imkoniyatingiz bor - <strong>darslik</strong>.</li>
+                <li>Alohida modul, amaliy mashg'ulot yoki maxsus kurs uchun nashr kerak bo'lsa - <strong>o'quv qo'llanma</strong>.</li>
+                <li>Birinchi nashringiz bo'lsa - o'quv qo'llanmadan boshlash amaliy jihatdan qulayroq.</li>
+                <li>Laboratoriya ishlari va ko'rsatmalar uchun - <strong>metodik qo'llanma</strong> ham alohida variant.</li>
+            </ul>
+
+            <h2>Ikkalasida ham umumiy bo'lgan talablar</h2>
+            <ul>
+                <li>UDK va BBK indekslari, ISBN raqami</li>
+                <li>Kamida ikkita mustaqil taqriz</li>
+                <li>Kafedra bayonnomasi</li>
+                <li>Yuqori originallik va antiplagiat hisoboti</li>
+                <li>Foydalanilgan adabiyotlarning to'g'ri rasmiylashtirilishi</li>
+            </ul>
+
+            <h2>Keyingi qadam</h2>
+            <p>Qaysi nashr sizga mos kelishini aniqlash uchun bepul konsultatsiya oling. Xizmatlar haqida batafsil: <a href="/xizmatlar/darslik-yozish">darslik yozish</a> va <a href="/xizmatlar/oquv-qollanma-tayyorlash">o'quv qo'llanma yozish</a>. Ilmiy nashr bo'yicha ish olib borayotgan bo'lsangiz, <a href="/xizmatlar/monografiya-tayyorlash">monografiya yozish xizmati</a> ham foydali bo'lishi mumkin.</p>
+        `
     }
 ];
+
 
 export const getBlogBySlug = (slug) => {
     return blogPosts.find(post => post.slug === slug);
