@@ -118,7 +118,7 @@ export const services = [
   {
     id: 7,
     slug: "monografiya-tayyorlash",
-    title: "Monografiya tayyorlash va nashrga tayyorlash",
+    title: "Monografiya yozish va nashrga tayyorlash",
     shortTitle: "Monografiya tayyorlash",
     description: "Ilmiy monografiyangizni tayyorlash va nashr qilishda to'liq yordam.",
     icon: "📖",
