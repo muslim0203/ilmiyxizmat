@@ -15,8 +15,8 @@ export const scientificWorks = [
         ],
         duration: "1-3 hafta",
         relatedService: "bmi-yozish",
-        metaTitle: "Bitiruv malakaviy ishi (BMI) nima? Talablar va yozish tartibi",
-        metaDescription: "Bitiruv malakaviy ishi (BMI) nima va unga qanday talablar qo'yiladi: hajm, antiplagiat foizi, tuzilma, manbalar soni va yozish tartibi."
+        metaTitle: "BMI ga qo'yiladigan talablar: hajm, antiplagiat va manbalar",
+        metaDescription: "Bitiruv malakaviy ishi necha bet bo'lishi kerak, antiplagiat foizi qancha, nechta manba talab qilinadi - BMI talablari ro'yxati va muddati."
     },
     {
         id: 2,
@@ -102,8 +102,8 @@ export const scientificWorks = [
         ],
         duration: "1-3 hafta",
         relatedService: "monografiya-tayyorlash",
-        metaTitle: "Monografiya nima? Talablar, hajm va tuzilma",
-        metaDescription: "Monografiya nima, unga qanday talablar qo'yiladi: hajm va bosma taboq, taqriz, ISBN va UDK, ilmiy yangilik hamda nashr tartibi."
+        metaTitle: "Monografiyaga qo'yiladigan talablar: hajm, taqriz va ISBN",
+        metaDescription: "Monografiya necha bet bo'lishi kerak, nechta taqriz talab qilinadi, ISBN va UDK qanday olinadi - talablar ro'yxati va nashr muddati."
     },
     {
         id: 7,

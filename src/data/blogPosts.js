@@ -315,6 +315,62 @@ export const blogPosts = [
                 <li>Xulosaning kirish qismini takrorlashi</li>
             </ul>
 
+            <h2>BMI, kurs ishi va magistrlik dissertatsiyasi farqi</h2>
+            <p>Uchala ish ham ilmiy-tadqiqot xarakteriga ega, lekin daraja va talablari sezilarli farq qiladi:</p>
+            <ul>
+                <li><strong>Kurs ishi</strong> - o'quv yili davomida bajariladigan nisbatan kichik ish (odatda 25-35 bet, ikki bob). Maqsad - nazariy bilimni amaliyotga qo'llashni o'rganish.</li>
+                <li><strong>BMI</strong> - bakalavriatni yakunlovchi ish (40-60 bet, uch bob). Undan mustaqil tahlil va asoslangan takliflar talab qilinadi.</li>
+                <li><strong>Magistrlik dissertatsiyasi</strong> - ancha kattaroq (80-100 bet), ilmiy yangilik va nashr etilgan maqolalar talab qilinadi.</li>
+            </ul>
+            <p>BMI ni ko'pincha "katta kurs ishi" deb tasavvur qilish - eng keng tarqalgan yanglish fikr. Farq hajmda emas, <strong>mustaqillik darajasida</strong>: BMI da siz o'z tahlilingizni va o'z takliflaringizni himoya qilishingiz kerak.</p>
+
+            <h2>Mavzu qanday tanlanadi va tasdiqlanadi?</h2>
+            <ul>
+                <li>Mavzu kafedra tomonidan tasdiqlangan ro'yxatdan tanlanadi yoki talaba o'z variantini taklif qiladi.</li>
+                <li>Yaxshi mavzuning uchta belgisi: aniq, manbalar bilan ta'minlangan va amaliy natija bera oladigan.</li>
+                <li>Amaliyot o'tagan tashkilotingiz bilan bog'liq mavzu ko'pincha eng qulay tanlov bo'ladi - ma'lumot olish oson va amaliy qism kuchli chiqadi.</li>
+                <li>Mavzu buyruq bilan tasdiqlanadi, keyin uni o'zgartirish murakkab jarayonga aylanadi.</li>
+                <li>Mavzu bilan birga ilmiy rahbar biriktiriladi va kalendar reja tuziladi.</li>
+            </ul>
+
+            <h2>BMI yozish bosqichlari</h2>
+            <ul>
+                <li><strong>1-bosqich.</strong> Mavzuni tasdiqlash va kalendar rejani tuzish.</li>
+                <li><strong>2-bosqich.</strong> Adabiyotlar va normativ hujjatlarni yig'ish.</li>
+                <li><strong>3-bosqich.</strong> Kirish qismini yozish - maqsad, vazifalar, ob'ekt va predmet.</li>
+                <li><strong>4-bosqich.</strong> Nazariy bob.</li>
+                <li><strong>5-bosqich.</strong> Tahliliy bob - ob'ekt bo'yicha ma'lumot yig'ish va tahlil.</li>
+                <li><strong>6-bosqich.</strong> Amaliy bob - takliflar va ularning hisob-kitobi.</li>
+                <li><strong>7-bosqich.</strong> Xulosa va takliflarni shakllantirish.</li>
+                <li><strong>8-bosqich.</strong> Antiplagiat tekshiruvi va rasmiylashtirish.</li>
+                <li><strong>9-bosqich.</strong> Taqriz olish va kafedra muhokamasi.</li>
+                <li><strong>10-bosqich.</strong> Taqdimot va himoya nutqini tayyorlash.</li>
+            </ul>
+            <p>Tuzilma va mundarija qanday ko'rinishini <a href="/blog/bmi-namunasi-tuzilma-va-mundarija">BMI namunasi</a> sahifasida ko'ring.</p>
+
+            <h2>Himoya qanday o'tadi?</h2>
+            <p>Himoya davlat attestatsiya komissiyasi oldida o'tkaziladi va odatda quyidagi tartibda kechadi:</p>
+            <ul>
+                <li>Talabaning chiqishi - 7-10 daqiqa, taqdimot bilan.</li>
+                <li>Komissiya a'zolarining savollari.</li>
+                <li>Ilmiy rahbar xulosasi va taqrizchi fikri.</li>
+                <li>Talabaning javob so'zi.</li>
+                <li>Komissiyaning yopiq muhokamasi va baho e'lon qilinishi.</li>
+            </ul>
+            <p>Amaliyotda baholashga eng ko'p ta'sir qiladigan uch narsa: amaliy qismning kuchi, chiqishning aniqligi va savollarga ishonchli javob berish.</p>
+
+            <h2>Baholashda nimaga qaraladi?</h2>
+            <ul>
+                <li>Mavzuning dolzarbligi va uning ochib berilishi.</li>
+                <li>Tahlilning chuqurligi - raqam va faktlarga tayanish.</li>
+                <li>Takliflarning aniqligi va asoslanganligi.</li>
+                <li>Manbalar bilan ishlash madaniyati - havolalar to'g'ri berilganmi.</li>
+                <li>Rasmiylashtirish talablariga rioya qilish.</li>
+                <li>Antiplagiat ko'rsatkichi.</li>
+                <li>Himoya paytidagi chiqish va javoblar.</li>
+            </ul>
+            <p>Aniq mezonlar va foizlar muassasangiz hujjatida belgilanadi - batafsil: <a href="/blog/bitiruv-malakaviy-ishi-nizomi">bitiruv malakaviy ishi nizomi</a>.</p>
+
             <h2>BMI yozishda yordam kerakmi?</h2>
             <p><strong>Ilmiyxizmat.uz</strong> jamoasi BMI yozish, formatlash, antiplagiat foizini oshirish va himoyaga tayyorgarlik ko'rishda professional yordam ko'rsatadi. Mutaxassislarimiz bilan bog'laning — bepul konsultatsiya oling!</p>
         `
@@ -367,6 +423,63 @@ export const blogPosts = [
                 <li><strong>O'zbekistonda nashr:</strong> 2 000 000 – 8 000 000 so'm (hajm va tirajga qarab)</li>
                 <li><strong>Xalqaro nashr:</strong> 500 – 2000 AQSh dollari</li>
                 <li><strong>Elektron nashr (e-monografiya):</strong> Arzonroq variant mavjud</li>
+            </ul>
+
+            <h2>Monografiya boshqa ilmiy nashrlardan nimasi bilan farq qiladi?</h2>
+            <p>Mualliflar ko'pincha monografiyani boshqa nashr turlari bilan chalkashtiradi. Farq quyidagicha:</p>
+            <ul>
+                <li><strong>Monografiya va darslik.</strong> Monografiya - tor mavzu bo'yicha chuqur tadqiqot, o'quv jarayoni uchun emas, ilmiy hamjamiyat uchun yoziladi. Darslik esa fan dasturini qamrab oladi va o'qitish uchun mo'ljallangan.</li>
+                <li><strong>Monografiya va o'quv qo'llanma.</strong> O'quv qo'llanma talabaga bilim beradi, monografiya esa fanga yangi bilim qo'shadi.</li>
+                <li><strong>Monografiya va maqolalar to'plami.</strong> To'plam - alohida maqolalarning mexanik yig'indisi. Monografiya esa yagona mantiq bilan bog'langan, boshidan oxirigacha bitta muammoni ochib beruvchi yaxlit asar.</li>
+                <li><strong>Monografiya va dissertatsiya.</strong> Dissertatsiya ilmiy daraja olish uchun himoya qilinadi va qat'iy shaklga ega. Monografiya esa nashr etiladi, uslubi erkinroq, lekin hajmi kattaroq bo'ladi.</li>
+            </ul>
+            <p>Ko'p hollarda monografiya aynan himoya qilingan dissertatsiya asosida tayyorlanadi - matn qayta quriladi, kengaytiriladi va kitob janriga moslashtiriladi.</p>
+
+            <h2>Monografiya uchun mavzu qanday tanlanadi?</h2>
+            <p>Mavzu tanlash monografiyaning taqdirini belgilaydi. Amaliyotda quyidagi mezonlar ishlaydi:</p>
+            <ul>
+                <li><strong>Tor va aniq bo'lsin.</strong> "Iqtisodiyotni rivojlantirish" emas, balki muayyan soha, hudud yoki davr bo'yicha aniq masala.</li>
+                <li><strong>Sizning tadqiqotingizga tayansin.</strong> Eng oson yo'l - dissertatsiyangiz yoki nashr etilgan maqolalaringiz mavzusini kengaytirish.</li>
+                <li><strong>Yetarli manba bo'lsin.</strong> Mavzu bo'yicha mahalliy va xorijiy adabiyot topilmasa, nazariy bob bo'sh chiqadi.</li>
+                <li><strong>Amaliy natija bersin.</strong> Faqat nazariy umumlashtirish bilan cheklangan monografiya taqrizchilarda savol tug'diradi.</li>
+                <li><strong>Takrorlanmasin.</strong> Shu mavzuda yaqin yillarda chiqqan nashrlarni tekshiring - yangilik bo'lmasa, kitobning qiymati past baholanadi.</li>
+            </ul>
+
+            <h2>Monografiya yozish bosqichlari</h2>
+            <p>Ish tartibli olib borilganda muddat ham, sifat ham nazoratda qoladi:</p>
+            <ul>
+                <li><strong>1-bosqich.</strong> Mavzuni aniqlashtirish va ilmiy yangilikni shakllantirish.</li>
+                <li><strong>2-bosqich.</strong> Prospekt - boblar va paragraflar rejasini tuzish, hajmni taqsimlash.</li>
+                <li><strong>3-bosqich.</strong> Manbalar bazasini yig'ish: ilmiy adabiyot, statistika, normativ hujjatlar.</li>
+                <li><strong>4-bosqich.</strong> Boblarni ketma-ket yozish. Har bob oxirida qisqacha xulosa bo'lishi shart.</li>
+                <li><strong>5-bosqich.</strong> Umumiy xulosa va amaliy tavsiyalarni shakllantirish.</li>
+                <li><strong>6-bosqich.</strong> Ilmiy va adabiy tahrir, korrektura.</li>
+                <li><strong>7-bosqich.</strong> Antiplagiat tekshiruvi va hisobotni saqlash.</li>
+                <li><strong>8-bosqich.</strong> Taqriz va mas'ul muharrir xulosasini olish.</li>
+                <li><strong>9-bosqich.</strong> Nashriyot maketi, UDK, BBK, ISBN va bosmaxona.</li>
+            </ul>
+            <p>Tuzilma va mundarija qanday ko'rinishini <a href="/blog/monografiya-namunasi-tuzilma-va-mundarija">monografiya namunasi</a> sahifasida ko'rishingiz mumkin.</p>
+
+            <h2>Taqriz, ISBN va rasmiylashtirish</h2>
+            <p>Qo'lyozma tayyor bo'lishi hali kitob degani emas. Rasmiy nashrga aylanishi uchun quyidagilar kerak:</p>
+            <ul>
+                <li><strong>Taqrizlar</strong> - odatda kamida ikkita, ko'p hollarda fan doktori darajasidagi mutaxassislardan.</li>
+                <li><strong>Mas'ul muharrir</strong> xulosasi.</li>
+                <li><strong>Kafedra va ilmiy kengash</strong> bayonnomasi bilan nashrga tavsiya etilishi.</li>
+                <li><strong>UDK va BBK</strong> indekslari - kutubxona tasnifi uchun.</li>
+                <li><strong>ISBN</strong> - kitobning xalqaro raqami, nashriyot orqali olinadi.</li>
+                <li><strong>Majburiy nusxalar</strong> - belgilangan miqdorda tegishli kutubxonalarga topshiriladi.</li>
+            </ul>
+
+            <h2>Monografiya yozishda ko'p uchraydigan xatolar</h2>
+            <ul>
+                <li>Mavzuning juda keng olinishi - natijada har bir masala yuzaki yoritiladi.</li>
+                <li>Boblar hajmining nomutanosibligi: nazariy bob 100 bet, amaliy bob 20 bet.</li>
+                <li>Muallifning o'z natijalari yo'qligi - kitob adabiyot sharhiga aylanib qoladi.</li>
+                <li>Bob oxirlarida xulosalarning yo'qligi.</li>
+                <li>Eskirgan manbalarga tayanish.</li>
+                <li>Taqriz va bayonnomalarni oxirgi paytga qoldirish - bu nashrni oylab kechiktiradi.</li>
+                <li>Antiplagiat tekshiruvini nashrdan keyin o'ylash.</li>
             </ul>
 
             <h2>Monografiya yozishda yordam</h2>
