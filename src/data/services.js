@@ -662,7 +662,7 @@ export const services = [
       "Sertifikat",
       "To'plam nashr"
     ],
-    price: "80 000",
+    price: "100 000",
     priceNote: "dan boshlab",
     popular: false,
     metaTitle: "Konferensiyaga maqola chiqarish | Ilmiyxizmat.uz",
