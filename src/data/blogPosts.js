@@ -586,11 +586,12 @@ export const blogPosts = [
                 <li><strong>3-qadam.</strong> Ariza shaklini to'ldiring: muallif ma'lumotlari, adabiyot nomi, turi, fan yo'nalishi va boshqa so'ralgan maydonlar.</li>
                 <li><strong>4-qadam.</strong> Xizmat haqini to'lang.</li>
                 <li><strong>5-qadam.</strong> Arizani yuboring va uning holatini portaldagi <strong>"Arizani tekshirish"</strong> bo'limi orqali kuzatib boring.</li>
+                <li><strong>6-qadam.</strong> Natijani oling. Ekspert xulosasi <strong>PDF hujjat</strong> ko'rinishida keladi.</li>
             </ul>
             <p>Portalda "Xizmatni olish uchun kerakli hujjatlar" bo'limida <strong>"Talab etilmaydi"</strong> deb ko'rsatilgan — ya'ni alohida qog'oz hujjatlar to'plamini idoraga olib borish shart emas. Shunga qaramay, qo'lyozmaning yakuniy elektron nusxasini va unga oid ma'lumotlarni oldindan tayyorlab qo'ygan ma'qul: ariza to'ldirish jarayonida ular so'ralishi mumkin, ariza to'ldirish esa o'rtacha 13 daqiqa vaqt oladi.</p>
 
             <h2>Ekspertlar qo'lyozmani qanday baholaydi: 15 ta mezon</h2>
-            <p>Ekspertiza natijasi <strong>100 ballik tizimda</strong> chiqariladi. Ekspert har bir mezon bo'yicha alohida ball qo'yadi va ular jamlanadi. Mezonlar hamda ularning maksimal ballari quyidagicha:</p>
+            <p>Ekspertiza natijasi <strong>100 ballik tizimda</strong> chiqariladi. Ekspert har bir mezon bo'yicha alohida ball qo'yadi va ular jamlanadi. Sizga keladigan PDF xulosa aynan shu jadval ko'rinishida bo'ladi: har bir mezon, uning maksimal balli va ekspert qo'ygan ball yonma-yon ko'rsatiladi. Mezonlar quyidagicha:</p>
 
             <div class="table-wrap">
             <table>
