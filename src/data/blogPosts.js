@@ -551,7 +551,7 @@ export const blogPosts = [
         id: 13,
         slug: "oquv-qollanma-yozish-va-ekspertizadan-otkazish-mygov",
         title: "O'quv qo'llanma yozish va uni my.gov.uz orqali ekspertizadan o'tkazish (2026)",
-        excerpt: "O'quv qo'llanma yozishdan nashrgacha bo'lgan yo'l: qo'lyozmani tayyorlash, my.gov.uz dagi \"O'quv adabiyotini ekspertizadan o'tkazish\" xizmatiga ariza berish, narxi, muddati va ekspertizaga tayyorgarlik.",
+        excerpt: "O'quv qo'llanmani my.gov.uz orqali ekspertizadan o'tkazish: xizmat narxi va muddati, ariza berish tartibi hamda ekspertlar baholaydigan 15 ta mezon ballari bilan.",
         category: "Ilmiy ishlar",
         date: "2026-08-21",
         readTime: "10 daqiqa",
@@ -588,6 +588,59 @@ export const blogPosts = [
                 <li><strong>5-qadam.</strong> Arizani yuboring va uning holatini portaldagi <strong>"Arizani tekshirish"</strong> bo'limi orqali kuzatib boring.</li>
             </ul>
             <p>Portalda "Xizmatni olish uchun kerakli hujjatlar" bo'limida <strong>"Talab etilmaydi"</strong> deb ko'rsatilgan — ya'ni alohida qog'oz hujjatlar to'plamini idoraga olib borish shart emas. Shunga qaramay, qo'lyozmaning yakuniy elektron nusxasini va unga oid ma'lumotlarni oldindan tayyorlab qo'ygan ma'qul: ariza to'ldirish jarayonida ular so'ralishi mumkin, ariza to'ldirish esa o'rtacha 13 daqiqa vaqt oladi.</p>
+
+            <h2>Ekspertlar qo'lyozmani qanday baholaydi: 15 ta mezon</h2>
+            <p>Ekspertiza natijasi <strong>100 ballik tizimda</strong> chiqariladi. Ekspert har bir mezon bo'yicha alohida ball qo'yadi va ular jamlanadi. Mezonlar hamda ularning maksimal ballari quyidagicha:</p>
+
+            <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>T/r</th><th>Baholash mezoni</th><th>Maksimal ball</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>O'quv adabiyoti bakalavriat ta'lim yo'nalishi yoki magistratura mutaxassisligi shifri, nomi va ixtisoslikka mo'ljallanganligi</td><td>5</td></tr>
+                    <tr><td>2</td><td>O'quv rejasi va dasturlariga to'la mos kelishi</td><td>10</td></tr>
+                    <tr><td>3</td><td>Boblar, bo'lim va mavzularning muayyan izchillikda yoritilganligi</td><td>5</td></tr>
+                    <tr><td>4</td><td>Jahon ilm-fani, texnika va texnologiyalarning eng so'nggi yutuqlari inobatga olinganligi</td><td>10</td></tr>
+                    <tr><td>5</td><td>Soha va fanga oid milliy hamda xorijiy ma'lumotlar mantiqiy ketma-ketlikda bayon etilganligi</td><td>5</td></tr>
+                    <tr><td>6</td><td>Nazariy va amaliy ma'lumotlar mukammal, puxta, ravon va ixcham ifoda qilinganligi</td><td>10</td></tr>
+                    <tr><td>7</td><td>Tasvirli materiallar (rasmlar, grafiklar, jadvallar, blok-sxemalar) mavjudligi</td><td>5</td></tr>
+                    <tr><td>8</td><td>Asosiy tushuncha hamda xulosalarning ta'riflari aniq va ravshan yozilganligi, atamalar umumiy qabul qilingan terminlarga mos ishlatilganligi</td><td>15</td></tr>
+                    <tr><td>9</td><td>Talabalarning yoshi va psixologik xususiyatlari hisobga olinganligi</td><td>5</td></tr>
+                    <tr><td>10</td><td>Talabalarning ijodiy qobiliyatlarini rivojlantirishga qaratilganligi va mustaqil ta'lim olishga qiziqish uyg'otishi</td><td>5</td></tr>
+                    <tr><td>11</td><td>O'quv adabiyotlar ro'yxatining yangilanganlik darajasi (2000 yildan keyin chop etilgan mahalliy va xorijiy adabiyotlar)</td><td>5</td></tr>
+                    <tr><td>12</td><td>Mavzulardan so'ng qisqacha xulosa, nazorat va muhokama savollari (kamida 8-10 ta), tayanch iboralarning mavjudligi</td><td>2,5</td></tr>
+                    <tr><td>13</td><td>Glossariy (izohli so'zlar) mavjudligi va uni bayon etish darajasi</td><td>2,5</td></tr>
+                    <tr><td>14</td><td>Muallif tomonidan doktorlik (DSc) yoki nomzodlik (PhD) dissertatsiyasidan foydalanilganligi</td><td>5</td></tr>
+                    <tr><td>15</td><td>O'quv adabiyotining mazmunan tugallanganligi</td><td>10</td></tr>
+                    <tr><td colspan="2"><strong>Jami</strong></td><td><strong>100</strong></td></tr>
+                </tbody>
+            </table>
+            </div>
+
+            <h3>Qaysi mezonlar hal qiluvchi?</h3>
+            <p>Ballar taqsimoti tasodifiy emas. Atigi <strong>beshta mezon umumiy bahoning 55 ballini</strong>, ya'ni yarmidan ko'pini tashkil qiladi:</p>
+            <ul>
+                <li><strong>15 ball</strong> — tushuncha va xulosalar ta'riflarining aniqligi hamda terminologiya izchilligi (8-mezon). Eng og'ir mezon shu.</li>
+                <li><strong>10 ball</strong> — o'quv rejasi va dasturlariga to'la mos kelishi (2-mezon)</li>
+                <li><strong>10 ball</strong> — jahon ilm-fani va texnologiyalarining so'nggi yutuqlari inobatga olinganligi (4-mezon)</li>
+                <li><strong>10 ball</strong> — nazariy va amaliy ma'lumotlarning puxta, ravon va ixcham ifodalanishi (6-mezon)</li>
+                <li><strong>10 ball</strong> — adabiyotning mazmunan tugallanganligi (15-mezon)</li>
+            </ul>
+            <p>Shu sababli kuchni birinchi navbatda shu yo'nalishlarga qaratish kerak. Ayniqsa <strong>o'quv rejasiga moslik</strong>: bu mezon bo'yicha past ball qo'yilsa, umumiy natija bir zumda pasayadi va uni boshqa mezonlar hisobiga qoplash qiyin bo'ladi.</p>
+
+            <h3>Jadvaldan kelib chiqadigan aniq talablar</h3>
+            <p>Mezonlarning ayrimlari mavhum emas — ularni qo'lyozmani topshirishdan oldin oddiy tekshiruv ro'yxati sifatida ishlatish mumkin:</p>
+            <ul>
+                <li>Titul qismida <strong>ta'lim yo'nalishi yoki mutaxassislik shifri va nomi</strong> aniq ko'rsatilganmi? (1-mezon)</li>
+                <li>Har bir mavzudan keyin qisqacha xulosa, tayanch iboralar va <strong>kamida 8-10 ta</strong> nazorat hamda muhokama savoli bormi? (12-mezon)</li>
+                <li>Foydalanilgan adabiyotlar <strong>2000-yildan keyin</strong> chop etilganmi — mahalliy va xorijiy manbalar bilan birga? (11-mezon)</li>
+                <li><strong>Glossariy</strong> — izohli so'zlar ro'yxati tuzilganmi? (13-mezon)</li>
+                <li>Rasm, grafik, jadval va blok-sxemalar yetarlimi? (7-mezon)</li>
+                <li>O'z <strong>PhD yoki DSc dissertatsiyangizdan</strong> foydalanganmisiz va bu matnda ko'rinib turibdimi? (14-mezon)</li>
+                <li>Atamalar butun kitob davomida bir xil qo'llanilganmi? (8-mezon — eng ko'p ball beradigan mezon)</li>
+            </ul>
+            <p>Bu ro'yxatdagi har bir band — yo'qotilishi mumkin bo'lgan ball. Ularning ko'pchiligini qo'lyozmani topshirishdan oldin bir kunda tuzatib olish mumkin.</p>
 
             <h2>Qo'lyozmani ekspertizaga qanday tayyorlash kerak</h2>
             <p>Ekspertiza natijasi ko'p jihatdan qo'lyozmaning tayyorlik darajasiga bog'liq. Quyidagilarni oldindan tartibga solib qo'ying:</p>

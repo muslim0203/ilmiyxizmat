@@ -91,3 +91,70 @@
         grid-template-columns: 1fr;
     }
 }
+/* ===== Maqola ichidagi jadvallar ===== */
+/* Keng jadval sahifani gorizontal siljitmasligi uchun o'z konteyneri ichida skroll bo'ladi */
+.post-content .table-wrap {
+    max-width: 800px;
+    margin: 1.5rem auto;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+}
+
+.post-content table {
+    width: 100%;
+    min-width: 520px;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.post-content thead th {
+    background: #f9fafb;
+    text-align: left;
+    font-weight: 600;
+    color: #1e3a5f;
+    padding: 0.75rem 1rem;
+    border-bottom: 2px solid #e5e7eb;
+    white-space: nowrap;
+}
+
+.post-content tbody td {
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid #f1f2f4;
+    line-height: 1.6;
+    vertical-align: top;
+    color: #374151;
+}
+
+/* Birinchi (T/r) va oxirgi (ball) ustunlar tor va markazda */
+.post-content tbody td:first-child,
+.post-content tbody td:last-child,
+.post-content thead th:first-child,
+.post-content thead th:last-child {
+    text-align: center;
+    white-space: nowrap;
+    width: 1%;
+}
+
+.post-content tbody tr:last-child td {
+    border-bottom: none;
+    background: #f9fafb;
+}
+
+.post-content h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+    color: #1e3a5f;
+}
+
+@media (max-width: 768px) {
+    .post-content table {
+        font-size: 0.88rem;
+    }
+    .post-content thead th,
+    .post-content tbody td {
+        padding: 0.6rem 0.7rem;
+    }
+}
