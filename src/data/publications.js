@@ -7,8 +7,8 @@ export const publications = [
         title: "OAK jurnallari",
         description: "OAK ro'yxatidagi jurnallarga maqola chiqarish xizmati.",
         icon: "🏛️",
-        price: "1 000 000",
-        timeline: "1-3 oy"
+        price: "350 000",
+        timeline: "1-4 hafta"
     },
     {
         id: 2,
@@ -16,8 +16,8 @@ export const publications = [
         title: "Konferensiyalar",
         description: "Xalqaro va respublika konferensiyalariga maqola chiqarish.",
         icon: "🎤",
-        price: "300 000",
-        timeline: "2-4 hafta"
+        price: "100 000",
+        timeline: "2-10 kun"
     },
     {
         id: 3,
@@ -25,8 +25,8 @@ export const publications = [
         title: "Sertifikatli nashr",
         description: "Rasmiy sertifikat bilan ilmiy nashrlar.",
         icon: "📜",
-        price: "200 000",
-        timeline: "1-2 hafta"
+        price: "100 000",
+        timeline: "2-10 kun"
     }
 ];
 

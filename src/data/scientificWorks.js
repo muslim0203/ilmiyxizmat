@@ -13,7 +13,7 @@ export const scientificWorks = [
             "3 bob + ilova",
             "20+ manba"
         ],
-        duration: "2-3 oy",
+        duration: "1-3 hafta",
         relatedService: "bmi-yozish",
         metaTitle: "Bitiruv malakaviy ishi (BMI) nima? | Ilmiyxizmat.uz",
         metaDescription: "Bitiruv malakaviy ishi (BMI) haqida to'liq ma'lumot. Talablar, tuzilma, yozish tartibi."
@@ -30,7 +30,7 @@ export const scientificWorks = [
             "2 bob",
             "15+ manba"
         ],
-        duration: "2-4 hafta",
+        duration: "2-5 kun",
         relatedService: "kurs-ishi-yozish",
         metaTitle: "Kurs ishi nima? Qanday yoziladi? | Ilmiyxizmat.uz",
         metaDescription: "Kurs ishi haqida batafsil. Tuzilma, talablar, yozish qo'llanmasi."
@@ -48,7 +48,7 @@ export const scientificWorks = [
             "50+ manba",
             "2+ ilmiy maqola"
         ],
-        duration: "6-12 oy",
+        duration: "2-4 hafta",
         relatedService: "magistrlik-dissertatsiyasi-yozish",
         metaTitle: "Magistrlik dissertatsiyasi | Talablar va tuzilma | Ilmiyxizmat.uz",
         metaDescription: "Magistrlik dissertatsiyasi haqida to'liq qo'llanma. Talablar, tuzilma, himoya."
@@ -66,7 +66,7 @@ export const scientificWorks = [
             "5+ ilmiy maqola",
             "Avtoreferat"
         ],
-        duration: "2-4 yil",
+        duration: "2-9 oy",
         relatedService: "doktorlik-dissertatsiyasi-yordam",
         metaTitle: "Doktorlik dissertatsiyasi (PhD, DSc) | Ilmiyxizmat.uz",
         metaDescription: "PhD va DSc doktorlik dissertatsiyasi haqida. Talablar, jarayon, himoya."
@@ -83,7 +83,7 @@ export const scientificWorks = [
             "Kalit so'zlar",
             "Mavzuga oid manbalar"
         ],
-        duration: "1-2 hafta",
+        duration: "2-5 kun",
         relatedService: "ilmiy-maqola-yozish",
         metaTitle: "Ilmiy maqola qanday yoziladi? | Ilmiyxizmat.uz",
         metaDescription: "Ilmiy maqola yozish qo'llanmasi. OAK, Scopus talablari, tuzilma."
@@ -100,7 +100,7 @@ export const scientificWorks = [
             "Ilmiy tahrir",
             "Retsenziya"
         ],
-        duration: "6-12 oy",
+        duration: "1-3 hafta",
         relatedService: "monografiya-tayyorlash",
         metaTitle: "Monografiya nima? Talablar, hajm va tuzilma",
         metaDescription: "Monografiya nima, unga qanday talablar qo'yiladi: hajm va bosma taboq, taqriz, ISBN va UDK, ilmiy yangilik hamda nashr tartibi."
@@ -117,7 +117,7 @@ export const scientificWorks = [
             "Retsenziya",
             "ISBN/UDK"
         ],
-        duration: "3-6 oy",
+        duration: "1-3 hafta",
         relatedService: "oquv-qollanma-tayyorlash",
         metaTitle: "O'quv qo'llanma nima? Talablar, hajm va tuzilma",
         metaDescription: "O'quv qo'llanma nima va unga qanday talablar qo'yiladi: hajm, retsenziya, UDK va ISBN, tasdiqlash tartibi hamda darslikdan farqi."
@@ -134,7 +134,7 @@ export const scientificWorks = [
             "Kamida ikkita taqriz",
             "Grif va ISBN rasmiylashtirish"
         ],
-        duration: "4-8 oy",
+        duration: "1-3 hafta",
         relatedService: "darslik-yozish",
         metaTitle: "Darslik nima? Talablar, tuzilma va grif olish tartibi",
         metaDescription: "Darslik nima va u o'quv qo'llanmadan nimasi bilan farq qiladi: tuzilma, metodik apparat, taqriz, grif olish tartibi va nashr talablari."
@@ -151,7 +151,7 @@ export const scientificWorks = [
             "Nazorat savollari",
             "Ilova"
         ],
-        duration: "1-2 oy",
+        duration: "1-2 hafta",
         relatedService: "ilmiy-ish-yozish",
         metaTitle: "Metodik qo'llanma tayyorlash | Ilmiyxizmat.uz",
         metaDescription: "Metodik qo'llanma tayyorlash xizmati. Amaliy ko'rsatmalar, laboratoriya."

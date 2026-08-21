@@ -522,7 +522,7 @@ export const blogPosts = [
                 <li><strong>Grif.</strong> Darslik uchun vakolatli organ grifi zarur; o'quv qo'llanma odatda kafedra va ilmiy-uslubiy kengash qarori bilan chiqadi.</li>
                 <li><strong>Hajm.</strong> Darsliklar amalda ko'pincha 200-400 bet; o'quv qo'llanmalar 100 betdan boshlanadi.</li>
                 <li><strong>Metodik apparat.</strong> Darslikda test, topshiriq, glossariy va nazorat savollari majburiy darajada to'liq bo'ladi.</li>
-                <li><strong>Muddat.</strong> Darslik 4-8 oy, grif jarayoni bilan uzayishi mumkin; o'quv qo'llanma 3-6 oy.</li>
+                <li><strong>Muddat.</strong> Qo'lyozmani tayyorlash ikkalasida ham o'rtacha 1-3 hafta. Farq keyingi bosqichlarda: darslik uchun grif olish qo'shimcha vaqt talab qiladi.</li>
                 <li><strong>Muallif talabi.</strong> Darslik mualliflaridan odatda katta o'qituvchilik tajribasi va ilmiy daraja talab qilinadi.</li>
             </ul>
 

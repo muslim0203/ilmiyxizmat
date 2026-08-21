@@ -233,7 +233,7 @@ export const services = [
     faq: [
       {
         question: "Monografiya yozish qancha vaqt oladi?",
-        answer: "O'rtacha 6-12 oy. Agar sizda dissertatsiya yoki nashr etilgan maqolalar shaklida tayyor material bo'lsa, muddat 3-4 oyga qisqarishi mumkin.",
+        answer: "O'rtacha 1-3 hafta. Aniq muddat monografiya hajmi va sizda tayyor material - dissertatsiya yoki nashr etilgan maqolalar - borligiga bog'liq. Nashr va ISBN rasmiylashtirish esa alohida vaqt oladi.",
       },
       {
         question: "Monografiya narxi qancha?",
@@ -367,7 +367,7 @@ export const services = [
     faq: [
       {
         question: "O'quv qo'llanma tayyorlash qancha vaqt oladi?",
-        answer: "O'rtacha 3-6 oy. Hajmi kichik va materialingiz qisman tayyor bo'lsa, muddat 1,5-2 oyga qisqarishi mumkin. Aniq muddat birinchi konsultatsiyada kelishiladi.",
+        answer: "O'rtacha 1-3 hafta. Hajmi katta bo'lsa yoki qo'shimcha amaliy qism talab qilinsa, muddat uzayishi mumkin. Aniq muddat birinchi konsultatsiyada kelishiladi. Ekspertiza va nashr bosqichlari bunga kirmaydi.",
       },
       {
         question: "O'quv qo'llanma narxi qancha?",
@@ -508,7 +508,7 @@ export const services = [
     faq: [
       {
         question: "Darslik yozish qancha vaqt oladi?",
-        answer: "O'rtacha 4-8 oy. Grif olish jarayoni bilan birga muddat uzayishi mumkin. Sizda ma'ruza matnlari yoki tayyor materiallar bo'lsa, muddat sezilarli qisqaradi.",
+        answer: "Qo'lyozmani tayyorlash o'rtacha 1-3 hafta. Sizda ma'ruza matnlari yoki tayyor materiallar bo'lsa, muddat yanada qisqaradi. Grif olish va nashr bosqichlari alohida vaqt talab qiladi.",
       },
       {
         question: "Darslik narxi qancha?",
