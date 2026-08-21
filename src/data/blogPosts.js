@@ -497,6 +497,8 @@ export const blogPosts = [
             </ul>
 
             <h2>Yordam kerakmi?</h2>
+            <p>Qo'lyozma tayyor bo'lgach uni ekspertizadan o'tkazish kerak — bu jarayon my.gov.uz orqali amalga oshiriladi. Batafsil: <a href="/blog/oquv-qollanma-yozish-va-ekspertizadan-otkazish-mygov">o'quv qo'llanmani ekspertizadan o'tkazish tartibi</a>.</p>
+
             <p>Ilmiyxizmat.uz jamoasi o'quv qo'llanmani tuzilmasidan nashrgacha tayyorlab beradi. Batafsil ma'lumot va narxlar: <a href="/xizmatlar/oquv-qollanma-tayyorlash">o'quv qo'llanma yozish xizmati</a>. Agar sizga fan dasturini to'liq qamrab oladigan nashr kerak bo'lsa - <a href="/xizmatlar/darslik-yozish">darslik yozish xizmati</a> sahifasiga qarang.</p>
         `
     },
@@ -544,8 +546,92 @@ export const blogPosts = [
             <h2>Keyingi qadam</h2>
             <p>Qaysi nashr sizga mos kelishini aniqlash uchun bepul konsultatsiya oling. Xizmatlar haqida batafsil: <a href="/xizmatlar/darslik-yozish">darslik yozish</a> va <a href="/xizmatlar/oquv-qollanma-tayyorlash">o'quv qo'llanma yozish</a>. Ilmiy nashr bo'yicha ish olib borayotgan bo'lsangiz, <a href="/xizmatlar/monografiya-tayyorlash">monografiya yozish xizmati</a> ham foydali bo'lishi mumkin.</p>
         `
+    },
+    {
+        id: 13,
+        slug: "oquv-qollanma-yozish-va-ekspertizadan-otkazish-mygov",
+        title: "O'quv qo'llanma yozish va uni my.gov.uz orqali ekspertizadan o'tkazish (2026)",
+        excerpt: "O'quv qo'llanma yozishdan nashrgacha bo'lgan yo'l: qo'lyozmani tayyorlash, my.gov.uz dagi \"O'quv adabiyotini ekspertizadan o'tkazish\" xizmatiga ariza berish, narxi, muddati va ekspertizaga tayyorgarlik.",
+        category: "Ilmiy ishlar",
+        date: "2026-08-21",
+        readTime: "10 daqiqa",
+        content: `
+            <p><strong>O'quv qo'llanma yozish</strong> — ishning faqat yarmi. Qo'lyozma tayyor bo'lgach, u rasmiy maqomga ega bo'lishi uchun <strong>ekspertizadan</strong> o'tishi kerak. Ekspertizasiz nashr etilgan kitob attestatsiya, lavozimga tanlov yoki ilmiy unvonga talabgorlik hujjatlarida o'quv adabiyoti sifatida hisobga olinmasligi mumkin.</p>
+
+            <p>Yaxshi yangilik shundaki, bu jarayon endi to'liq elektron shaklda — <strong>my.gov.uz</strong> portali orqali amalga oshiriladi. Quyida qo'lyozmani tayyorlashdan arizani yuborishgacha bo'lgan yo'lni bosqichma-bosqich ko'rib chiqamiz.</p>
+
+            <h2>Ekspertiza nima va nima uchun kerak?</h2>
+            <p>Ekspertiza — o'quv adabiyotining mazmuni, ilmiy saviyasi va o'quv dasturiga mosligini vakolatli mutaxassislar tomonidan baholash jarayoni. U kitobning haqiqatan ham o'quv jarayonida foydalanishga yaroqli ekanini tasdiqlaydi.</p>
+            <p>Ekspertizadan o'tgan o'quv adabiyoti rasmiy maqom oladi va oliy ta'lim muassasalarida o'quv manbai sifatida foydalanish mumkin bo'ladi. Shu sababli tajribali mualliflar qo'lyozmani yozishning boshidayoq ekspertiza talablarini hisobga olib ishlaydi — keyin qayta yozishdan ko'ra bu ancha oson.</p>
+
+            <h2>my.gov.uz dagi xizmat haqida asosiy ma'lumotlar</h2>
+            <p>Portaldagi xizmat <strong>"O'quv adabiyotini ekspertizadan o'tkazish"</strong> deb nomlanadi. 2026-yil avgust holatiga ko'ra uning ko'rsatkichlari quyidagicha:</p>
+            <ul>
+                <li><strong>Xizmat narxi:</strong> 927 000 so'm (2,25 BHM). Bazaviy hisoblash miqdori o'zgarganda summa ham o'zgaradi.</li>
+                <li><strong>Ko'rsatish muddati:</strong> 30 ish kuni</li>
+                <li><strong>Mas'ul tashkilot:</strong> O'zbekiston Respublikasi Oliy ta'lim, fan va innovatsiyalar vazirligi</li>
+                <li><strong>Kimlar murojaat qila oladi:</strong> jismoniy shaxslar</li>
+                <li><strong>Huquqiy asos:</strong> Vazirlar Mahkamasining 2025-yil 22-avgustdagi &laquo;Oliy ta'lim tashkilotlari talabalari uchun tayyorlangan o'quv adabiyotlarini ekspertizadan o'tkazish bo'yicha davlat xizmatini ko'rsatishning ma'muriy reglamentini tasdiqlash to'g'risida&raquo;gi 530-son qarori</li>
+                <li><strong>Aloqa:</strong> +998 (71) 207-03-43 (108)</li>
+            </ul>
+            <p>Reglament nomidan ko'rinib turibdiki, xizmat <strong>oliy ta'lim tashkilotlari talabalari uchun tayyorlangan</strong> o'quv adabiyotlariga tegishli.</p>
+            <p>Xizmat portalda 15 mingdan ortiq marta ishlatilgan va foydalanuvchilar bahosi 5 balldan 4,46 ni tashkil etadi — ya'ni jarayon amalda ishlaydi va nisbatan tushunarli.</p>
+            <p>Xizmat sahifasi: <a href="https://my.gov.uz/uz/service/1278" target="_blank" rel="noopener">my.gov.uz/uz/service/1278</a>. Narx va muddat vaqt o'tishi bilan yangilanishi mumkin, shuning uchun ariza berishdan oldin rasmiy sahifadagi joriy ma'lumotni tekshirib oling.</p>
+
+            <h2>Ariza berish tartibi</h2>
+            <p>Jarayon to'liq onlayn kechadi va odatda quyidagi ketma-ketlikda boradi:</p>
+            <ul>
+                <li><strong>1-qadam.</strong> my.gov.uz portalida ro'yxatdan o'ting yoki mavjud hisobingiz bilan kiring. Kirish <strong>OneID</strong> (id.egov.uz) orqali amalga oshiriladi — elektron raqamli imzo (ERI) yoki boshqa identifikatsiya usuli kerak bo'ladi.</li>
+                <li><strong>2-qadam.</strong> Xizmat sahifasini oching va <strong>"Ariza yuborish"</strong> tugmasini bosing.</li>
+                <li><strong>3-qadam.</strong> Ariza shaklini to'ldiring: muallif ma'lumotlari, adabiyot nomi, turi, fan yo'nalishi va boshqa so'ralgan maydonlar.</li>
+                <li><strong>4-qadam.</strong> Xizmat haqini to'lang.</li>
+                <li><strong>5-qadam.</strong> Arizani yuboring va uning holatini portaldagi <strong>"Arizani tekshirish"</strong> bo'limi orqali kuzatib boring.</li>
+            </ul>
+            <p>Portalda "Xizmatni olish uchun kerakli hujjatlar" bo'limida <strong>"Talab etilmaydi"</strong> deb ko'rsatilgan — ya'ni alohida qog'oz hujjatlar to'plamini idoraga olib borish shart emas. Shunga qaramay, qo'lyozmaning yakuniy elektron nusxasini va unga oid ma'lumotlarni oldindan tayyorlab qo'ygan ma'qul: ariza to'ldirish jarayonida ular so'ralishi mumkin, ariza to'ldirish esa o'rtacha 13 daqiqa vaqt oladi.</p>
+
+            <h2>Qo'lyozmani ekspertizaga qanday tayyorlash kerak</h2>
+            <p>Ekspertiza natijasi ko'p jihatdan qo'lyozmaning tayyorlik darajasiga bog'liq. Quyidagilarni oldindan tartibga solib qo'ying:</p>
+            <ul>
+                <li><strong>O'quv dasturiga moslik.</strong> Mavzular ketma-ketligi fan dasturi va soatlar taqsimotiga mos kelishi kerak — bu eng ko'p e'tibor qaratiladigan mezon.</li>
+                <li><strong>Tuzilma to'liqligi.</strong> So'z boshi, boblar, amaliy qism, nazorat savollari, glossariy, adabiyotlar ro'yxati va ilovalar joyida bo'lsin.</li>
+                <li><strong>Zamonaviy manbalar.</strong> Eskirgan adabiyotlarga tayanish qo'lyozmaning saviyasini pasaytiradi.</li>
+                <li><strong>Terminologiya izchilligi.</strong> Bir tushuncha butun kitob davomida bir xil atama bilan berilishi kerak.</li>
+                <li><strong>Originallik.</strong> Matnni oldindan antiplagiat tizimida tekshirib, hisobotni saqlab qo'ying.</li>
+                <li><strong>Texnik rasmiylashtirish.</strong> Jadval, rasm va formulalar raqamlangan hamda matnda havola qilingan bo'lsin.</li>
+                <li><strong>Til va uslub.</strong> Adabiy tahrir va korrekturadan o'tkazing — imlo xatolari umumiy taassurotni buzadi.</li>
+            </ul>
+
+            <h2>Darslikmi yoki o'quv qo'llanma?</h2>
+            <p>Ariza to'ldirishda adabiyot turini to'g'ri ko'rsatish kerak, chunki talablar farq qiladi. Qisqacha:</p>
+            <ul>
+                <li><strong>Darslik</strong> fan dasturini boshidan oxirigacha to'liq qamrab oladi va unga qo'yiladigan talablar yuqoriroq.</li>
+                <li><strong>O'quv qo'llanma</strong> darslikni to'ldiradi, ayrim mavzularni chuqurlashtiradi yoki amaliy mashg'ulotlarga mo'ljallanadi.</li>
+            </ul>
+            <p>Batafsil taqqoslash: <a href="/blog/darslik-va-oquv-qollanma-orasidagi-farq">darslik va o'quv qo'llanma o'rtasidagi farq</a>.</p>
+
+            <h2>Ekspertizadan keyin nima bo'ladi?</h2>
+            <p>Ijobiy xulosa olingach, kitobni nashrga tayyorlash bosqichi boshlanadi: nashriyot bilan shartnoma, <strong>UDK</strong> va <strong>BBK</strong> indekslarini belgilash, <strong>ISBN</strong> raqamini olish, maket va muqova dizayni, so'ngra bosmaxona.</p>
+            <p>Shundan keyingina kitob rasmiy ro'yxatdan o'tgan nashr hisoblanadi va uni hujjatlar to'plamiga ilova qilish mumkin bo'ladi.</p>
+
+            <h2>Ko'p uchraydigan xatolar</h2>
+            <ul>
+                <li>Qo'lyozma tugallanmagan holda ariza berish — ekspertiza yakuniy matn bo'yicha o'tkaziladi.</li>
+                <li>Adabiyot turini noto'g'ri ko'rsatish (darslik o'rniga o'quv qo'llanma yoki aksincha).</li>
+                <li>Mazmunning amaldagi o'quv dasturiga mos kelmasligi.</li>
+                <li>Adabiyotlar ro'yxatining talab qilingan shaklda rasmiylashtirilmasligi.</li>
+                <li>Antiplagiat tekshiruvini oxirgi paytga qoldirish.</li>
+                <li>Muddatni noto'g'ri rejalashtirish — faqat ekspertizaning o'zi 30 ish kuni oladi, nashr esa alohida vaqt talab qiladi.</li>
+            </ul>
+
+            <h2>Yordam kerakmi?</h2>
+            <p>Ilmiyxizmat.uz jamoasi qo'lyozmani ekspertiza talablariga moslashtirish, tuzilmani qayta qurish, adabiy va ilmiy tahrir, antiplagiat tekshiruvi hamda nashrga tayyorlash bo'yicha yordam beradi.</p>
+            <p>Batafsil: <a href="/xizmatlar/oquv-qollanma-tayyorlash">o'quv qo'llanma yozish xizmati</a> va <a href="/xizmatlar/darslik-yozish">darslik yozish xizmati</a>. O'quv qo'llanmaning tuzilmasi va talablari haqida esa alohida maqola bor: <a href="/blog/oquv-qollanma-qanday-yoziladi-talablar-va-tuzilma">o'quv qo'llanma qanday yoziladi</a>.</p>
+
+            <p><em>Eslatma: ushbu maqoladagi narx, muddat va tartib my.gov.uz portalida 2026-yil avgust holatiga ko'ra ko'rsatilgan ma'lumotlarga asoslanadi. Rasmiy talablar o'zgarishi mumkin — ariza berishdan oldin xizmatning rasmiy sahifasini tekshiring.</em></p>
+        `
     }
 ];
+
 
 
 export const getBlogBySlug = (slug) => {

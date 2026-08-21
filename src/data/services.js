@@ -330,6 +330,7 @@ export const services = [
               heading: "Nashr, ISBN va rasmiylashtirish",
               paragraphs: [
                 "Tayyor qo'lyozmani nashrga chiqarish alohida bosqich bo'lib, biz uni ham to'liq zimmamizga olamiz.",
+          "Oliy ta'lim tashkilotlari talabalari uchun tayyorlangan o'quv adabiyoti nashrdan oldin ekspertizadan o'tkaziladi. Ariza my.gov.uz portali orqali elektron shaklda topshiriladi, xizmatni Oliy ta'lim, fan va innovatsiyalar vazirligi ko'rsatadi va u 30 ish kuni davom etadi. Biz qo'lyozmani shu talablarga moslashtirib beramiz.",
                 "Nashriyot tanlash, shartnoma rasmiylashtirish, ISBN va UDK/BBK indekslarini olish, maket va muqova dizayni, bosmaxona bilan ishlash - bularning barchasi xizmat tarkibiga kiritilishi mumkin.",
                 "Natijada siz qo'lingizga rasmiy ro'yxatdan o'tgan, attestatsiya va lavozimga tanlov uchun qabul qilinadigan nashrni olasiz.",
               ],
