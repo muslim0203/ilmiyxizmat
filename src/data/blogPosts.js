@@ -70,7 +70,7 @@ export const blogPosts = [
     {
         id: 3,
         slug: "bitiruv-malakaviy-ishi-bmi-yozish-sirlari",
-        title: "Bitiruv malakaviy ishi (BMI) qanday yoziladi? Bosqichma-bosqich qo'llanma",
+        title: "Bitiruv malakaviy ishi (BMI) yozish tartibi: bosqichma-bosqich qo'llanma",
         excerpt: "Bakalavr bosqichining oxirida talabadan talab etiladigan Bitiruv malakaviy ishini (BMI) sifatli tayyorlash bo'yicha to'liq tavsiyalar va maslahatlar.",
         category: "Ilmiy ishlar",
         date: "2024-02-10",
@@ -273,7 +273,7 @@ export const blogPosts = [
     {
         id: 8,
         slug: "bmi-nima-bitiruv-malakaviy-ishi-haqida-tolik-malumot",
-        title: "BMI nima? Bitiruv malakaviy ishi haqida to'liq ma'lumot (2026)",
+        title: "BMI nima? Bitiruv malakaviy ishi va uni yozish tartibi (2026)",
         excerpt: "BMI — Bitiruv malakaviy ishi nima, qanday yoziladi, qanday tuzilmaga ega va qanday talablar mavjud? Bakalavr talabalari uchun to'liq qo'llanma.",
         category: "Ilmiy ishlar",
         date: "2026-03-16",
@@ -322,7 +322,7 @@ export const blogPosts = [
     {
         id: 9,
         slug: "monografiya-nima-va-qanday-yoziladi",
-        title: "Monografiya nima? Monografiya yozish bo'yicha to'liq qo'llanma (2026)",
+        title: "Monografiya nima? Monografiya yozish tartibi va to'liq qo'llanma (2026)",
         excerpt: "Monografiya nima, kimlar yozadi, qanday tuzilmaga ega, nashr qilish narxi qancha? O'zbekistonda monografiya yozish va nashr qilish bo'yicha batafsil ma'lumot.",
         category: "Ilmiy ishlar",
         date: "2026-03-16",
@@ -683,8 +683,245 @@ export const blogPosts = [
 
             <p><em>Eslatma: ushbu maqoladagi narx, muddat va tartib my.gov.uz portalida 2026-yil avgust holatiga ko'ra ko'rsatilgan ma'lumotlarga asoslanadi. Rasmiy talablar o'zgarishi mumkin — ariza berishdan oldin xizmatning rasmiy sahifasini tekshiring.</em></p>
         `
+    },
+    {
+        id: 14,
+        slug: "monografiya-namunasi-tuzilma-va-mundarija",
+        title: "Monografiya namunasi: tuzilma, mundarija va rasmiylashtirish (2026)",
+        excerpt: "Monografiya namunasi - titul varag'idan adabiyotlar ro'yxatigacha bo'lgan to'liq tuzilma, mundarija namunasi va har bir qismga qo'yiladigan talablar.",
+        category: "Ilmiy ishlar",
+        date: "2026-08-21",
+        readTime: "8 daqiqa",
+        content: `
+            <p>Monografiya yozishni boshlagan ko'p muallif birinchi navbatda <strong>namuna</strong> qidiradi: kitob qanday tuzilishi kerak, mundarija qanday ko'rinadi, qaysi qismlar majburiy. Quyida monografiyaning standart tuzilmasi va mundarija namunasi keltirilgan.</p>
+
+            <p>Eslatma: bu yerdagi namuna umumiy qabul qilingan tuzilmaga asoslanadi. Muassasangiz yoki nashriyotingizning o'z talablari bo'lishi mumkin - ishni boshlashdan oldin ularni ham tekshiring.</p>
+
+            <h2>Monografiya tuzilmasi</h2>
+            <p>Standart ilmiy monografiya quyidagi qismlardan iborat bo'ladi:</p>
+            <ul>
+                <li><strong>Titul varag'i</strong> - kitob nomi, muallif, nashriyot, nashr yili</li>
+                <li><strong>Titul orqasi</strong> - UDK va BBK indekslari, ISBN, taqrizchilar, mas'ul muharrir</li>
+                <li><strong>Annotatsiya</strong> - o'zbek, rus va ingliz tillarida, kalit so'zlar bilan</li>
+                <li><strong>Mundarija</strong></li>
+                <li><strong>So'z boshi (kirish)</strong> - muammoning dolzarbligi, tadqiqot maqsadi va ob'ekti</li>
+                <li><strong>Asosiy boblar</strong> - odatda 3-5 ta</li>
+                <li><strong>Xulosa</strong> - natijalar va amaliy tavsiyalar</li>
+                <li><strong>Foydalanilgan adabiyotlar ro'yxati</strong></li>
+                <li><strong>Ilovalar</strong> - jadval, diagramma, hisob-kitob, so'rovnoma</li>
+            </ul>
+
+            <h2>Mundarija namunasi</h2>
+            <p>Quyida umumlashtirilgan mundarija namunasi. Bob va paragraf nomlari sizning mavzuingizga moslashtiriladi:</p>
+            <ul>
+                <li><strong>SO'Z BOSHI</strong></li>
+                <li><strong>I BOB. Muammoning nazariy asoslari</strong>
+                    <ul>
+                        <li>1.1. Asosiy tushunchalar va ularning ta'rifi</li>
+                        <li>1.2. Masalaning o'rganilganlik darajasi</li>
+                        <li>1.3. Xorijiy tajriba tahlili</li>
+                        <li>I bob bo'yicha xulosa</li>
+                    </ul>
+                </li>
+                <li><strong>II BOB. Tadqiqot metodologiyasi va mavjud holat tahlili</strong>
+                    <ul>
+                        <li>2.1. Tadqiqot usullari va yondashuvlari</li>
+                        <li>2.2. Mavjud holatning tahlili</li>
+                        <li>2.3. Aniqlangan muammolar</li>
+                        <li>II bob bo'yicha xulosa</li>
+                    </ul>
+                </li>
+                <li><strong>III BOB. Muallif tadqiqotining natijalari</strong>
+                    <ul>
+                        <li>3.1. Taklif etilayotgan yondashuv</li>
+                        <li>3.2. Natijalar va ularning asoslanishi</li>
+                        <li>3.3. Amaliy tavsiyalar</li>
+                        <li>III bob bo'yicha xulosa</li>
+                    </ul>
+                </li>
+                <li><strong>UMUMIY XULOSA</strong></li>
+                <li><strong>FOYDALANILGAN ADABIYOTLAR</strong></li>
+                <li><strong>ILOVALAR</strong></li>
+            </ul>
+
+            <h2>Har bir qismga qo'yiladigan talablar</h2>
+            <ul>
+                <li><strong>So'z boshi</strong> - odatda 3-5 bet. Muammoning dolzarbligi, tadqiqot maqsadi, ilmiy yangilik va kitob kimga mo'ljallangani ko'rsatiladi.</li>
+                <li><strong>Boblar</strong> - hajmi taxminan teng bo'lgani ma'qul. Har bir bob oxirida qisqacha xulosa bo'lishi kerak.</li>
+                <li><strong>Xulosa</strong> - yangi ma'lumot kiritilmaydi, faqat boblardagi natijalar umumlashtiriladi.</li>
+                <li><strong>Adabiyotlar</strong> - GOST yoki APA bo'yicha rasmiylashtiriladi, matnda har biriga havola bo'lishi shart.</li>
+                <li><strong>Annotatsiya</strong> - uch tilda, har biri 150-250 so'z atrofida.</li>
+            </ul>
+
+            <h2>Hajm va texnik talablar</h2>
+            <ul>
+                <li>Umumiy hajm: odatda 150-300 bet yoki kamida 8-10 bosma taboq</li>
+                <li>Shrift: Times New Roman, 14 pt (asosiy matn uchun)</li>
+                <li>Qatorlar oralig'i: 1,5</li>
+                <li>Chekkalar: chapdan 3 sm, o'ngdan 1,5 sm, yuqori va pastdan 2 sm</li>
+                <li>Jadval, rasm va formulalar raqamlanadi va matnda havola qilinadi</li>
+                <li>Sahifa raqamlari - pastda markazda</li>
+            </ul>
+            <p>Aniq texnik talablar nashriyotga qarab farq qilishi mumkin, shuning uchun maketni boshlashdan oldin nashriyot bilan kelishing.</p>
+
+            <h2>Namunadan foydalanishda ko'p uchraydigan xato</h2>
+            <p>Tayyor namunani ko'chirib olib, faqat sarlavhalarni almashtirish - eng ko'p uchraydigan xato. Monografiyaning asosiy qiymati <strong>muallifning o'z natijalarida</strong>, ya'ni uchinchi bobda. Nazariy qism kuchli, amaliy qism bo'sh bo'lgan qo'lyozma taqrizdan o'tmaydi.</p>
+            <p>Namuna faqat tuzilma uchun mo'ljal bo'lishi kerak, mazmun esa to'liq sizniki bo'lsin. Antiplagiat tekshiruvi ham buni ko'rsatadi.</p>
+
+            <h2>Keyingi qadam</h2>
+            <p>Monografiya haqida batafsil: <a href="/blog/monografiya-nima-va-qanday-yoziladi">monografiya nima va yozish tartibi</a>. Talablar va hajm bo'yicha: <a href="/ilmiy-ishlar/monografiya">monografiyaga qo'yiladigan talablar</a>.</p>
+            <p>Yozish, tahrir, ISBN va nashr bo'yicha yordam kerak bo'lsa: <a href="/xizmatlar/monografiya-tayyorlash">monografiya yozish va nashr qilish xizmati</a>.</p>
+        `
+    },
+    {
+        id: 15,
+        slug: "bmi-namunasi-tuzilma-va-mundarija",
+        title: "BMI namunasi: bitiruv malakaviy ishi tuzilmasi va mundarija namunasi (2026)",
+        excerpt: "Bitiruv malakaviy ishi (BMI) namunasi: titul varag'idan ilovalargacha to'liq tuzilma, mundarija namunasi, hajm va antiplagiat talablari.",
+        category: "Ilmiy ishlar",
+        date: "2026-08-21",
+        readTime: "8 daqiqa",
+        content: `
+            <p>Bitiruv malakaviy ishini boshlayotgan talabaning birinchi savoli odatda bitta bo'ladi: <strong>BMI namunasi</strong> qanday ko'rinadi? Quyida ishning standart tuzilmasi, mundarija namunasi va har bir qismga qo'yiladigan talablar keltirilgan.</p>
+
+            <p>Muhim eslatma: har bir oliy ta'lim muassasasining o'z uslubiy ko'rsatmasi bor. Quyidagi namuna umumiy amaliyotga asoslanadi - kafedrangizdagi ko'rsatmani ham albatta oling.</p>
+
+            <h2>BMI tuzilmasi</h2>
+            <ul>
+                <li><strong>Titul varag'i</strong> - muassasa, fakultet, kafedra, mavzu, talaba va rahbar ma'lumotlari</li>
+                <li><strong>Topshiriq varaqasi</strong> - kafedra tomonidan tasdiqlangan vazifa</li>
+                <li><strong>Mundarija</strong></li>
+                <li><strong>Kirish</strong></li>
+                <li><strong>I bob</strong> - nazariy qism</li>
+                <li><strong>II bob</strong> - tahliliy qism</li>
+                <li><strong>III bob</strong> - amaliy qism va takliflar</li>
+                <li><strong>Xulosa va takliflar</strong></li>
+                <li><strong>Foydalanilgan adabiyotlar ro'yxati</strong></li>
+                <li><strong>Ilovalar</strong></li>
+            </ul>
+
+            <h2>Mundarija namunasi</h2>
+            <p>Bob nomlari mavzuingizga moslashtiriladi, tuzilma esa deyarli o'zgarmaydi:</p>
+            <ul>
+                <li><strong>KIRISH</strong></li>
+                <li><strong>I BOB. Mavzuning nazariy asoslari</strong>
+                    <ul>
+                        <li>1.1. Asosiy tushunchalar va ularning mohiyati</li>
+                        <li>1.2. Masalaning o'rganilganlik darajasi va normativ asoslar</li>
+                        <li>1.3. Xorijiy tajriba</li>
+                        <li>I bob bo'yicha xulosa</li>
+                    </ul>
+                </li>
+                <li><strong>II BOB. Mavjud holat tahlili</strong>
+                    <ul>
+                        <li>2.1. Tadqiqot ob'ekti haqida umumiy ma'lumot</li>
+                        <li>2.2. Ko'rsatkichlar tahlili</li>
+                        <li>2.3. Aniqlangan muammolar</li>
+                        <li>II bob bo'yicha xulosa</li>
+                    </ul>
+                </li>
+                <li><strong>III BOB. Takliflar va ularning samaradorligi</strong>
+                    <ul>
+                        <li>3.1. Muammoni hal qilish yo'llari</li>
+                        <li>3.2. Taklif etilayotgan chora-tadbirlar</li>
+                        <li>3.3. Kutilayotgan natijalar va hisob-kitob</li>
+                        <li>III bob bo'yicha xulosa</li>
+                    </ul>
+                </li>
+                <li><strong>XULOSA VA TAKLIFLAR</strong></li>
+                <li><strong>FOYDALANILGAN ADABIYOTLAR</strong></li>
+                <li><strong>ILOVALAR</strong></li>
+            </ul>
+
+            <h2>Kirish qismi namunasi</h2>
+            <p>Kirish - komissiya eng diqqat bilan o'qiydigan qism. Unda quyidagilar ketma-ket yoritiladi:</p>
+            <ul>
+                <li><strong>Mavzuning dolzarbligi</strong> - nima uchun aynan shu masala muhim</li>
+                <li><strong>Tadqiqot maqsadi</strong> - bitta aniq jumla</li>
+                <li><strong>Tadqiqot vazifalari</strong> - odatda 3-5 ta, boblarga mos keladi</li>
+                <li><strong>Tadqiqot ob'ekti va predmeti</strong></li>
+                <li><strong>Tadqiqot usullari</strong> - tahlil, taqqoslash, statistik usullar</li>
+                <li><strong>Ishning tuzilishi</strong> - necha bob, necha bet</li>
+            </ul>
+
+            <h2>Hajm va texnik talablar</h2>
+            <ul>
+                <li>Hajm: odatda 40-60 bet (ilovalarsiz)</li>
+                <li>Antiplagiat: originallik 70% va undan yuqori</li>
+                <li>Manbalar: kamida 20-30 ta</li>
+                <li>Shrift: Times New Roman, 14 pt</li>
+                <li>Qatorlar oralig'i: 1,5, abzats 1,25 sm</li>
+                <li>Chekkalar: chapdan 3 sm, o'ngdan 1,5 sm, yuqori va pastdan 2 sm</li>
+                <li>Havolalar kvadrat qavsda: [12] yoki [12, 45-bet]</li>
+            </ul>
+
+            <h2>Namuna bilan ishlashda nimaga ehtiyot bo'lish kerak</h2>
+            <p>Internetdan topilgan tayyor BMI ni asos qilib olish eng xavfli yo'l: bunday ishlar allaqachon antiplagiat bazasida bo'ladi va originallik foizi keskin tushadi. Namunadan faqat <strong>tuzilma va rasmiylashtirish</strong> uchun foydalaning, matn esa o'zingizniki bo'lsin.</p>
+            <p>Ikkinchi keng tarqalgan xato - uchinchi bobning bo'shligi. Nazariya va tahlil yaxshi yozilgan, lekin aniq takliflar va ularning hisob-kitobi yo'q ish past baholanadi.</p>
+
+            <h2>Keyingi qadam</h2>
+            <p>Batafsil qo'llanmalar: <a href="/blog/bitiruv-malakaviy-ishi-bmi-yozish-sirlari">BMI yozish tartibi bosqichma-bosqich</a> va <a href="/blog/bmi-nima-bitiruv-malakaviy-ishi-haqida-tolik-malumot">BMI nima - to'liq ma'lumot</a>.</p>
+            <p>Talablar bo'yicha: <a href="/ilmiy-ishlar/bitiruv-malakaviy-ishi-bmi">BMI ga qo'yiladigan talablar</a>. Yordam kerak bo'lsa: <a href="/xizmatlar/bmi-yozish">BMI yozish xizmati</a>.</p>
+        `
+    },
+    {
+        id: 16,
+        slug: "bitiruv-malakaviy-ishi-nizomi",
+        title: "Bitiruv malakaviy ishi nizomi: nima va unda nima belgilanadi?",
+        excerpt: "BMI nizomi nima, u nimani tartibga soladi va uni qayerdan olish kerak: hajm, muddat, antiplagiat, himoya tartibi va baholash mezonlari haqida.",
+        category: "Ilmiy ishlar",
+        date: "2026-08-21",
+        readTime: "6 daqiqa",
+        content: `
+            <p><strong>Bitiruv malakaviy ishi nizomi</strong> - BMI ni tayyorlash, topshirish va himoya qilish tartibini belgilaydigan rasmiy hujjat. Talabalar uni ko'pincha ish yozib bo'lgandan keyin qidiradi, holbuki undagi talablarni <strong>boshidan</strong> bilish ancha ko'p vaqtni tejaydi.</p>
+
+            <h2>Nizom nimani tartibga soladi?</h2>
+            <p>Nizom odatda quyidagi masalalarni qamrab oladi:</p>
+            <ul>
+                <li>BMI ning maqsadi va u qanday malakalarni tekshirishi</li>
+                <li>Mavzu tanlash va uni tasdiqlash tartibi</li>
+                <li>Ilmiy rahbar biriktirish va uning vazifalari</li>
+                <li>Ishning tuzilmasi va hajmi</li>
+                <li>Rasmiylashtirish talablari - shrift, oraliq, havolalar, ilovalar</li>
+                <li>Antiplagiat tekshiruvi va talab qilinadigan originallik foizi</li>
+                <li>Topshirish muddatlari va bosqichlari</li>
+                <li>Taqriz va kafedra muhokamasi tartibi</li>
+                <li>Himoya jarayoni va davlat attestatsiya komissiyasining ishi</li>
+                <li>Baholash mezonlari</li>
+                <li>Ish himoyaga qo'yilmaydigan yoki qaytariladigan holatlar</li>
+            </ul>
+
+            <h2>Nizomni qayerdan olish kerak?</h2>
+            <p>Bu yerda muhim jihat bor: <strong>yagona umumiy nizom yo'q</strong>. Har bir oliy ta'lim muassasasi umumiy normativ hujjatlar asosida o'z nizomini va uslubiy ko'rsatmasini tasdiqlaydi. Talablar yo'nalishga qarab ham farq qiladi - masalan, texnika yo'nalishida chizmalar, iqtisodiyotda hisob-kitoblar alohida talab qilinadi.</p>
+            <p>Shuning uchun internetdagi umumiy namunaga emas, aynan <strong>o'z muassasangizning amaldagi hujjatiga</strong> tayaning. Uni quyidagi manbalardan olish mumkin:</p>
+            <ul>
+                <li>Kafedra yoki dekanat - eng ishonchli manba</li>
+                <li>Muassasa rasmiy sayti - odatda "Talabalarga" yoki "Bitiruvchilarga" bo'limida</li>
+                <li>Ilmiy rahbaringiz - u amaldagi talablarni yaxshi biladi</li>
+                <li>Kafedraning uslubiy ko'rsatmasi - nizomni amaliy tilga o'girilgan shakli</li>
+            </ul>
+
+            <h2>Nizomdan nimani birinchi bo'lib bilib olish kerak</h2>
+            <p>Ish boshlashdan oldin quyidagi beshta raqamni aniqlab oling - ular butun rejangizni belgilaydi:</p>
+            <ul>
+                <li><strong>Hajm</strong> - necha bet, ilovalar hisobga olinadimi</li>
+                <li><strong>Antiplagiat foizi</strong> - minimal originallik talabi</li>
+                <li><strong>Manbalar soni</strong> - kamida nechta va qaysi yillardan</li>
+                <li><strong>Topshirish sanasi</strong> - va oraliq nazorat bosqichlari</li>
+                <li><strong>Boblar soni</strong> - odatda uch bob, lekin istisnolar bo'ladi</li>
+            </ul>
+            <p>Amaliyotda eng ko'p muammo aynan shu raqamlarni kech bilishdan kelib chiqadi: ish yozilib bo'lgandan keyin hajm yoki antiplagiat talabiga mos kelmagani ma'lum bo'ladi va qayta ishlashga to'g'ri keladi.</p>
+
+            <h2>Nizom talablari va amaliyot</h2>
+            <p>Nizomda yozilgan talablar minimal chegarani belgilaydi. Amalda komissiya bundan tashqari ishning mantiqiy izchilligiga, amaliy qismning kuchiga va himoya paytidagi javoblaringizga ham qaraydi. Ya'ni nizom talablariga rasman mos kelish - kerakli shart, lekin yetarli emas.</p>
+
+            <h2>Keyingi qadam</h2>
+            <p>BMI tuzilmasi va mundarija namunasi: <a href="/blog/bmi-namunasi-tuzilma-va-mundarija">BMI namunasi</a>. Yozish tartibi bosqichma-bosqich: <a href="/blog/bitiruv-malakaviy-ishi-bmi-yozish-sirlari">BMI yozish tartibi</a>.</p>
+            <p>Umumiy talablar: <a href="/ilmiy-ishlar/bitiruv-malakaviy-ishi-bmi">BMI ga qo'yiladigan talablar</a>. Professional yordam: <a href="/xizmatlar/bmi-yozish">BMI yozish xizmati</a>.</p>
+        `
     }
 ];
+
 
 
 

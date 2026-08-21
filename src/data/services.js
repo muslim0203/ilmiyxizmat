@@ -36,9 +36,143 @@ export const services = [
     price: "800 000",
     priceNote: "dan boshlab",
     popular: true,
-    metaTitle: "BMI yozish xizmati | Bitiruv malakaviy ishi | Ilmiyxizmat.uz",
-    metaDescription: "Bitiruv malakaviy ish (BMI) yozish xizmati. Antiplagiat 70%+, barcha yo'nalishlar bo'yicha, himoyaga tayyorlash."
-  },
+    metaTitle: "BMI yozish xizmati - bitiruv malakaviy ishi tayyorlash",
+    metaDescription: "Bitiruv malakaviy ishi (BMI) yozish xizmati 800 000 so'mdan. Barcha yo'nalishlar, antiplagiat 70%+, GOST rasmiylashtirish, taqdimot va himoyaga tayyorgarlik.",
+    content: [
+      {
+              heading: "Bitiruv malakaviy ishi (BMI) yozish xizmati",
+              paragraphs: [
+                "Bitiruv malakaviy ishi - bakalavriat bosqichini yakunlovchi mustaqil ilmiy-tadqiqot ishi. U talabaning to'rt yil davomida o'zlashtirgan bilimlarini amaliy masalaga qo'llay olishini ko'rsatadi va diplom olishning majburiy sharti hisoblanadi.",
+                "Ilmiyxizmat.uz jamoasi BMI ni mavzu tanlashdan himoyaga tayyorgarlikkacha bo'lgan barcha bosqichlarda tayyorlab beradi. Har bir ish tegishli yo'nalish bo'yicha mutaxassis tomonidan bajariladi va bosqichma-bosqich topshiriladi.",
+                "Xizmat barcha yo'nalishlar uchun ochiq: iqtisodiyot, pedagogika, filologiya, huquq, aniq va tabiiy fanlar, texnika, tibbiyot hamda ijtimoiy fanlar.",
+              ],
+            },
+      {
+              heading: "BMI tuzilmasi",
+              paragraphs: [
+                "Bitiruv malakaviy ishining tuzilmasi deyarli barcha oliy ta'lim muassasalarida bir xil bo'ladi:",
+              ],
+              list: [
+                "Titul varag'i va topshiriq varaqasi",
+                "Mundarija",
+                "Kirish - mavzuning dolzarbligi, maqsad, vazifalar, ob'ekt va predmet",
+                "I bob - nazariy qism, masalaning o'rganilganlik darajasi",
+                "II bob - tahliliy qism, mavjud holatni baholash",
+                "III bob - amaliy qism, takliflar va ularning asoslanishi",
+                "Xulosa va takliflar",
+                "Foydalanilgan adabiyotlar ro'yxati",
+                "Ilovalar - jadval, hisob-kitob, so'rovnoma natijalari",
+              ],
+            },
+      {
+              heading: "BMI yozish tartibi: bosqichma-bosqich",
+              paragraphs: [
+                "Ish oldindan kelishilgan reja asosida olib boriladi va har bir bosqich alohida topshiriladi - siz jarayonni boshidan oxirigacha kuzatib borasiz.",
+              ],
+              list: [
+                "Bepul konsultatsiya: yo'nalish, mavzu va kafedra talablari aniqlanadi.",
+                "Mavzuni tasdiqlash va ish rejasini (kalendar reja) tuzish.",
+                "Adabiyotlar bazasini yig'ish: normativ hujjatlar, ilmiy manbalar, statistika.",
+                "Kirish qismini yozish va rahbar bilan kelishish.",
+                "Boblarni ketma-ket yozish - har biri alohida topshiriladi.",
+                "Amaliy qism: hisob-kitoblar, tahlil, jadval va diagrammalar.",
+                "Xulosa va takliflarni shakllantirish.",
+                "Antiplagiat tekshiruvi va originallikni talab darajasiga yetkazish.",
+                "GOST bo'yicha rasmiylashtirish: mundarija, havolalar, ilovalar.",
+                "Taqdimot (prezentatsiya) va himoya nutqini tayyorlash.",
+              ],
+            },
+      {
+              heading: "BMI ga qo'yiladigan talablar",
+              paragraphs: [
+                "Talablar muassasa va yo'nalishga qarab biroz farq qiladi, lekin amaliyotda quyidagilar deyarli har doim so'raladi:",
+              ],
+              list: [
+                "Hajm: odatda 40-60 bet (ilovalarsiz).",
+                "Antiplagiat: originallik ko'rsatkichi 70% va undan yuqori.",
+                "Manbalar: kamida 20-30 ta, ularning aksariyati so'nggi yillar nashri.",
+                "Tuzilma: uch bob, har bir bob oxirida qisqacha xulosa.",
+                "Rasmiylashtirish: GOST talablari - shrift, oraliq, chekkalar, havolalar.",
+                "Amaliy qismning bo'lishi - faqat nazariya bilan cheklangan ish qaytariladi.",
+                "Ilmiy rahbar taqrizi va kafedra muhokamasidan o'tish.",
+              ],
+            },
+      {
+              heading: "Himoyaga tayyorgarlik",
+              paragraphs: [
+                "Yaxshi yozilgan ish ham zaif himoya tufayli past baholanishi mumkin. Shu sababli biz himoya bosqichini alohida tayyorlaymiz.",
+              ],
+              list: [
+                "Taqdimot slaydlari - odatda 10-12 ta, asosiy natijalar va grafiklar bilan.",
+                "Himoya nutqi - 7-10 daqiqaga mo'ljallangan matn.",
+                "Komissiya beradigan ehtimoliy savollar va ularga javoblar.",
+                "Ishning asosiy yangiligi va amaliy ahamiyatini qisqa ifodalash.",
+              ],
+            },
+      {
+              heading: "BMI narxi nimaga bog'liq",
+              paragraphs: [
+                "Xizmat narxi 800 000 so'mdan boshlanadi. Yakuniy summa quyidagi omillarga qarab shakllanadi:",
+              ],
+              list: [
+                "Yo'nalish va mavzuning murakkabligi.",
+                "Ish hajmi - bet soni va boblar miqdori.",
+                "Amaliy qism hajmi: hisob-kitob, so'rovnoma, statistik tahlil.",
+                "Grafik material: jadval, diagramma, chizmalar soni.",
+                "Talab qilinadigan antiplagiat foizi.",
+                "Tayyorlash muddati - shoshilinch buyurtmalar qimmatroq.",
+                "Sizda tayyor material - kurs ishlari, to'plangan ma'lumotlar - borligi.",
+              ],
+            },
+      {
+              heading: "Nima uchun Ilmiyxizmat.uz",
+              paragraphs: [
+                "Biz 5000 dan ortiq ilmiy ishni yakunlaganmiz va BMI bo'yicha eng katta tajribaga egamiz.",
+              ],
+              list: [
+                "Har bir yo'nalish bo'yicha mutaxassis mualliflar.",
+                "Bosqichma-bosqich topshirish va bo'lib to'lash imkoniyati.",
+                "Antiplagiat hisoboti har bir ish bilan birga.",
+                "Himoyagacha bepul tuzatishlar.",
+                "Taqdimot va himoya nutqi xizmat tarkibida.",
+                "To'liq maxfiylik - buyurtma ma'lumotlari uchinchi shaxsga berilmaydi.",
+              ],
+            },
+    ],
+    faq: [
+      {
+        question: "BMI yozish qancha vaqt oladi?",
+        answer: "O'rtacha 1-3 hafta. Aniq muddat yo'nalish, ish hajmi va amaliy qism murakkabligiga bog'liq. Sizda tayyor material bo'lsa, muddat qisqaradi.",
+      },
+      {
+        question: "BMI narxi qancha?",
+        answer: "Narx 800 000 so'mdan boshlanadi. Yakuniy summa yo'nalish, hajm, amaliy qism va muddatga qarab belgilanadi. Aniq narx uchun bepul konsultatsiya oling.",
+      },
+      {
+        question: "BMI necha bet bo'lishi kerak?",
+        answer: "Odatda 40-60 bet, ilovalar bundan tashqari. Aniq talab muassasangiz va kafedrangiz uslubiy ko'rsatmalarida belgilanadi.",
+      },
+      {
+        question: "Antiplagiat foizi qanday bo'ladi?",
+        answer: "Ish to'liq original yoziladi va topshirishdan oldin antiplagiat tizimida tekshiriladi. Odatda talab qilinadigan 70% dan yuqori ko'rsatkich ta'minlanadi, hisobot esa ish bilan birga topshiriladi.",
+      },
+      {
+        question: "Ishni bosqichma-bosqich olsam bo'ladimi?",
+        answer: "Ha, biz aynan shunday ishlaymiz. Har bob alohida topshiriladi, siz uni ko'rib chiqasiz va ilmiy rahbaringizga ko'rsatasiz. To'lov ham shu bosqichlarga bo'linadi.",
+      },
+      {
+        question: "Himoyaga tayyorgarlik ham kiradimi?",
+        answer: "Ha. Taqdimot slaydlari, 7-10 daqiqalik himoya nutqi va komissiya beradigan ehtimoliy savollarga javoblar tayyorlab beriladi.",
+      },
+      {
+        question: "Rahbarim tuzatish so'rasa nima bo'ladi?",
+        answer: "Tuzatishlar himoyagacha bepul kiritiladi. Ilmiy rahbar izohlari bo'yicha ishni qayta ko'rib chiqamiz.",
+      },
+      {
+        question: "Mavzuni o'zim tanlashim kerakmi?",
+        answer: "Shart emas. Mavzu allaqachon tasdiqlangan bo'lsa, shu bo'yicha ishlaymiz. Tanlanmagan bo'lsa, yo'nalishingiz va kafedra talablariga mos bir nechta variant taklif qilamiz.",
+      },
+    ],  },
   {
     id: 3,
     slug: "kurs-ishi-yozish",

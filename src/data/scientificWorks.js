@@ -15,8 +15,8 @@ export const scientificWorks = [
         ],
         duration: "1-3 hafta",
         relatedService: "bmi-yozish",
-        metaTitle: "Bitiruv malakaviy ishi (BMI) nima? | Ilmiyxizmat.uz",
-        metaDescription: "Bitiruv malakaviy ishi (BMI) haqida to'liq ma'lumot. Talablar, tuzilma, yozish tartibi."
+        metaTitle: "Bitiruv malakaviy ishi (BMI) nima? Talablar va yozish tartibi",
+        metaDescription: "Bitiruv malakaviy ishi (BMI) nima va unga qanday talablar qo'yiladi: hajm, antiplagiat foizi, tuzilma, manbalar soni va yozish tartibi."
     },
     {
         id: 2,
