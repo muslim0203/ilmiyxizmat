@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import { useData } from '../../lib/useData';
 import { useSiteSettings } from '../../context/SiteSettingsContext';
 import './Order.css';
@@ -35,6 +36,8 @@ const Order = () => {
                 title="Buyurtma berish - Ilmiy ish yozish xizmatiga buyurtma"
                 description="Ilmiy ish yozish xizmatiga buyurtma bering. BMI, dissertatsiya, ilmiy maqola, kurs ishi. 1 soat ichida javob beramiz. Bepul konsultatsiya."
             />
+            <Breadcrumbs items={[{ name: "Buyurtma", path: '/buyurtma' }]} />
+
             <section className="page-header">
                 <div className="container">
                     <span className="badge badge-gold">Buyurtma</span>

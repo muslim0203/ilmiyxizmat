@@ -1,4 +1,5 @@
 import SEO from '../../components/SEO/SEO';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 
 const Terms = () => {
     return (
@@ -8,6 +9,8 @@ const Terms = () => {
                 description="Ilmiyxizmat.uz foydalanish shartlari. Xizmatlarimizdan foydalanish qoidalari, to'lov va qaytarish shartlari."
                 noindex={true}
             />
+            <Breadcrumbs items={[{ name: "Foydalanish shartlari", path: '/terms' }]} />
+
             <section className="section">
                 <div className="container" style={{ maxWidth: '800px' }}>
                     <h1 className="mb-6">Foydalanish Shartlari</h1>

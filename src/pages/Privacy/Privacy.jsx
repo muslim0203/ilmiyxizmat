@@ -1,4 +1,5 @@
 import SEO from '../../components/SEO/SEO';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import { useSiteSettings } from '../../context/SiteSettingsContext';
 
 const Privacy = () => {
@@ -10,6 +11,8 @@ const Privacy = () => {
                 description="Ilmiyxizmat.uz maxfiylik siyosati. Shaxsiy ma'lumotlaringiz qanday to'planishi, ishlatilishi va himoya qilinishi haqida."
                 noindex={true}
             />
+            <Breadcrumbs items={[{ name: "Maxfiylik siyosati", path: '/privacy-policy' }]} />
+
             <section className="section">
                 <div className="container" style={{ maxWidth: '800px' }}>
                     <h1 className="mb-6">Maxfiylik Siyosati</h1>

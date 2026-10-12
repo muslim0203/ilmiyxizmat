@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import { useData } from '../../lib/useData';
 import { useSiteSettings } from '../../context/SiteSettingsContext';
 import { defaultSteps } from '../../data/services';
@@ -66,32 +67,6 @@ const ServiceDetail = () => {
         "serviceType": service.shortTitle || service.title
     };
 
-    // BreadcrumbList JSON-LD
-    const breadcrumbJsonLd = {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Bosh sahifa",
-                "item": SITE_URL
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Xizmatlar",
-                "item": `${SITE_URL}/xizmatlar`
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": service.title,
-                "item": `${SITE_URL}/xizmatlar/${service.slug}`
-            }
-        ]
-    };
-
     // FAQPage JSON-LD - Google natijalarida savol-javob ko'rinishini beradi
     const faqJsonLd = service.faq?.length ? {
         "@context": "https://schema.org",
@@ -103,7 +78,7 @@ const ServiceDetail = () => {
         }))
     } : null;
 
-    const schemas = [serviceJsonLd, breadcrumbJsonLd];
+    const schemas = [serviceJsonLd];
     if (faqJsonLd) schemas.push(faqJsonLd);
 
     return (
@@ -114,16 +89,7 @@ const ServiceDetail = () => {
                 jsonLd={schemas}
             />
 
-            {/* Breadcrumb */}
-            <nav className="breadcrumb" aria-label="Breadcrumb">
-                <div className="container">
-                    <ol>
-                        <li><Link to="/">Bosh sahifa</Link></li>
-                        <li><Link to="/xizmatlar">Xizmatlar</Link></li>
-                        <li aria-current="page">{service.title}</li>
-                    </ol>
-                </div>
-            </nav>
+            <Breadcrumbs items={[{ name: 'Xizmatlar', path: '/xizmatlar' }, { name: service.title, path: `/xizmatlar/${service.slug}` }]} />
 
             {/* Service Header */}
             <section className="service-header">

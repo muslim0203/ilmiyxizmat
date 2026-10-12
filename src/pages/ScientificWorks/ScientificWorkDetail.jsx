@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import { useData } from '../../lib/useData';
 import './ScientificWorkDetail.css';
 
@@ -36,50 +37,15 @@ const ScientificWorkDetail = () => {
         }))
     } : null;
 
-    // BreadcrumbList JSON-LD
-    const breadcrumbJsonLd = {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Bosh sahifa",
-                "item": "https://www.ilmiyxizmat.uz"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Ilmiy ishlar",
-                "item": "https://www.ilmiyxizmat.uz/ilmiy-ishlar"
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": work.title,
-                "item": `https://www.ilmiyxizmat.uz/ilmiy-ishlar/${work.slug}`
-            }
-        ]
-    };
-
     return (
         <>
             <SEO
                 title={work.metaTitle || work.title}
                 description={work.metaDescription || work.description}
-                jsonLd={faqJsonLd ? [breadcrumbJsonLd, faqJsonLd] : breadcrumbJsonLd}
+                jsonLd={faqJsonLd}
             />
 
-            {/* Breadcrumb */}
-            <nav className="breadcrumb" aria-label="Breadcrumb">
-                <div className="container">
-                    <ol>
-                        <li><Link to="/">Bosh sahifa</Link></li>
-                        <li><Link to="/ilmiy-ishlar">Ilmiy ishlar</Link></li>
-                        <li aria-current="page">{work.title}</li>
-                    </ol>
-                </div>
-            </nav>
+            <Breadcrumbs items={[{ name: 'Ilmiy ishlar', path: '/ilmiy-ishlar' }, { name: work.title, path: `/ilmiy-ishlar/${work.slug}` }]} />
 
             <section className="work-header">
                 <div className="container">

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import { useData } from '../../lib/useData';
 import './Pricing.css';
 
@@ -34,6 +35,8 @@ const Pricing = () => {
                 description="Ilmiy ishlar yozish narxlari: ilmiy maqola 100 000 so'mdan, kurs ishi 300 000, BMI 800 000, dissertatsiya va monografiya. Shaffof narxlar, bo'lib to'lash imkoniyati."
                 jsonLd={pricingJsonLd}
             />
+            <Breadcrumbs items={[{ name: "Narxlar", path: '/narxlar' }]} />
+
             <section className="page-header">
                 <div className="container">
                     <span className="badge badge-gold">Narxlar</span>

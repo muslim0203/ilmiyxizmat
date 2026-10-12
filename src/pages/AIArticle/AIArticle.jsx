@@ -9,6 +9,7 @@ import fileSaver from 'file-saver';
 const { saveAs } = fileSaver;
 import api from '../../lib/apiClient';
 import SEO from '../../components/SEO/SEO';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import './AIArticle.css';
 
 const AIArticle = () => {
@@ -290,6 +291,8 @@ OTHER CRITICAL RULES:
                 title="AI Maqola Yozish | Ilmiyxizmat.uz"
                 description="Sun'iy intellekt yordamida har qanday sohada va tilda ilmiy maqolalar yaratib, Word formatida yuklab oling."
             />
+
+            <Breadcrumbs items={[{ name: "AI maqola", path: '/ai-maqola' }]} />
 
             <div className="container">
                 <div className="ai-article-header">

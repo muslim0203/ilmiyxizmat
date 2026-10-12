@@ -11,6 +11,35 @@
 /** Qoralama maqolalar faqat dev da ochiladi (Node da import.meta.env yo'q - prod) */
 export const isPublished = (post) => !post.draft || Boolean(import.meta.env?.DEV);
 
+// Sarlavhadagi umumiy, mavzuni bildirmaydigan so'zlar
+const STOP_WORDS = new Set(['nima', 'qanday', 'yoziladi', 'yozish', 'tartibi', "to'liq", 'haqida', 'uchun', 'bilan', 'qilish', 'talablar', 'namunasi', 'ilmiy']);
+
+const titleWords = (post) => new Set(
+    post.title.toLowerCase().split(/[^a-z'ʻ’]+/).filter(w => w.length > 3 && !STOP_WORDS.has(w))
+);
+
+/**
+ * "O'xshash maqolalar": shu maqola bog'langan xizmatning qo'lda tanlangan
+ * relatedPosts ro'yxatida bor (+3), bir xil xizmatga bog'langan (+3), bir xil
+ * kategoriya (+1), sarlavhadagi umumiy so'zlar (+1 har biri). Teng bo'lsa yangisi.
+ */
+export function getRelatedPosts(post, allPosts, curatedSlugs = [], count = 3) {
+    const words = titleWords(post);
+    return allPosts
+        .filter(p => p.slug !== post.slug && isPublished(p))
+        .map(p => {
+            let score = 0;
+            if (curatedSlugs.includes(p.slug)) score += 3;
+            if (post.relatedService && p.relatedService === post.relatedService) score += 3;
+            if (p.category === post.category) score += 1;
+            for (const w of titleWords(p)) if (words.has(w)) score += 1;
+            return { p, score };
+        })
+        .sort((a, b) => b.score - a.score || b.p.date.localeCompare(a.p.date))
+        .slice(0, count)
+        .map(({ p }) => p);
+}
+
 export const blogPosts = [
     {
         id: 1,

@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import { useData } from '../../lib/useData';
 import { useSiteSettings } from '../../context/SiteSettingsContext';
 import './NashrDetail.css';
@@ -46,50 +47,15 @@ const NashrDetail = () => {
         }
     };
 
-    // BreadcrumbList JSON-LD
-    const breadcrumbJsonLd = {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Bosh sahifa",
-                "item": "https://www.ilmiyxizmat.uz"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Nashr",
-                "item": "https://www.ilmiyxizmat.uz/nashr"
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": pub.title,
-                "item": `https://www.ilmiyxizmat.uz/nashr/${pub.slug}`
-            }
-        ]
-    };
-
     return (
         <>
             <SEO
                 title={pub.metaTitle || pub.title}
                 description={pub.metaDescription || pub.description}
-                jsonLd={[pubJsonLd, breadcrumbJsonLd]}
+                jsonLd={pubJsonLd}
             />
 
-            {/* Breadcrumb */}
-            <nav className="breadcrumb" aria-label="Breadcrumb">
-                <div className="container">
-                    <ol>
-                        <li><Link to="/">Bosh sahifa</Link></li>
-                        <li><Link to="/nashr">Nashr</Link></li>
-                        <li aria-current="page">{pub.title}</li>
-                    </ol>
-                </div>
-            </nav>
+            <Breadcrumbs items={[{ name: 'Nashr', path: '/nashr' }, { name: pub.title, path: `/nashr/${pub.slug}` }]} />
 
             <section className="nashr-header">
                 <div className="container">

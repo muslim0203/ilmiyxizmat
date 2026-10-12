@@ -1,13 +1,29 @@
 import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
 import { useData } from '../../lib/useData';
+import { isPublished } from '../../data/blogPosts';
 import { useSiteSettings } from '../../context/SiteSettingsContext';
 import './Home.css';
+
+const FEATURED_POSTS = [
+    'monografiya-nima-va-qanday-yoziladi',
+    'bmi-nima-bitiruv-malakaviy-ishi-haqida-tolik-malumot',
+    'bmi-namunasi-tuzilma-va-mundarija',
+    'oquv-qollanma-qanday-yoziladi-talablar-va-tuzilma',
+    'ozbekistonda-ilmiy-maqola-nashr-qilish-narxlari-2026',
+    'oak-jurnallari-ruyxati-va-ulardan-otish-talablari',
+];
 
 const Home = () => {
     const { settings } = useSiteSettings();
     const { items: services } = useData('services');
     const popularServices = services.filter(s => s.popular);
+    const otherServices = services.filter(s => !s.popular);
+    const { items: blogPosts } = useData('blog');
+    // Eng ko'p qidiriladigan mavzular bo'yicha asosiy maqolalar
+    const featuredPosts = FEATURED_POSTS
+        .map(slug => blogPosts.find(p => p.slug === slug))
+        .filter(p => p && isPublished(p));
 
     const stats = [
         { number: '5000+', label: "Bajarilgan ishlar" },
@@ -159,6 +175,16 @@ const Home = () => {
                             </Link>
                         ))}
                     </div>
+                    {otherServices.length > 0 && (
+                        <div className="home-more-services">
+                            <span className="home-more-services-label">Boshqa xizmatlar:</span>
+                            {otherServices.map(service => (
+                                <Link to={`/xizmatlar/${service.slug}`} key={service.id} className="home-service-chip">
+                                    {service.icon} {service.shortTitle}
+                                </Link>
+                            ))}
+                        </div>
+                    )}
                     <div className="text-center mt-8">
                         <Link to="/xizmatlar" className="btn btn-primary btn-lg">
                             Barcha xizmatlar
@@ -209,6 +235,32 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Foydali maqolalar */}
+            {featuredPosts.length > 0 && (
+                <section className="section">
+                    <div className="container">
+                        <div className="section-title">
+                            <span className="badge badge-primary">Blog</span>
+                            <h2>Foydali maqolalar</h2>
+                            <p>Monografiya, BMI, o'quv qo'llanma va ilmiy maqola nashri bo'yicha qo'llanmalar</p>
+                        </div>
+                        <div className="home-posts-grid">
+                            {featuredPosts.map(post => (
+                                <Link to={`/blog/${post.slug}`} key={post.slug} className="home-post-card">
+                                    <span className="home-post-category">{post.category}</span>
+                                    <h3>{post.title}</h3>
+                                    <p>{post.excerpt}</p>
+                                    <span className="home-post-more">O'qish →</span>
+                                </Link>
+                            ))}
+                        </div>
+                        <div className="text-center mt-8">
+                            <Link to="/blog" className="btn btn-outline btn-lg">Barcha maqolalar</Link>
+                        </div>
+                    </div>
+                </section>
+            )}
 
             {/* CTA Section */}
             <section className="cta-section">

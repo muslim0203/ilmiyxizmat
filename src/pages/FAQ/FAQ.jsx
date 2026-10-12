@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import { useData } from '../../lib/useData';
 import './FAQ.css';
 
@@ -29,6 +30,8 @@ const FAQ = () => {
                 description="Ilmiy ishlar yozish xizmati haqida ko'p beriladigan savollar va javoblar. BMI, dissertatsiya, ilmiy maqola, narxlar, muddatlar haqida."
                 jsonLd={faqJsonLd}
             />
+            <Breadcrumbs items={[{ name: "Savol-javob", path: '/savol-javob' }]} />
+
             <section className="page-header">
                 <div className="container">
                     <span className="badge badge-primary">FAQ</span>

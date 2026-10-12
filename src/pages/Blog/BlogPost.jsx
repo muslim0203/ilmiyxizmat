@@ -1,9 +1,10 @@
 import { useParams, Link } from 'react-router-dom';
 import { sanitizeHtml } from '../../lib/sanitizeHtml';
 import SEO from '../../components/SEO/SEO';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import { useData } from '../../lib/useData';
 import contentDates from '../../data/contentDates.json';
-import { isPublished } from '../../data/blogPosts';
+import { isPublished, getRelatedPosts } from '../../data/blogPosts';
 import './BlogPost.css';
 
 const BlogPost = () => {
@@ -26,8 +27,8 @@ const BlogPost = () => {
         );
     }
 
-    const otherPosts = blogPosts.filter(p => p.id !== post.id && isPublished(p)).slice(0, 3);
     const relatedService = services.find(s => s.slug === post.relatedService);
+    const otherPosts = getRelatedPosts(post, blogPosts, relatedService?.relatedPosts);
     // Fayli hali qo'yilmagan (pending) namunalar prod da ko'rsatilmaydi
     const downloads = (post.downloads || []).filter(d => !d.pending || import.meta.env.DEV);
 
@@ -67,32 +68,6 @@ const BlogPost = () => {
         "inLanguage": "uz"
     };
 
-    // BreadcrumbList JSON-LD
-    const breadcrumbJsonLd = {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Bosh sahifa",
-                "item": "https://www.ilmiyxizmat.uz"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Blog",
-                "item": "https://www.ilmiyxizmat.uz/blog"
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": post.title,
-                "item": `https://www.ilmiyxizmat.uz/blog/${post.slug}`
-            }
-        ]
-    };
-
     return (
         <>
             <SEO
@@ -100,19 +75,10 @@ const BlogPost = () => {
                 description={post.excerpt}
                 type="article"
                 article={{ publishedTime: post.date, modifiedTime: dateModified, author: "Ilmiyxizmat.uz" }}
-                jsonLd={[articleJsonLd, breadcrumbJsonLd]}
+                jsonLd={articleJsonLd}
             />
 
-            {/* Breadcrumb */}
-            <nav className="breadcrumb" aria-label="Breadcrumb">
-                <div className="container">
-                    <ol>
-                        <li><Link to="/">Bosh sahifa</Link></li>
-                        <li><Link to="/blog">Blog</Link></li>
-                        <li aria-current="page">{post.title}</li>
-                    </ol>
-                </div>
-            </nav>
+            <Breadcrumbs items={[{ name: 'Blog', path: '/blog' }, { name: post.title, path: `/blog/${post.slug}` }]} />
 
             <section className="post-header">
                 <div className="container">
@@ -189,7 +155,7 @@ const BlogPost = () => {
                     )}
 
                     <div className="related-posts">
-                        <h3>Boshqa maqolalar</h3>
+                        <h3>O'xshash maqolalar</h3>
                         <div className="related-grid">
                             {otherPosts.map(p => (
                                 <Link to={`/blog/${p.slug}`} key={p.id} className="related-card">

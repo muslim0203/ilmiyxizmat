@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import { useData } from '../../lib/useData';
 import { isPublished } from '../../data/blogPosts';
 import './Blog.css';
@@ -27,6 +28,8 @@ const Blog = () => {
                 description="Ilmiy ishlar yozish bo'yicha foydali maqolalar: BMI qanday yoziladi, APA-7 format, antiplagiat, OAK jurnal talablari va boshqalar."
                 jsonLd={blogJsonLd}
             />
+            <Breadcrumbs items={[{ name: "Blog", path: '/blog' }]} />
+
             <section className="page-header">
                 <div className="container">
                     <span className="badge badge-primary">Blog</span>

@@ -413,3 +413,43 @@
         text-align: center;
     }
 }
+
+/* ===== "Boshqa xizmatlar" kartalari =====
+   Uslub Home.css dagi .service-card bilan bir xil. Ilgari faqat Home.css da
+   bo'lgani uchun sahifa to'g'ridan-to'g'ri ochilganda kartalar uslubsiz chiqardi. */
+.other-services-grid .service-card {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-6);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    border: 1px solid var(--gray-100);
+}
+
+.other-services-grid .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-light);
+}
+
+.other-services-grid .service-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-4);
+}
+
+.other-services-grid .service-card h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-3);
+}
+
+.other-services-grid .service-card p {
+    font-size: var(--font-size-sm);
+    color: var(--gray-500);
+    margin-bottom: var(--spacing-4);
+}
+
+.other-services-grid .service-link {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--gold);
+}

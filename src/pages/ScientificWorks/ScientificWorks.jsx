@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import { useData } from '../../lib/useData';
 import './ScientificWorks.css';
 
@@ -28,6 +29,8 @@ const ScientificWorks = () => {
                 description="Har bir ilmiy ish turiga talablar: hajm, antiplagiat foizi, manbalar soni va muddat. BMI, kurs ishi, magistrlik va doktorlik dissertatsiyasi, maqola, monografiya."
                 jsonLd={worksJsonLd}
             />
+            <Breadcrumbs items={[{ name: "Ilmiy ishlar", path: '/ilmiy-ishlar' }]} />
+
             <section className="page-header">
                 <div className="container">
                     <span className="badge badge-primary">Ilmiy ishlar</span>

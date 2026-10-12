@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import SEO from '../../components/SEO/SEO';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import { useSiteSettings } from '../../context/SiteSettingsContext';
 import './Contact.css';
 
@@ -52,6 +53,8 @@ const Contact = () => {
                 description={`Ilmiyxizmat.uz bilan bog'laning. Telefon: ${settings.phone}. Telegram: ${settings.telegram}. Email: ${settings.email}. 24/7 aloqadamiz. Bepul konsultatsiya.`}
                 jsonLd={contactJsonLd}
             />
+            <Breadcrumbs items={[{ name: "Aloqa", path: '/aloqa' }]} />
+
             <section className="page-header">
                 <div className="container">
                     <span className="badge badge-primary">Aloqa</span>

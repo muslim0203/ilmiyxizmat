@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import './About.css';
 
 const About = () => {
@@ -33,6 +34,8 @@ const About = () => {
                 description="Ilmiyxizmat.uz - 2017 yildan buyon O'zbekistonda ilmiy xizmatlar ko'rsatib kelmoqdamiz. 7 yillik tajriba, 5000+ muvaffaqiyatli loyiha, 50+ mutaxassis."
                 jsonLd={aboutJsonLd}
             />
+            <Breadcrumbs items={[{ name: "Biz haqimizda", path: '/biz-haqimizda' }]} />
+
             <section className="page-header">
                 <div className="container">
                     <span className="badge badge-primary">Kompaniya</span>

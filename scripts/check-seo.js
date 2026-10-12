@@ -86,6 +86,14 @@ for (const file of files) {
         }
         const d = descs[0] ?? '';
         if (d.length < 70 || d.length > 170) warnings.push(`${where}: description uzunligi ${d.length} (tavsiya 70-160)`);
+
+        // Ichki sahifada ko'rinadigan breadcrumb va BreadcrumbList sxemasi
+        if (path !== '/') {
+            const navs = (html.match(/<nav[^>]*class="breadcrumb"/g) || []).length;
+            const lists = (head.match(/"@type":"BreadcrumbList"/g) || []).length;
+            if (navs !== 1) errors.push(`${where}: ko'rinadigan breadcrumb soni ${navs}`);
+            if (lists !== 1) errors.push(`${where}: BreadcrumbList sxemasi soni ${lists}`);
+        }
     }
 
     pages.set(path, { noindex, title: titles[0], description: descs[0], html });

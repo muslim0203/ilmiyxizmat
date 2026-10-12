@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import { useData } from '../../lib/useData';
 import './Nashr.css';
 
@@ -28,6 +29,8 @@ const Nashr = () => {
                 description="Ilmiy maqolalarni OAK jurnallari va xalqaro konferensiyalarda nashr qilish. Rasmiy sertifikat olish. Tezkor nashr xizmati."
                 jsonLd={nashrJsonLd}
             />
+            <Breadcrumbs items={[{ name: "Nashr", path: '/nashr' }]} />
+
             <section className="page-header">
                 <div className="container">
                     <span className="badge badge-primary">Nashr</span>

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import { useData } from '../../lib/useData';
 import './Services.css';
 
@@ -29,6 +30,8 @@ const Services = () => {
                 jsonLd={servicesJsonLd}
             />
             {/* Page Header */}
+            <Breadcrumbs items={[{ name: "Xizmatlar", path: '/xizmatlar' }]} />
+
             <section className="page-header">
                 <div className="container">
                     <span className="badge badge-primary">Xizmatlar</span>
