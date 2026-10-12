@@ -24,7 +24,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir   = join(__dirname, '..');
 export const DATES_FILE = join(rootDir, 'src', 'data', 'contentDates.json');
 
-const src = (file) => readFileSync(join(rootDir, 'src', 'pages', file), 'utf-8');
+// CRLF -> LF: Windows (autocrlf) va Vercel (LF) da hash bir xil chiqishi uchun
+const src = (file) => readFileSync(join(rootDir, 'src', 'pages', file), 'utf-8').replace(/\r\n/g, '\n');
 const pick = (items, keys) => items.map(i => keys.map(k => i[k]));
 
 // Statik sahifa kontenti = sahifa komponenti + u ko'rsatadigan ma'lumotlar
