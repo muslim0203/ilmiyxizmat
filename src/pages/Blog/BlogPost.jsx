@@ -3,12 +3,16 @@ import { sanitizeHtml } from '../../lib/sanitizeHtml';
 import SEO from '../../components/SEO/SEO';
 import { useData } from '../../lib/useData';
 import contentDates from '../../data/contentDates.json';
+import { isPublished } from '../../data/blogPosts';
 import './BlogPost.css';
 
 const BlogPost = () => {
     const { slug } = useParams();
     const { items: blogPosts, getBySlug } = useData('blog');
-    const post = getBySlug(slug);
+    const { items: services } = useData('services');
+    const found = getBySlug(slug);
+    // Qoralama (draft) maqola faqat dev da ochiladi - prod da prerender ham qilinmaydi
+    const post = found && isPublished(found) ? found : null;
 
     if (!post) {
         return (
@@ -22,7 +26,10 @@ const BlogPost = () => {
         );
     }
 
-    const otherPosts = blogPosts.filter(p => p.id !== post.id).slice(0, 3);
+    const otherPosts = blogPosts.filter(p => p.id !== post.id && isPublished(p)).slice(0, 3);
+    const relatedService = services.find(s => s.slug === post.relatedService);
+    // Fayli hali qo'yilmagan (pending) namunalar prod da ko'rsatilmaydi
+    const downloads = (post.downloads || []).filter(d => !d.pending || import.meta.env.DEV);
 
     // Haqiqiy o'zgarish sanasi - scripts/content-dates.js kontent hash i bo'yicha yuritadi
     const modified = contentDates[`/blog/${post.slug}`]?.modified;
@@ -89,7 +96,7 @@ const BlogPost = () => {
     return (
         <>
             <SEO
-                title={post.title}
+                title={post.metaTitle || post.title}
                 description={post.excerpt}
                 type="article"
                 article={{ publishedTime: post.date, modifiedTime: dateModified, author: "Ilmiyxizmat.uz" }}
@@ -122,6 +129,12 @@ const BlogPost = () => {
             <section className="section">
                 <div className="container">
                     <article className="post-content">
+                        {post.shortAnswer && (
+                            <div className="post-short-answer">
+                                <strong>Qisqacha javob</strong>
+                                <p>{post.shortAnswer}</p>
+                            </div>
+                        )}
                         <p className="lead" style={{fontWeight: "bold"}}>{post.excerpt}</p>
                         {post.content ? (
                             <div dangerouslySetInnerHTML={{ __html: sanitizeHtml(post.content) }} />
@@ -136,11 +149,44 @@ const BlogPost = () => {
                         )}
                     </article>
 
-                    <div className="post-cta">
-                        <h3>Yordam kerakmi?</h3>
-                        <p>Professional xizmatlarimizdan foydalaning</p>
-                        <Link to="/buyurtma" className="btn btn-gold">Buyurtma berish</Link>
-                    </div>
+                    {downloads.length > 0 && (
+                        <div className="post-downloads">
+                            <h3>Namunani yuklab olish</h3>
+                            <ul>
+                                {downloads.map(d => (
+                                    <li key={d.file}>
+                                        {d.pending ? (
+                                            <span className="post-download-pending">
+                                                {d.label} ({d.format}) - fayl hali yo'q: <code>public{d.file}</code> ga qo'ying
+                                                va <code>pending</code> ni olib tashlang (faqat dev da ko'rinadi)
+                                            </span>
+                                        ) : (
+                                            <a href={d.file} download>{d.label} ({d.format})</a>
+                                        )}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+
+                    {relatedService ? (
+                        <div className="post-cta">
+                            <span className="post-cta-label">Mavzuga oid xizmat</span>
+                            <h3>{relatedService.icon} {relatedService.title}</h3>
+                            <p>{relatedService.description}</p>
+                            <p className="post-cta-price">{relatedService.price} so'm {relatedService.priceNote}</p>
+                            <div className="post-cta-actions">
+                                <Link to={`/xizmatlar/${relatedService.slug}`} className="btn btn-gold">Xizmat haqida batafsil</Link>
+                                <Link to={`/buyurtma?xizmat=${relatedService.slug}`} className="btn btn-white">Narxni bilish</Link>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="post-cta">
+                            <h3>Yordam kerakmi?</h3>
+                            <p>Professional xizmatlarimizdan foydalaning</p>
+                            <Link to="/buyurtma" className="btn btn-gold">Buyurtma berish</Link>
+                        </div>
+                    )}
 
                     <div className="related-posts">
                         <h3>Boshqa maqolalar</h3>

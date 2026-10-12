@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
 import { useData } from '../../lib/useData';
+import { isPublished } from '../../data/blogPosts';
 import './Blog.css';
 
 const Blog = () => {
@@ -37,7 +38,7 @@ const Blog = () => {
             <section className="section">
                 <div className="container">
                     <div className="blog-grid">
-                        {blogPosts.map(post => (
+                        {blogPosts.filter(isPublished).map(post => (
                             <Link to={`/blog/${post.slug}`} key={post.id} className="blog-card">
                                 <div className="blog-card-image">📄</div>
                                 <div className="blog-card-content">

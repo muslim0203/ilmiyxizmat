@@ -1,4 +1,15 @@
 // ===== BLOG MAQOLALARI =====
+//
+// Ixtiyoriy maydonlar:
+//   relatedService: xizmat slug   - maqola oxiridagi "Mavzuga oid xizmat" bloki
+//   shortAnswer:    matn          - sahifa boshidagi "Qisqacha javob" bloki
+//   downloads:      [{ label, format, file, pending? }] - yuklab olinadigan namuna.
+//                   Faylni public/ ga qo'ying (masalan public/files/namuna/x.docx ->
+//                   file: "/files/namuna/x.docx") va pending ni olib tashlang.
+//   draft: true     - qoralama: faqat dev da ko'rinadi
+
+/** Qoralama maqolalar faqat dev da ochiladi (Node da import.meta.env yo'q - prod) */
+export const isPublished = (post) => !post.draft || Boolean(import.meta.env?.DEV);
 
 export const blogPosts = [
     {
@@ -9,6 +20,7 @@ export const blogPosts = [
         category: "Formatlash",
         date: "2024-02-15",
         readTime: "8 daqiqa",
+        relatedService: "apa-7-formatlash",
         content: `
             <p>Ilmiy ishlar, jumladan, <strong>Bitiruv malakaviy ishi (BMI)</strong>, magistrlik va doktorlik dissertatsiyalari (PhD, DSc) yoki OAK jurnallari uchun ilmiy maqolalar yozishda eng muhim talablardan biri bu - matnni to'g'ri formatlashdir. O'zbekistonda tadqiqotchilar asosan ikki formatga duch kelishadi: <strong>GOST standarti</strong> va xalqaro miqyosdagi <strong>APA 7 formati</strong>.</p>
             
@@ -41,6 +53,7 @@ export const blogPosts = [
         category: "Antiplagiat",
         date: "2024-03-01",
         readTime: "9 daqiqa",
+        relatedService: "antiplagiat-tekshirish",
         content: `
             <p><strong>Antiplagiat tizimidan o'tish</strong> bugungi kunda talabalar, magistrantlar hamda ilmiy darajaga da'vogarlar uchun (PhD va DSc) eng dolzarb masalalardan biridir. O'zbekistonning barcha OTMlarida hamda OAK jurnallarida, dissertatsiyalar, BMI (bitiruv malakaviy ishlari), MD (magistrlik dissertatsiyalari) va hatto ilmiy maqolalar qat'iy tekshiruvdan o'tkaziladi.</p>
 
@@ -75,6 +88,7 @@ export const blogPosts = [
         category: "Ilmiy ishlar",
         date: "2024-02-10",
         readTime: "12 daqiqa",
+        relatedService: "bmi-yozish",
         content: `
             <p>To'rt yillik bakalavriat ta'limining mukammal yakuni shubhasiz - <strong>Bitiruv malakaviy ishi (BMI)</strong> hisoblanadi. BMIni to'g'ri yozish, ilmiy bazani qidirish, va OTM antiplagiat talabidan eson-omon o'tish ko'plab talabalarda qo'rquv va asabbuzarliklarni keltirib chiqarishi sir emas. Quyida biz BMI yozishning noldan tortib to himoyagacha bo'lgan sirlarini bo'lishamiz.</p>
 
@@ -101,13 +115,32 @@ export const blogPosts = [
     {
         id: 4,
         slug: "scopus-va-web-of-science-ilmiy-maqola-nashr",
-        title: "Scopus va Web of Science xalqaro bazalarida maqola chop etish",
-        excerpt: "Qanday qilib Scopus (Q1, Q2, Q3, Q4) yoki Web of Science nufuzli jurnallariga maqola yozish, yuborish va qabul qildirish sirlari haqida mufassal ma'lumot.",
+        title: "Scopus jurnaliga maqola chiqarish: bosqichlar, muddat, narx",
+        excerpt: "Scopus jurnaliga maqola chiqarish: jurnal va kvartil tanlash, IMRAD tuzilmasi, yuborish va taqriz bosqichlari, muddat, APC to'lovi va yirtqich jurnallar.",
         category: "Nashr",
         date: "2024-01-20",
         readTime: "15 daqiqa",
+        relatedService: "ilmiy-maqola-yozish",
         content: `
             <p>Hozirgi kunda ilm-fan yutuqlari xalqaro darajada ko'rinishi uchun doktorantlar (PhD va DSc), hamda professor-o'qituvchilardan <strong>Scopus</strong> yoki <strong>Web of Science (WoS)</strong> xalqaro bazalaridagi jurnalga maqola chop ettirish talab etiladi. Buning sababi, ushbu bazalarning haqiqiy sifatli ilm maskani ekani hamda O'zbekiston ilm-fani indikatorini xalqaro miqyosga olib chiqishidir.</p>
+
+            <h2>Scopus jurnaliga maqola chiqarish bosqichlari</h2>
+            <ul>
+                <li><strong>1. Jurnal tanlash.</strong> Mavzuingizga mos, Scopus bazasida <strong>amalda indekslanayotgan</strong> jurnalni toping. Jurnalning holati va kvartilini (Q1-Q4) Scopus Sources ro'yxati hamda SCImago (SJR) saytida tekshiring.</li>
+                <li><strong>2. Jurnal talablarini o'rganish.</strong> Har bir jurnalning mualliflar uchun yo'riqnomasi (Guide for Authors) bor: hajm, tuzilma, havola uslubi (ko'pincha APA), annotatsiya hajmi.</li>
+                <li><strong>3. Maqolani yozish.</strong> Matn IMRAD tuzilmasida, ilmiy ingliz tilida yoziladi (pastda batafsil).</li>
+                <li><strong>4. Yuborish.</strong> Maqola jurnalning onlayn tizimi orqali, qo'shimcha xat (cover letter) bilan yuboriladi.</li>
+                <li><strong>5. Taqriz (peer review).</strong> Muharrir maqolani dastlabki ko'rikdan o'tkazadi, so'ng u mustaqil taqrizchilarga yuboriladi.</li>
+                <li><strong>6. Qayta ishlash.</strong> Taqrizchilar izohlari bo'yicha maqola tuzatiladi va javob xati bilan qayta yuboriladi.</li>
+                <li><strong>7. Qabul va nashr.</strong> Maqola qabul qilingach, tahrir va maketdan so'ng chop etiladi va bazada indekslanadi.</li>
+            </ul>
+
+            <h2>Scopus jurnaliga maqola chiqarish muddati</h2>
+            <p>Muddat jurnalga qarab juda farq qiladi. Taqriz bosqichining o'zi bir necha haftadan bir necha oygacha davom etishi mumkin, qayta ishlash va nashr navbati ham vaqt oladi - shuning uchun maqolani himoya muddatidan ancha oldin yuborish kerak. Jurnalning o'rtacha ko'rib chiqish muddati odatda uning saytida ko'rsatiladi.</p>
+
+            <h2>Scopus jurnaliga maqola chiqarish narxi</h2>
+            <p>Ko'p obunaviy jurnallar mualliflardan nashr to'lovi olmaydi. Ochiq kirishli (open access) jurnallar esa odatda <strong>APC</strong> (article processing charge) - maqolani nashrga tayyorlash to'lovini oladi; uning miqdori jurnal saytida ochiq ko'rsatiladi. Kafolatlangan tez nashr evaziga katta pul so'ralishi - yirtqich jurnal belgisi bo'lishi mumkin (pastda batafsil).</p>
+            <p>Maqolani tayyorlash, jurnal tanlash va talablarga moslashtirish bo'yicha xizmatimiz narxi ish hajmiga qarab kelishiladi: <a href="/xizmatlar/ilmiy-maqola-yozish">ilmiy maqola yozish xizmati</a>.</p>
 
             <h2>Scopus maqolasi uchun IMRAD tuzilmasi</h2>
             <p>Local tarzda, OAK jurnallariga yozilgan matn uslubida nufuzli jurnallarga borish - bu to'g'ridan-to'g'ri "Reject" (Rad etildi) javobini olish demakdir. Xalqaro jurnallar qat'iy ravishda quyidagi <strong>IMRAD</strong> strukturasiga rioya qilishni so'raydi:</p>
@@ -129,17 +162,38 @@ export const blogPosts = [
     {
         id: 5,
         slug: "oak-jurnallari-ruyxati-va-ulardan-otish-talablari",
-        title: "Oliy Attestatsiya Komissiyasi (OAK) jurnallari ro'yxati va ularda maqola nashr etish",
-        excerpt: "Tadqiqotchilar uchun O'zbekistondagi OAK ruyxatidan o'tgan jurnallar haqida, talablar va maqola chop etishning amaliy jarayoni.",
+        title: "OAK jurnallari ro'yxati 2026: ixtisoslik bo'yicha jurnal tanlash",
+        excerpt: "OAK jurnallari ro'yxati 2026: ro'yxatni qayerdan topish, ixtisoslik shifri bo'yicha jurnal tanlash, jurnalning OAK holatini tekshirish va maqolaga qo'yiladigan talablar.",
         category: "Nashr",
         date: "2023-12-18",
-        readTime: "7 daqiqa",
+        readTime: "10 daqiqa",
+        relatedService: "oak-jurnalga-chiqarish",
         content: `
             <p>PhD (falsafa doktori) yoki DSc (fan doktori) kabi ilmiy darajalarni himoya qilish uchun O'zbekiston amaliyotida ko'plab chop etilgan ishlar talab qilinadi. Bular orasida eng muhimi — OAK (Oliy Attestatsiya Komissiyasi) e'tirof etadigan nufuzli mahalliy jurnallardir.</p>
 
             <h2>OAK jurnallariga maqola topshirish tushunchasi</h2>
             <p>Agar jurnalingiz OAK ro'yxatida bo'lmasa, uni disertatsiya himoyasida inobatga olinishi qiyin. OAK ro'yxatiga asosan O'zbekistonning markaziy hamda yirik OTMlari qoshida chiqadigan ilmiy xabarnomalar kiradi (Masalan, O'zMU xabarlari, Moliya jurnali va hokazo). Bunday jurnallar odatda O'zbek, Rus va Ingliz tillarida material qabul qiladi.</p>
             
+            <h2>OAK jurnallari ro'yxatini qayerdan topish mumkin</h2>
+            <p>Dissertatsiya natijalari chop etilishi mumkin bo'lgan jurnallar ro'yxati Oliy attestatsiya komissiyasi tomonidan tasdiqlanadi va vaqti-vaqti bilan yangilanadi. Shuning uchun maqola yuborishdan oldin jurnal <strong>amaldagi</strong> ro'yxatda ekanini tekshirish shart.</p>
+            <p>Ro'yxat bilan qulay ishlash uchun <a href="https://ilmiz.uz">ilmiz.uz</a> ochiq indeksidan foydalanish mumkin: unda OAK ro'yxatidagi jurnallar, ularning OAK holati, ixtisoslik kodlari va ISSN raqamlari jamlangan, jurnallarni soha va kalit so'z bo'yicha qidirish mumkin.</p>
+
+            <h2>Ixtisoslik bo'yicha jurnal tanlash</h2>
+            <p>OAK ro'yxatidagi har bir jurnal muayyan ixtisosliklar (fan sohalari) bo'yicha maqolalarni qabul qiladi. Maqolangiz dissertatsiya himoyasida hisobga olinishi uchun jurnal <strong>sizning ixtisoslik shifringiz</strong> bo'yicha ro'yxatga kiritilgan bo'lishi kerak. Tanlash tartibi:</p>
+            <ul>
+                <li><strong>Ixtisoslik shifrini aniqlang</strong> - dissertatsiyangiz qaysi ixtisoslik bo'yicha himoya qilinishini ilmiy rahbaringiz bilan aniqlashtiring.</li>
+                <li><strong>Shu shifr bo'yicha jurnallarni saralang</strong> - ilmiz.uz da jurnallarni ixtisoslik kodi bo'yicha filtrlash mumkin.</li>
+                <li><strong>Jurnalning OAK holatini tekshiring</strong> - jurnal ro'yxatdan chiqarilgan bo'lsa, undagi yangi maqolalar hisobga olinmasligi mumkin.</li>
+                <li><strong>Talablar va muddatni solishtiring</strong> - til, hajm, rasmiylashtirish va navbatdagi son chiqish sanasi har jurnalda har xil.</li>
+            </ul>
+
+            <h2>Jurnal OAK ro'yxatida ekanini qanday tekshirish</h2>
+            <ul>
+                <li>Jurnal nomi va <strong>ISSN</strong> raqamini ro'yxatdagi ma'lumot bilan solishtiring - nomi o'xshash, lekin ro'yxatda yo'q jurnallar uchraydi.</li>
+                <li>Jurnal qaysi ixtisosliklar bo'yicha kiritilganini tekshiring.</li>
+                <li>Jurnal ro'yxatga qachon kiritilganiga e'tibor bering: maqolaning chop etilgan sanasi jurnal ro'yxatda bo'lgan davrga to'g'ri kelishi kerak.</li>
+            </ul>
+
             <h2>Rasmiylashtirish va Asosiy talablar</h2>
             <ul>
                 <li><strong>Muallif ma'lumotlari:</strong> F.I.O, asosiy ish joyi (affiliatsiya), lavozim va ORCID identifikatori to'g'ri ko'rsatilishi lozim.</li>
@@ -149,6 +203,8 @@ export const blogPosts = [
             </ul>
 
             <p>Mavzuyingiz va yo'nalishingiz qanday bo'lmasin, OAK ilmiy jurnallarida zudlik bilan kerakli bo'lgan nashr ishlarini amalga oshirishingiz uchun jamoamiz malakali yordam bera oladi. Zero vaqt tejash bu muvaffaqiyat garovidir!</p>
+            <h2>OAK jurnaliga maqola chiqarish muddati va narxi</h2>
+            <p>Muddat jurnalning navbatdagi soni va taqriz jarayoniga bog'liq. Bizning amaliyotimizda OAK jurnaliga maqola chiqarish odatda <strong>1-4 hafta</strong> oladi, xizmat narxi <strong>350 000 so'mdan</strong> boshlanadi. Batafsil: <a href="/xizmatlar/oak-jurnalga-chiqarish">OAK jurnaliga maqola chiqarish xizmati</a>. Nashr narxlarini solishtirish uchun: <a href="/blog/ozbekistonda-ilmiy-maqola-nashr-qilish-narxlari-2026">O'zbekistonda ilmiy maqola nashr qilish narxlari (2026)</a>.</p>
         `
     },
     {
@@ -159,6 +215,7 @@ export const blogPosts = [
         category: "Ilmiy ishlar",
         date: "2023-11-25",
         readTime: "11 daqiqa",
+        relatedService: "magistrlik-dissertatsiyasi-yozish",
         content: `
             <p>Oliy ta'limning magistratura bosqichi chuqur ixtisoslashish va mustaqil tadqiqot ko'nikmalarini shakllantirishga qaratilgan bo'lib, buning eng yuqori nuqtasi hisoblangan <strong>Magistrlik dissertatsiyasini</strong> (MD) himoya qilish qadamidir.</p>
             
@@ -186,6 +243,7 @@ export const blogPosts = [
         category: "Nashr",
         date: "2026-03-16",
         readTime: "8 daqiqa",
+        relatedService: "oak-jurnalga-chiqarish",
         content: `
             <p>Ilmiy maqola nashr qilish bugungi kunda ilmiy faoliyat bilan shug'ullanayotgan <strong>tadqiqotchilar, magistrantlar, doktorantlar</strong> va professor-o'qituvchilar uchun muhim jarayondir. O'zbekistonda ilmiy daraja olish, attestatsiyadan o'tish yoki ilmiy reytingni oshirish uchun ko'pincha ilmiy maqola nashr qilish talab qilinadi.</p>
             <p>Quyida <strong>2026 yil</strong> holatiga ko'ra ilmiy maqolalarni nashr qilish narxlari, jurnal turlari va ularga ta'sir qiluvchi omillar haqida batafsil ma'lumot beramiz.</p>
@@ -278,6 +336,7 @@ export const blogPosts = [
         category: "Ilmiy ishlar",
         date: "2026-03-16",
         readTime: "7 daqiqa",
+        relatedService: "bmi-yozish",
         content: `
             <p><strong>BMI nima?</strong> — Bu savol har yili minglab bakalavr talabalari uchun eng dolzarb savolga aylanadi. BMI — <strong>Bitiruv Malakaviy Ishi</strong> degan ma'noni anglatib, bakalavr (4 yillik) ta'limining yakuniy bosqichida tayyorlanadigan ilmiy-amaliy ishdir.</p>
             <p>BMI talabaning 4 yil davomida orttirgan bilimi va ko'nikmalarini ko'rsatadigan asosiy hujjat hisoblanadi. Uni muvaffaqiyatli himoya qilish talabaga bakalavr diplomini olish imkonini beradi.</p>
@@ -378,11 +437,13 @@ export const blogPosts = [
     {
         id: 9,
         slug: "monografiya-nima-va-qanday-yoziladi",
-        title: "Monografiya nima? Monografiya yozish tartibi va to'liq qo'llanma (2026)",
-        excerpt: "Monografiya nima, kimlar yozadi, qanday tuzilmaga ega, nashr qilish narxi qancha? O'zbekistonda monografiya yozish va nashr qilish bo'yicha batafsil ma'lumot.",
+        title: "Monografiya nima? Yozish tartibi, namuna va narx (2026)",
+        excerpt: "Monografiya nima, qanday tuzilmaga ega va qanday yoziladi? 2026 yil uchun yozish tartibi, mundarija namunasi, ISBN va taqriz talablari hamda nashr narxi.",
         category: "Ilmiy ishlar",
         date: "2026-03-16",
         readTime: "8 daqiqa",
+        shortAnswer: "Monografiya - bitta ilmiy mavzuni chuqur va tizimli yorituvchi, ISBN raqami bilan alohida kitob sifatida nashr etiladigan ilmiy asar. U kirish (so'z boshi), odatda 3-5 ta bob, xulosa va adabiyotlar ro'yxatidan iborat bo'ladi va kamida ikkita ilmiy darajali mutaxassis taqrizidan o'tadi. O'zbekistonda nashr narxi hajm va tirajga qarab taxminan 2 000 000 - 8 000 000 so'm.",
+        relatedService: "monografiya-tayyorlash",
         content: `
             <p><strong>Monografiya nima?</strong> — Bu savol ko'plab doktorantlar, ilmiy xodimlar va professor-o'qituvchilar tomonidan beriladi. Monografiya — bitta muallif yoki muallif jamoasi tomonidan yozilgan, bitta ilmiy mavzuni chuqur va har tomonlama yorituvchi ilmiy kitob turidir.</p>
 
@@ -494,6 +555,7 @@ export const blogPosts = [
         category: "Formatlash",
         date: "2026-03-16",
         readTime: "6 daqiqa",
+        relatedService: "gost-formatlash",
         content: `
             <p><strong>GOST nima?</strong> — Ko'plab talabalar, magistrantlar va tadqiqotchilar uchun bu savol tez-tez paydo bo'ladi. GOST — <strong>Gosudarstvennyy Standart</strong> (Davlat Standarti) ning qisqartmasi bo'lib, Sovet Ittifoqi davridan beri MDH davlatlarida, shu jumladan O'zbekistonda ham ilmiy va texnik hujjatlarni rasmiylashtirish uchun qo'llaniladigan standartlar tizimini anglatadi.</p>
 
@@ -553,6 +615,7 @@ export const blogPosts = [
         category: "Ilmiy ishlar",
         date: "2026-08-10",
         readTime: "9 daqiqa",
+        relatedService: "oquv-qollanma-tayyorlash",
         content: `
             <p><strong>O'quv qo'llanma</strong> - oliy va o'rta maxsus ta'lim muassasalarida muayyan fan yoki modul bo'yicha tayyorlanadigan o'quv nashri. Ko'p o'qituvchilar uchun bu birinchi jiddiy nashr bo'ladi: u lavozimga tanlov, attestatsiya va ilmiy unvonga talabgorlik hujjatlarida hisobga olinadi. Ushbu maqolada o'quv qo'llanma yozishning barcha bosqichlarini ketma-ket ko'rib chiqamiz.</p>
 
@@ -623,6 +686,7 @@ export const blogPosts = [
         category: "Ilmiy ishlar",
         date: "2026-08-14",
         readTime: "7 daqiqa",
+        relatedService: "darslik-yozish",
         content: `
             <p>Nashr tayyorlashni boshlagan har bir muallif birinchi navbatda bitta savolga javob berishi kerak: men <strong>darslik</strong> yozyapmanmi yoki <strong>o'quv qo'llanma</strong>? Bu shunchaki nom masalasi emas - undan hajm, tasdiqlash tartibi, muddat va hujjatlar to'plami kelib chiqadi.</p>
 
@@ -668,6 +732,7 @@ export const blogPosts = [
         category: "Ilmiy ishlar",
         date: "2026-08-21",
         readTime: "10 daqiqa",
+        relatedService: "oquv-qollanma-tayyorlash",
         content: `
             <p><strong>O'quv qo'llanma yozish</strong> — ishning faqat yarmi. Qo'lyozma tayyor bo'lgach, u rasmiy maqomga ega bo'lishi uchun <strong>ekspertizadan</strong> o'tishi kerak. Ekspertizasiz nashr etilgan kitob attestatsiya, lavozimga tanlov yoki ilmiy unvonga talabgorlik hujjatlarida o'quv adabiyoti sifatida hisobga olinmasligi mumkin.</p>
 
@@ -800,11 +865,12 @@ export const blogPosts = [
     {
         id: 14,
         slug: "monografiya-namunasi-tuzilma-va-mundarija",
-        title: "Monografiya namunasi: tuzilma, mundarija va rasmiylashtirish (2026)",
-        excerpt: "Monografiya namunasi - titul varag'idan adabiyotlar ro'yxatigacha bo'lgan to'liq tuzilma, mundarija namunasi va har bir qismga qo'yiladigan talablar.",
+        title: "Monografiya namunasi: titul, mundarija, ISBN rasmiylashtirish (2026)",
+        excerpt: "Monografiya namunasi: titul varag'i va titul orqasi namunasi, to'liq mundarija, ISBN, UDK va BBK rasmiylashtirish hamda hajm va texnik talablar.",
         category: "Ilmiy ishlar",
         date: "2026-08-21",
-        readTime: "8 daqiqa",
+        readTime: "10 daqiqa",
+        relatedService: "monografiya-tayyorlash",
         content: `
             <p>Monografiya yozishni boshlagan ko'p muallif birinchi navbatda <strong>namuna</strong> qidiradi: kitob qanday tuzilishi kerak, mundarija qanday ko'rinadi, qaysi qismlar majburiy. Quyida monografiyaning standart tuzilmasi va mundarija namunasi keltirilgan.</p>
 
@@ -823,6 +889,28 @@ export const blogPosts = [
                 <li><strong>Foydalanilgan adabiyotlar ro'yxati</strong></li>
                 <li><strong>Ilovalar</strong> - jadval, diagramma, hisob-kitob, so'rovnoma</li>
             </ul>
+
+            <h2>Titul varag'i namunasi</h2>
+            <p>Titul varag'ida kitob haqidagi asosiy ma'lumotlar beriladi. Umumiy ko'rinishi:</p>
+            <div class="titul-namuna">
+                <p>[TASHKILOT NOMI - muallif ishlaydigan muassasa]</p>
+                <p><strong>[MUALLIF F.I.Sh.]</strong></p>
+                <p><strong>[MONOGRAFIYA NOMI]</strong></p>
+                <p>Monografiya</p>
+                <p>[Shahar]<br>"[Nashriyot nomi]" nashriyoti<br>2026</p>
+            </div>
+
+            <h2>Titul orqasi namunasi</h2>
+            <p>Titul varag'ining orqa tomonida bibliografik ma'lumotlar joylashadi:</p>
+            <div class="titul-namuna">
+                <p>UDK [indeks]<br>BBK [indeks]<br>[Muallifning familiyasi bo'yicha muallif belgisi]</p>
+                <p>[Muallif F.I.Sh.] [Monografiya nomi]: monografiya / [F.I.Sh.]. - [Shahar]: [Nashriyot], 2026. - [bet soni] b.</p>
+                <p>ISBN [raqam]</p>
+                <p>Mas'ul muharrir: [ilmiy daraja, F.I.Sh.]<br>Taqrizchilar: [ilmiy daraja, F.I.Sh.]; [ilmiy daraja, F.I.Sh.]</p>
+                <p>[Annotatsiya: kitob nimaga bag'ishlangani va kimga mo'ljallangani - 3-5 jumla]</p>
+                <p>Monografiya [muassasa] Ilmiy kengashining [sana] dagi [raqam]-sonli qarori bilan nashrga tavsiya etilgan.</p>
+                <p>&copy; [Muallif], 2026</p>
+            </div>
 
             <h2>Mundarija namunasi</h2>
             <p>Quyida umumlashtirilgan mundarija namunasi. Bob va paragraf nomlari sizning mavzuingizga moslashtiriladi:</p>
@@ -877,6 +965,16 @@ export const blogPosts = [
             </ul>
             <p>Aniq texnik talablar nashriyotga qarab farq qilishi mumkin, shuning uchun maketni boshlashdan oldin nashriyot bilan kelishing.</p>
 
+            <h2>ISBN, UDK va BBK rasmiylashtirish</h2>
+            <p>Titul orqasidagi indekslar kitobni kutubxona va bibliografik tizimlarda topish uchun kerak:</p>
+            <ul>
+                <li><strong>ISBN</strong> - kitobning xalqaro standart raqami. Rasmiy nashr uchun majburiy va <strong>nashriyot orqali</strong> olinadi: muallif odatda o'zi murojaat qilmaydi, nashriyot bilan shartnoma tuzilgach raqamni nashriyot rasmiylashtiradi.</li>
+                <li><strong>UDK</strong> (Universal o'nlik klassifikatsiyasi) - mavzu bo'yicha indeks. Kitobning ilmiy sohasiga qarab beriladi.</li>
+                <li><strong>BBK</strong> (Kutubxona-bibliografik klassifikatsiya) - kutubxonada joylashtirish uchun indeks.</li>
+                <li><strong>Muallif belgisi</strong> - muallif familiyasining birinchi harfi va raqamdan iborat kod, BBK bilan birga qo'yiladi.</li>
+            </ul>
+            <p>Rasmiylashtirish tartibi odatda quyidagicha: qo'lyozma taqrizdan o'tadi va muassasa Ilmiy kengashida nashrga tavsiya etiladi, so'ng nashriyot bilan shartnoma tuziladi, UDK/BBK indekslari belgilanadi, ISBN olinadi, maket tayyorlanib bosmaxonaga beriladi.</p>
+
             <h2>Namunadan foydalanishda ko'p uchraydigan xato</h2>
             <p>Tayyor namunani ko'chirib olib, faqat sarlavhalarni almashtirish - eng ko'p uchraydigan xato. Monografiyaning asosiy qiymati <strong>muallifning o'z natijalarida</strong>, ya'ni uchinchi bobda. Nazariy qism kuchli, amaliy qism bo'sh bo'lgan qo'lyozma taqrizdan o'tmaydi.</p>
             <p>Namuna faqat tuzilma uchun mo'ljal bo'lishi kerak, mazmun esa to'liq sizniki bo'lsin. Antiplagiat tekshiruvi ham buni ko'rsatadi.</p>
@@ -889,11 +987,26 @@ export const blogPosts = [
     {
         id: 15,
         slug: "bmi-namunasi-tuzilma-va-mundarija",
-        title: "BMI namunasi: bitiruv malakaviy ishi tuzilmasi va mundarija namunasi (2026)",
-        excerpt: "Bitiruv malakaviy ishi (BMI) namunasi: titul varag'idan ilovalargacha to'liq tuzilma, mundarija namunasi, hajm va antiplagiat talablari.",
+        title: "BMI namunasi 2026: to'liq mundarija va tuzilma",
+        excerpt: "BMI namunasi 2026: titul varag'i, to'liq mundarija, bo'limlar bo'yicha hajm jadvali va har bir qismga qo'yiladigan talablar - hajm, antiplagiat va rasmiylashtirish.",
         category: "Ilmiy ishlar",
         date: "2026-08-21",
-        readTime: "8 daqiqa",
+        readTime: "10 daqiqa",
+        downloads: [
+            {
+                "label": "BMI namunasi",
+                "format": "DOCX",
+                "file": "/files/namuna/bmi-namunasi-2026.docx",
+                "pending": true
+            },
+            {
+                "label": "BMI namunasi",
+                "format": "PDF",
+                "file": "/files/namuna/bmi-namunasi-2026.pdf",
+                "pending": true
+            }
+        ],
+        relatedService: "bmi-yozish",
         content: `
             <p>Bitiruv malakaviy ishini boshlayotgan talabaning birinchi savoli odatda bitta bo'ladi: <strong>BMI namunasi</strong> qanday ko'rinadi? Quyida ishning standart tuzilmasi, mundarija namunasi va har bir qismga qo'yiladigan talablar keltirilgan.</p>
 
@@ -912,6 +1025,22 @@ export const blogPosts = [
                 <li><strong>Foydalanilgan adabiyotlar ro'yxati</strong></li>
                 <li><strong>Ilovalar</strong></li>
             </ul>
+
+            <h2>Titul varag'i namunasi</h2>
+            <p>Titul varag'i ishning birinchi sahifasi bo'lib, sahifa raqami qo'yilmaydi. Quyida umumiy qabul qilingan ko'rinish keltirilgan - kvadrat qavsdagi joylar o'zingizning ma'lumotlaringiz bilan to'ldiriladi:</p>
+            <div class="titul-namuna">
+                <p>O'ZBEKISTON RESPUBLIKASI<br>OLIY TA'LIM, FAN VA INNOVATSIYALAR VAZIRLIGI</p>
+                <p><strong>[OLIY TA'LIM MUASSASASI NOMI]</strong></p>
+                <p>[Fakultet nomi] fakulteti<br>[Kafedra nomi] kafedrasi</p>
+                <p>[Ta'lim yo'nalishi shifri va nomi]</p>
+                <p><strong>BITIRUV MALAKAVIY ISHI</strong></p>
+                <p>Mavzu: <strong>"[Ish mavzusi]"</strong></p>
+                <p class="titul-right">Bajardi: [guruh] guruh talabasi<br>[F.I.Sh.]</p>
+                <p class="titul-right">Ilmiy rahbar: [ilmiy daraja, unvon]<br>[F.I.Sh.]</p>
+                <p class="titul-right">"Himoyaga ruxsat etildi"<br>Kafedra mudiri: __________<br>"___" ________ 2026-yil</p>
+                <p>[Shahar] - 2026</p>
+            </div>
+            <p>Vazirlik nomi, "himoyaga ruxsat" bandining joylashuvi va qo'shimcha imzolar muassasaga qarab farq qiladi - kafedrangizdagi tasdiqlangan shaklni asos qilib oling.</p>
 
             <h2>Mundarija namunasi</h2>
             <p>Bob nomlari mavzuingizga moslashtiriladi, tuzilma esa deyarli o'zgarmaydi:</p>
@@ -957,6 +1086,26 @@ export const blogPosts = [
                 <li><strong>Ishning tuzilishi</strong> - necha bob, necha bet</li>
             </ul>
 
+            <h2>Bo'limlar bo'yicha hajm taqsimoti</h2>
+            <p>Umumiy hajm 40-60 bet bo'lganda bo'limlar odatda quyidagicha taqsimlanadi. Bu taxminiy mo'ljal - aniq nisbatni kafedra ko'rsatmasi belgilaydi:</p>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>Bo'lim</th><th>Taxminiy hajm</th><th>Nimalar yoritiladi</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Kirish</td><td>3-4 bet</td><td>Dolzarblik, maqsad, vazifalar, ob'ekt va predmet, usullar</td></tr>
+                        <tr><td>I bob (nazariy)</td><td>10-15 bet</td><td>Tushunchalar, o'rganilganlik darajasi, normativ asoslar</td></tr>
+                        <tr><td>II bob (tahliliy)</td><td>12-18 bet</td><td>Ob'ekt tavsifi, ko'rsatkichlar tahlili, muammolar</td></tr>
+                        <tr><td>III bob (amaliy)</td><td>12-18 bet</td><td>Takliflar, chora-tadbirlar, hisob-kitob</td></tr>
+                        <tr><td>Xulosa va takliflar</td><td>2-3 bet</td><td>Asosiy natijalar va tavsiyalar</td></tr>
+                        <tr><td>Adabiyotlar ro'yxati</td><td>2-4 bet</td><td>Kamida 20-30 ta manba</td></tr>
+                        <tr><td>Ilovalar</td><td>hajmga kirmaydi</td><td>Jadval, hisob-kitob, so'rovnoma</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Boblar hajmi bir-biriga yaqin bo'lgani ma'qul: nazariy bob juda katta, amaliy bob esa qisqa bo'lsa, ish "nazariy referat" sifatida baholanishi mumkin.</p>
+
             <h2>Hajm va texnik talablar</h2>
             <ul>
                 <li>Hajm: odatda 40-60 bet (ilovalarsiz)</li>
@@ -985,6 +1134,7 @@ export const blogPosts = [
         category: "Ilmiy ishlar",
         date: "2026-08-21",
         readTime: "6 daqiqa",
+        relatedService: "bmi-yozish",
         content: `
             <p><strong>Bitiruv malakaviy ishi nizomi</strong> - BMI ni tayyorlash, topshirish va himoya qilish tartibini belgilaydigan rasmiy hujjat. Talabalar uni ko'pincha ish yozib bo'lgandan keyin qidiradi, holbuki undagi talablarni <strong>boshidan</strong> bilish ancha ko'p vaqtni tejaydi.</p>
 
@@ -1031,6 +1181,94 @@ export const blogPosts = [
             <h2>Keyingi qadam</h2>
             <p>BMI tuzilmasi va mundarija namunasi: <a href="/blog/bmi-namunasi-tuzilma-va-mundarija">BMI namunasi</a>. Yozish tartibi bosqichma-bosqich: <a href="/blog/bitiruv-malakaviy-ishi-bmi-yozish-sirlari">BMI yozish tartibi</a>.</p>
             <p>Umumiy talablar: <a href="/ilmiy-ishlar/bitiruv-malakaviy-ishi-bmi">BMI ga qo'yiladigan talablar</a>. Professional yordam: <a href="/xizmatlar/bmi-yozish">BMI yozish xizmati</a>.</p>
+        `
+    },
+    {
+        // QORALAMA: draft: true - faqat dev da ko'rinadi; prerender, sitemap va blog
+        // ro'yxatiga kirmaydi. Matn to'ldirilgach draft ni olib tashlang va date ni
+        // nashr kuniga o'zgartiring.
+        id: 17,
+        slug: "magistrlik-dissertatsiyasi-namunasi-va-talablari",
+        title: "Magistrlik dissertatsiyasi namunasi va talablari 2026",
+        excerpt: "Magistrlik dissertatsiyasi namunasi 2026: titul varag'i, mundarija, hajm, antiplagiat va manbalar bo'yicha talablar hamda himoyagacha bo'lgan bosqichlar.",
+        category: "Ilmiy ishlar",
+        date: "2026-10-12",
+        readTime: "8 daqiqa",
+        relatedService: "magistrlik-dissertatsiyasi-yozish",
+        draft: true,
+        content: `
+            <p>[Kirish: maqola nimaga bag'ishlangani - 2-3 jumla, asosiy kalit so'z bilan]</p>
+
+            <h2>Magistrlik dissertatsiyasiga qo'yiladigan talablar</h2>
+            <p>[Matn: "Magistrlik dissertatsiyasiga qo'yiladigan talablar" bo'limi - qo'lda to'ldiriladi]</p>
+
+            <h2>Dissertatsiya tuzilmasi</h2>
+            <p>[Matn: "Dissertatsiya tuzilmasi" bo'limi - qo'lda to'ldiriladi]</p>
+
+            <h2>Titul varag'i namunasi</h2>
+            <p>[Matn: "Titul varag'i namunasi" bo'limi - qo'lda to'ldiriladi]</p>
+
+            <h2>Mundarija namunasi</h2>
+            <p>[Matn: "Mundarija namunasi" bo'limi - qo'lda to'ldiriladi]</p>
+
+            <h2>Kirish qismi namunasi</h2>
+            <p>[Matn: "Kirish qismi namunasi" bo'limi - qo'lda to'ldiriladi]</p>
+
+            <h2>Hajm va texnik talablar</h2>
+            <p>[Matn: "Hajm va texnik talablar" bo'limi - qo'lda to'ldiriladi]</p>
+
+            <h2>Maqolalar va aprobatsiya</h2>
+            <p>[Matn: "Maqolalar va aprobatsiya" bo'limi - qo'lda to'ldiriladi]</p>
+
+            <h2>Himoyaga tayyorgarlik</h2>
+            <p>[Matn: "Himoyaga tayyorgarlik" bo'limi - qo'lda to'ldiriladi]</p>
+
+            <h2>Keyingi qadam</h2>
+            <p>Talablar: <a href="/ilmiy-ishlar/magistrlik-dissertatsiyasi">magistrlik dissertatsiyasiga qo'yiladigan talablar</a>. Himoya: <a href="/blog/magistrlik-dissertatsiyasi-himoyasiga-tayyorgarlik">magistrlik dissertatsiyasini himoya qilish</a>.</p>
+        `
+    },
+    {
+        // QORALAMA: draft: true - faqat dev da ko'rinadi; prerender, sitemap va blog
+        // ro'yxatiga kirmaydi. Matn to'ldirilgach draft ni olib tashlang va date ni
+        // nashr kuniga o'zgartiring.
+        id: 18,
+        slug: "kurs-ishi-qanday-yoziladi-tuzilma-hajm-namuna",
+        title: "Kurs ishi qanday yoziladi: tuzilma, hajm, namuna",
+        excerpt: "Kurs ishi qanday yoziladi: mavzu tanlashdan topshirishgacha bosqichlar, tuzilma, hajm (25-35 bet), mundarija va titul varag'i namunasi, rasmiylashtirish talablari.",
+        category: "Ilmiy ishlar",
+        date: "2026-10-12",
+        readTime: "8 daqiqa",
+        relatedService: "kurs-ishi-yozish",
+        draft: true,
+        content: `
+            <p>[Kirish: maqola nimaga bag'ishlangani - 2-3 jumla, asosiy kalit so'z bilan]</p>
+
+            <h2>Kurs ishi nima</h2>
+            <p>[Matn: "Kurs ishi nima" bo'limi - qo'lda to'ldiriladi]</p>
+
+            <h2>Kurs ishi tuzilmasi</h2>
+            <p>[Matn: "Kurs ishi tuzilmasi" bo'limi - qo'lda to'ldiriladi]</p>
+
+            <h2>Hajm va talablar</h2>
+            <p>[Matn: "Hajm va talablar" bo'limi - qo'lda to'ldiriladi]</p>
+
+            <h2>Kurs ishi yozish bosqichlari</h2>
+            <p>[Matn: "Kurs ishi yozish bosqichlari" bo'limi - qo'lda to'ldiriladi]</p>
+
+            <h2>Mundarija namunasi</h2>
+            <p>[Matn: "Mundarija namunasi" bo'limi - qo'lda to'ldiriladi]</p>
+
+            <h2>Titul varag'i namunasi</h2>
+            <p>[Matn: "Titul varag'i namunasi" bo'limi - qo'lda to'ldiriladi]</p>
+
+            <h2>Rasmiylashtirish: GOST talablari</h2>
+            <p>[Matn: "Rasmiylashtirish: GOST talablari" bo'limi - qo'lda to'ldiriladi]</p>
+
+            <h2>Ko'p uchraydigan xatolar</h2>
+            <p>[Matn: "Ko'p uchraydigan xatolar" bo'limi - qo'lda to'ldiriladi]</p>
+
+            <h2>Keyingi qadam</h2>
+            <p>Talablar: <a href="/ilmiy-ishlar/kurs-ishi">kurs ishiga qo'yiladigan talablar</a>. Rasmiylashtirish: <a href="/blog/gost-nima-ilmiy-ishlarda-gost-standarti">GOST nima</a>.</p>
         `
     }
 ];

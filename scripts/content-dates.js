@@ -16,7 +16,7 @@ import { createHash } from 'node:crypto';
 import { services }        from '../src/data/services.js';
 import { scientificWorks } from '../src/data/scientificWorks.js';
 import { publications }    from '../src/data/publications.js';
-import { blogPosts }       from '../src/data/blogPosts.js';
+import { blogPosts, isPublished } from '../src/data/blogPosts.js';
 import { faqItems }        from '../src/data/faq.js';
 import { routes }          from './routes.js';
 
@@ -34,7 +34,7 @@ const STATIC_SOURCES = {
     '/xizmatlar':      () => [src('Services/Services.jsx'), pick(services, ['slug', 'title', 'description', 'icon', 'price', 'priceNote'])],
     '/narxlar':        () => [src('Pricing/Pricing.jsx'), pick(services, ['slug', 'title', 'price', 'priceNote', 'features'])],
     '/buyurtma':       () => [src('Order/Order.jsx'), pick(services, ['slug', 'title'])],
-    '/blog':           () => [src('Blog/Blog.jsx'), pick(blogPosts, ['slug', 'title', 'excerpt', 'category', 'date', 'readTime'])],
+    '/blog':           () => [src('Blog/Blog.jsx'), pick(blogPosts.filter(isPublished), ['slug', 'title', 'excerpt', 'category', 'date', 'readTime'])],
     '/ilmiy-ishlar':   () => [src('ScientificWorks/ScientificWorks.jsx'), scientificWorks],
     '/nashr':          () => [src('Nashr/Nashr.jsx'), publications],
     '/biz-haqimizda':  () => [src('About/About.jsx')],
@@ -52,13 +52,19 @@ const DETAIL_SOURCES = [
     ['/blog/',         blogPosts],
 ];
 
+// Maqola matniga aloqasi yo'q maydonlar: ular o'zgarsa dateModified siljimasligi
+// kerak (masalan "Mavzuga oid xizmat" bog'lanishi - bu shablon, maqola emas)
+const NON_CONTENT_KEYS = ['relatedService', 'draft'];
+const withoutNonContent = (item) =>
+    Object.fromEntries(Object.entries(item).filter(([k]) => !NON_CONTENT_KEYS.includes(k)));
+
 /** Sahifa kontentining manbasi (hash shu qiymatdan olinadi). */
 export function contentSource(path) {
     if (STATIC_SOURCES[path]) return STATIC_SOURCES[path]();
     for (const [prefix, items] of DETAIL_SOURCES) {
         if (path.startsWith(prefix)) {
             const item = items.find(i => i.slug === path.slice(prefix.length));
-            if (item) return item;
+            if (item) return withoutNonContent(item);
         }
     }
     throw new Error(`Kontent manbasi aniqlanmadi: ${path}`);

@@ -55,7 +55,7 @@ export const scientificWorks = [
         ],
         duration: "2-5 kun",
         relatedService: "kurs-ishi-yozish",
-        metaTitle: "Kurs ishi nima? Qanday yoziladi? | Ilmiyxizmat.uz",
+        metaTitle: "Kurs ishiga qo'yiladigan talablar: hajm, originallik, manbalar",
         metaDescription: "Kurs ishiga qo'yiladigan talablar: hajm 25-35 bet, originallik 60%+, ikki bob, kamida 15 ta manba. Kurs ishi tuzilmasi va rasmiylashtirish bo'yicha qisqa qo'llanma.",
         faq: [
             {

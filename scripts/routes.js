@@ -8,7 +8,7 @@
 import { services }        from '../src/data/services.js';
 import { scientificWorks } from '../src/data/scientificWorks.js';
 import { publications }    from '../src/data/publications.js';
-import { blogPosts }       from '../src/data/blogPosts.js';
+import { blogPosts, isPublished } from '../src/data/blogPosts.js';
 
 export const SITE_URL = 'https://www.ilmiyxizmat.uz';
 
@@ -44,7 +44,8 @@ export const routes = [
         priority: '0.7',
         changefreq: 'monthly',
     })),
-    ...blogPosts.map(b => ({
+    // Qoralama (draft) maqolalar prerender va sitemap ga kirmaydi
+    ...blogPosts.filter(isPublished).map(b => ({
         path: `/blog/${b.slug}`,
         priority: '0.7',
         changefreq: 'monthly',

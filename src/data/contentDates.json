@@ -16,8 +16,8 @@
     "modified": "2026-08-20"
   },
   "/blog": {
-    "hash": "daefcc7de7de2169",
-    "modified": "2026-08-21"
+    "hash": "dafcd62780086ef3",
+    "modified": "2026-10-12"
   },
   "/blog/antiplagiat-dasturidan-qanday-otish-mumkin": {
     "hash": "dcb8ffa4445fa8e5",
@@ -36,8 +36,8 @@
     "modified": "2026-08-21"
   },
   "/blog/bmi-namunasi-tuzilma-va-mundarija": {
-    "hash": "eee46483ddbe3e45",
-    "modified": "2026-08-21"
+    "hash": "54bb327c6db15b0c",
+    "modified": "2026-10-12"
   },
   "/blog/bmi-nima-bitiruv-malakaviy-ishi-haqida-tolik-malumot": {
     "hash": "915002994d5d8eaa",
@@ -56,16 +56,16 @@
     "modified": "2026-03-16"
   },
   "/blog/monografiya-namunasi-tuzilma-va-mundarija": {
-    "hash": "1571ecd1dca369e1",
-    "modified": "2026-08-21"
+    "hash": "be32c593977e52f1",
+    "modified": "2026-10-12"
   },
   "/blog/monografiya-nima-va-qanday-yoziladi": {
-    "hash": "94a89464fbcbd09e",
-    "modified": "2026-08-21"
+    "hash": "ba192138d7e98ce5",
+    "modified": "2026-10-12"
   },
   "/blog/oak-jurnallari-ruyxati-va-ulardan-otish-talablari": {
-    "hash": "26cbe5c7c836776b",
-    "modified": "2026-03-02"
+    "hash": "e1f78d1bd76bd36a",
+    "modified": "2026-10-12"
   },
   "/blog/oquv-qollanma-qanday-yoziladi-talablar-va-tuzilma": {
     "hash": "afa4f1baafff82f6",
@@ -80,51 +80,51 @@
     "modified": "2026-03-16"
   },
   "/blog/scopus-va-web-of-science-ilmiy-maqola-nashr": {
-    "hash": "3d1c32b23657cb62",
-    "modified": "2026-03-02"
+    "hash": "869176375c9bde12",
+    "modified": "2026-10-12"
   },
   "/buyurtma": {
     "hash": "9dde0fc45ed2b37f",
     "modified": "2026-10-12"
   },
   "/ilmiy-ishlar": {
-    "hash": "3078df5356683707",
+    "hash": "059c2d6f71decbd2",
     "modified": "2026-10-12"
   },
   "/ilmiy-ishlar/bitiruv-malakaviy-ishi-bmi": {
-    "hash": "720b1632304e607d",
+    "hash": "9a213b0ad711f8ad",
     "modified": "2026-10-12"
   },
   "/ilmiy-ishlar/darslik": {
-    "hash": "4e413286fc7c7f60",
+    "hash": "50f28530bb518f10",
     "modified": "2026-10-12"
   },
   "/ilmiy-ishlar/doktorlik-dissertatsiyasi": {
-    "hash": "8a537ac6d25bdfc6",
+    "hash": "097f9352e04ad0dd",
     "modified": "2026-10-12"
   },
   "/ilmiy-ishlar/ilmiy-maqola": {
-    "hash": "daf49cdeb3ba9a78",
+    "hash": "810cb8fbbe92fa76",
     "modified": "2026-10-12"
   },
   "/ilmiy-ishlar/kurs-ishi": {
-    "hash": "c73ff82347c08baf",
+    "hash": "70b5dca946dacbca",
     "modified": "2026-10-12"
   },
   "/ilmiy-ishlar/magistrlik-dissertatsiyasi": {
-    "hash": "46b57739e9688c9e",
+    "hash": "48705d26a738b31c",
     "modified": "2026-10-12"
   },
   "/ilmiy-ishlar/metodik-qollanma": {
-    "hash": "458b0ff4e5d6b592",
+    "hash": "785bc67f022e0b00",
     "modified": "2026-10-12"
   },
   "/ilmiy-ishlar/monografiya": {
-    "hash": "5ce4feade4c795f7",
+    "hash": "4b69dc257f46c21e",
     "modified": "2026-10-12"
   },
   "/ilmiy-ishlar/oquv-qollanma": {
-    "hash": "e39c01a390d7013a",
+    "hash": "106b7813af700c09",
     "modified": "2026-10-12"
   },
   "/narxlar": {
