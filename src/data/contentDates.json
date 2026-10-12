@@ -84,68 +84,68 @@
     "modified": "2026-03-02"
   },
   "/buyurtma": {
-    "hash": "439e664b7df49198",
-    "modified": "2026-08-21"
+    "hash": "c54c3f604cede59a",
+    "modified": "2026-10-12"
   },
   "/ilmiy-ishlar": {
-    "hash": "027f3e74b7c95775",
-    "modified": "2026-08-21"
+    "hash": "3078df5356683707",
+    "modified": "2026-10-12"
   },
   "/ilmiy-ishlar/bitiruv-malakaviy-ishi-bmi": {
-    "hash": "49cac190a7d8e93c",
-    "modified": "2026-08-21"
+    "hash": "720b1632304e607d",
+    "modified": "2026-10-12"
   },
   "/ilmiy-ishlar/darslik": {
-    "hash": "07a808f00f16a44f",
-    "modified": "2026-08-21"
+    "hash": "4e413286fc7c7f60",
+    "modified": "2026-10-12"
   },
   "/ilmiy-ishlar/doktorlik-dissertatsiyasi": {
-    "hash": "e3ae295265de6491",
-    "modified": "2026-08-21"
+    "hash": "8a537ac6d25bdfc6",
+    "modified": "2026-10-12"
   },
   "/ilmiy-ishlar/ilmiy-maqola": {
-    "hash": "7207daeb1aca7e31",
-    "modified": "2026-08-21"
+    "hash": "daf49cdeb3ba9a78",
+    "modified": "2026-10-12"
   },
   "/ilmiy-ishlar/kurs-ishi": {
-    "hash": "4c23856234470d94",
-    "modified": "2026-08-21"
+    "hash": "c73ff82347c08baf",
+    "modified": "2026-10-12"
   },
   "/ilmiy-ishlar/magistrlik-dissertatsiyasi": {
-    "hash": "20b526c4bc7b8f17",
-    "modified": "2026-08-21"
+    "hash": "46b57739e9688c9e",
+    "modified": "2026-10-12"
   },
   "/ilmiy-ishlar/metodik-qollanma": {
-    "hash": "ccb9b7699958bb85",
-    "modified": "2026-08-21"
+    "hash": "458b0ff4e5d6b592",
+    "modified": "2026-10-12"
   },
   "/ilmiy-ishlar/monografiya": {
-    "hash": "be26c26f94b7b578",
-    "modified": "2026-08-21"
+    "hash": "5ce4feade4c795f7",
+    "modified": "2026-10-12"
   },
   "/ilmiy-ishlar/oquv-qollanma": {
-    "hash": "412cff59226062c6",
-    "modified": "2026-08-21"
+    "hash": "e39c01a390d7013a",
+    "modified": "2026-10-12"
   },
   "/narxlar": {
     "hash": "7891ba5889cac27f",
     "modified": "2026-08-21"
   },
   "/nashr": {
-    "hash": "2371719595439a2f",
-    "modified": "2026-08-21"
+    "hash": "63f7e0d32f8e5fc3",
+    "modified": "2026-10-12"
   },
   "/nashr/konferensiyalar": {
-    "hash": "6ea8843e120a5ae1",
-    "modified": "2026-08-21"
+    "hash": "a4e22ebca28eba8d",
+    "modified": "2026-10-12"
   },
   "/nashr/oak-jurnallar": {
-    "hash": "468b5e43ac2c3d51",
-    "modified": "2026-08-21"
+    "hash": "63f5ecbfcd1394e7",
+    "modified": "2026-10-12"
   },
   "/nashr/sertifikatli-nashr": {
-    "hash": "1556be6c9c2cf4bc",
-    "modified": "2026-08-21"
+    "hash": "486e682b8f9f2db0",
+    "modified": "2026-10-12"
   },
   "/privacy-policy": {
     "hash": "ab0909a5bfaec5a4",
@@ -164,67 +164,67 @@
     "modified": "2026-08-21"
   },
   "/xizmatlar/annotatsiya-kalit-soz": {
-    "hash": "1e7838711e15c38d",
-    "modified": "2026-02-06"
+    "hash": "60fe76bff314b746",
+    "modified": "2026-10-12"
   },
   "/xizmatlar/antiplagiat-tekshirish": {
-    "hash": "f6ff2c6e8fed69f1",
-    "modified": "2026-02-06"
+    "hash": "4a5b3fa465973d3b",
+    "modified": "2026-10-12"
   },
   "/xizmatlar/apa-7-formatlash": {
-    "hash": "387bc245dff1e7b4",
-    "modified": "2026-02-06"
+    "hash": "02e29425c3b945bf",
+    "modified": "2026-10-12"
   },
   "/xizmatlar/bmi-yozish": {
-    "hash": "1d5802c5d8bec0ab",
-    "modified": "2026-08-21"
+    "hash": "51f1c5a9c3232568",
+    "modified": "2026-10-12"
   },
   "/xizmatlar/darslik-yozish": {
-    "hash": "27fdb713ddd17f27",
-    "modified": "2026-08-21"
+    "hash": "925bbfa6852dc77f",
+    "modified": "2026-10-12"
   },
   "/xizmatlar/doktorlik-dissertatsiyasi-yordam": {
-    "hash": "9e2e93f19cb4f411",
-    "modified": "2026-02-06"
+    "hash": "0060f6f09a126e54",
+    "modified": "2026-10-12"
   },
   "/xizmatlar/gost-formatlash": {
-    "hash": "ca5f465dd78f86a1",
-    "modified": "2026-02-06"
+    "hash": "1775c218e34cb740",
+    "modified": "2026-10-12"
   },
   "/xizmatlar/ilmiy-ish-yozish": {
-    "hash": "48b0eb250c8585dd",
-    "modified": "2026-02-06"
+    "hash": "d8631413221cc796",
+    "modified": "2026-10-12"
   },
   "/xizmatlar/ilmiy-maqola-yozish": {
-    "hash": "fff70d8f1f7105a8",
-    "modified": "2026-08-20"
+    "hash": "dcb617d9a7b07f05",
+    "modified": "2026-10-12"
   },
   "/xizmatlar/konferensiyaga-chiqarish": {
-    "hash": "d4f528117593b5a5",
-    "modified": "2026-08-21"
+    "hash": "0292c0e009295e23",
+    "modified": "2026-10-12"
   },
   "/xizmatlar/kurs-ishi-yozish": {
-    "hash": "82ee8d0c5e04ecbd",
-    "modified": "2026-02-06"
+    "hash": "971df0a8c2f3384e",
+    "modified": "2026-10-12"
   },
   "/xizmatlar/magistrlik-dissertatsiyasi-yozish": {
-    "hash": "ee5242ec11d968f2",
-    "modified": "2026-02-06"
+    "hash": "d58d416767b8a1f9",
+    "modified": "2026-10-12"
   },
   "/xizmatlar/monografiya-tayyorlash": {
-    "hash": "bb8707c97234bdf4",
-    "modified": "2026-08-21"
+    "hash": "9b24e694d99e4b09",
+    "modified": "2026-10-12"
   },
   "/xizmatlar/oak-jurnalga-chiqarish": {
-    "hash": "a145faa8a8039f93",
-    "modified": "2026-03-16"
+    "hash": "a672134ef7b5cf6f",
+    "modified": "2026-10-12"
   },
   "/xizmatlar/oquv-qollanma-tayyorlash": {
-    "hash": "de89933ecaca0860",
-    "modified": "2026-08-21"
+    "hash": "7a5d41a404d25784",
+    "modified": "2026-10-12"
   },
   "/xizmatlar/tahrir-korrektura": {
-    "hash": "c22a758e20b25c23",
-    "modified": "2026-02-06"
+    "hash": "8dfc0663c2e17e38",
+    "modified": "2026-10-12"
   }
 }

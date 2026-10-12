@@ -6,6 +6,7 @@ import './ScientificWorkDetail.css';
 const ScientificWorkDetail = () => {
     const { slug } = useParams();
     const { getBySlug } = useData('scientificWorks');
+    const { items: blogPosts } = useData('blog');
     const work = getBySlug(slug);
 
     if (!work) {
@@ -19,6 +20,21 @@ const ScientificWorkDetail = () => {
             </section>
         );
     }
+
+    const relatedPosts = (work.relatedPosts || [])
+        .map(postSlug => blogPosts.find(p => p.slug === postSlug))
+        .filter(Boolean);
+
+    // FAQPage JSON-LD - talablar bo'yicha savollar (narx savollari xizmat sahifasida)
+    const faqJsonLd = work.faq?.length ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": work.faq.map(item => ({
+            "@type": "Question",
+            "name": item.question,
+            "acceptedAnswer": { "@type": "Answer", "text": item.answer }
+        }))
+    } : null;
 
     // BreadcrumbList JSON-LD
     const breadcrumbJsonLd = {
@@ -51,7 +67,7 @@ const ScientificWorkDetail = () => {
             <SEO
                 title={work.metaTitle || work.title}
                 description={work.metaDescription || work.description}
-                jsonLd={breadcrumbJsonLd}
+                jsonLd={faqJsonLd ? [breadcrumbJsonLd, faqJsonLd] : breadcrumbJsonLd}
             />
 
             {/* Breadcrumb */}
@@ -92,6 +108,39 @@ const ScientificWorkDetail = () => {
                     </div>
                 </div>
             </section>
+
+            {work.faq?.length > 0 && (
+                <section className="section section-light">
+                    <div className="container">
+                        <h2 className="text-center mb-8">{work.title}: ko'p beriladigan savollar</h2>
+                        <div className="work-faq">
+                            {work.faq.map((item, index) => (
+                                <details key={index} className="work-faq-item">
+                                    <summary>{item.question}</summary>
+                                    <p>{item.answer}</p>
+                                </details>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
+
+            {relatedPosts.length > 0 && (
+                <section className="section">
+                    <div className="container">
+                        <h2 className="text-center mb-8">Foydali maqolalar</h2>
+                        <div className="work-related-posts">
+                            {relatedPosts.map(post => (
+                                <Link to={`/blog/${post.slug}`} key={post.slug} className="work-related-post">
+                                    <span className="work-related-category">{post.category}</span>
+                                    <h3>{post.title}</h3>
+                                    <span className="work-related-more">O'qish →</span>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
         </>
     );
 };

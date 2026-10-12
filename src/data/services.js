@@ -1,4 +1,24 @@
 // ===== XIZMATLAR MA'LUMOTLARI =====
+//
+// Xizmat sahifasi (/xizmatlar/:slug) bloklari - har biri ixtiyoriy, maydon
+// bo'lmasa blok chiqmaydi:
+//   pricing:      [{ type, volume, duration, price, link? }]  - narx jadvali
+//   steps:        [{ title, text }]   - ish bosqichlari (bo'lmasa defaultSteps)
+//   content:      [{ heading, paragraphs?, list? }]  - batafsil SEO matni
+//   samples:      [{ title, meta, description, file? }] - anonim namunalar/portfolio
+//   faq:          [{ question, answer }] - FAQ bloki va FAQPage sxemasi (5-8 ta)
+//   relatedPosts: [blog slug]  - "Foydali maqolalar" bloki
+//
+// Narx, muddat va hajm /ilmiy-ishlar va /nashr dagi qiymatlar bilan bir xil
+// bo'lsin - FAQ javoblari shu raqamlarga tayanadi.
+
+export const defaultSteps = [
+  { title: "Buyurtma", text: "Sayt formasi yoki Telegram orqali ish turi, mavzu va muddatni yuborasiz. Konsultatsiya bepul." },
+  { title: "Kelishuv", text: "Talablar, hajm, muddat va narx aniqlanadi, ish rejasi kelishiladi." },
+  { title: "Yozish", text: "Mutaxassis ishni reja asosida yozadi. Katta ishlar bo'limlarga bo'lib topshiriladi." },
+  { title: "Tekshirish", text: "Ish antiplagiat, talab qilingan standart bo'yicha rasmiylashtirish va mazmun jihatidan tekshiriladi." },
+  { title: "Topshirish", text: "Tayyor ish topshiriladi. Ilmiy rahbar izohlari bo'yicha tuzatishlar bepul kiritiladi." },
+];
 
 export const services = [
   {
@@ -17,8 +37,84 @@ export const services = [
     price: "200 000",
     priceNote: "dan boshlab",
     popular: true,
-    metaTitle: "Ilmiy ish yozish xizmati | Ilmiyxizmat.uz",
-    metaDescription: "Professional ilmiy ish yozish xizmati. BMI, kurs ishi, dissertatsiya va boshqa ilmiy ishlarni sifatli tayyorlab beramiz."
+    metaTitle: "Ilmiy ish yozish xizmati – BMI, kurs ishi, dissertatsiya, maqola | Ilmiyxizmat.uz",
+    metaDescription: "Ilmiy ish yozish: kurs ishi 300 000, BMI 800 000, magistrlik dissertatsiyasi 2 000 000 so'mdan. Barcha yo'nalishlar, GOST rasmiylashtirish, bepul tuzatishlar.",
+    pricing: [
+      {
+        type: "Kurs ishi",
+        volume: "25-35 bet",
+        duration: "2-5 kun",
+        price: "300 000 so'mdan",
+        link: "/xizmatlar/kurs-ishi-yozish"
+      },
+      {
+        type: "Bitiruv malakaviy ishi (BMI)",
+        volume: "40-60 bet",
+        duration: "1-3 hafta",
+        price: "800 000 so'mdan",
+        link: "/xizmatlar/bmi-yozish"
+      },
+      {
+        type: "Magistrlik dissertatsiyasi",
+        volume: "80-100 bet",
+        duration: "2-4 hafta",
+        price: "2 000 000 so'mdan",
+        link: "/xizmatlar/magistrlik-dissertatsiyasi-yozish"
+      },
+      {
+        type: "Ilmiy maqola",
+        volume: "6-15 bet",
+        duration: "2-5 kun",
+        price: "100 000 so'mdan",
+        link: "/xizmatlar/ilmiy-maqola-yozish"
+      },
+      {
+        type: "Monografiya",
+        volume: "150-300 bet",
+        duration: "1-3 hafta",
+        price: "3 000 000 so'mdan",
+        link: "/xizmatlar/monografiya-tayyorlash"
+      },
+      {
+        type: "Doktorlik dissertatsiyasi (PhD, DSc)",
+        volume: "PhD: 120-150 bet, DSc: 200+ bet",
+        duration: "2-9 oy",
+        price: "5 000 000 so'mdan",
+        link: "/xizmatlar/doktorlik-dissertatsiyasi-yordam"
+      }
+    ],
+    faq: [
+      {
+        question: "Qaysi turdagi ilmiy ishlarni yozasizlar?",
+        answer: "Kurs ishi, bitiruv malakaviy ishi (BMI), magistrlik dissertatsiyasi, ilmiy maqola, monografiya, o'quv qo'llanma va darslik. Doktorlik (PhD, DSc) dissertatsiyasi bo'yicha esa ilmiy maslahat va yordam beramiz."
+      },
+      {
+        question: "Ilmiy ish yozish narxi qancha?",
+        answer: "Narx ish turiga bog'liq: kurs ishi 300 000, BMI 800 000, magistrlik dissertatsiyasi 2 000 000, ilmiy maqola 100 000 so'mdan boshlanadi. Yakuniy summa hajm, yo'nalish va muddatga qarab bepul konsultatsiyada aniqlanadi."
+      },
+      {
+        question: "Qaysi fan yo'nalishlari bo'yicha ishlaysizlar?",
+        answer: "Barcha yo'nalishlar bo'yicha: iqtisodiyot, huquq, pedagogika, filologiya, tibbiyot, texnika, aniq va tabiiy fanlar hamda ijtimoiy fanlar."
+      },
+      {
+        question: "Ish GOST talablari bo'yicha rasmiylashtiriladimi?",
+        answer: "Ha. Ish muassasangiz talab qiladigan standart - odatda GOST, xalqaro jurnallar uchun esa APA 7 - bo'yicha rasmiylashtiriladi: mundarija, havolalar, adabiyotlar ro'yxati va ilovalar."
+      },
+      {
+        question: "Tuzatish kiritish pullikmi?",
+        answer: "Yo'q. Ilmiy rahbar yoki taqrizchi izohlari bo'yicha tuzatishlar bepul kiritiladi."
+      },
+      {
+        question: "Buyurtma qanday beriladi?",
+        answer: "Saytdagi buyurtma formasini to'ldiring yoki Telegram orqali yozing: ish turi, mavzu va muddatni yuboring. Talablar va narx konsultatsiyada kelishiladi."
+      }
+    ],
+    relatedPosts: [
+      "bitiruv-malakaviy-ishi-bmi-yozish-sirlari",
+      "gost-nima-ilmiy-ishlarda-gost-standarti",
+      "apa-7-format-va-gost-standarti-ilmiy-ishlar-uchun",
+      "antiplagiat-dasturidan-qanday-otish-mumkin"
+    ]
   },
   {
     id: 2,
@@ -172,7 +268,22 @@ export const services = [
         question: "Mavzuni o'zim tanlashim kerakmi?",
         answer: "Shart emas. Mavzu allaqachon tasdiqlangan bo'lsa, shu bo'yicha ishlaymiz. Tanlanmagan bo'lsa, yo'nalishingiz va kafedra talablariga mos bir nechta variant taklif qilamiz.",
       },
-    ],  },
+    ],
+    pricing: [
+      {
+        type: "Bitiruv malakaviy ishi (BMI)",
+        volume: "40-60 bet",
+        duration: "1-3 hafta",
+        price: "800 000 so'mdan"
+      }
+    ],
+    relatedPosts: [
+      "bmi-nima-bitiruv-malakaviy-ishi-haqida-tolik-malumot",
+      "bitiruv-malakaviy-ishi-bmi-yozish-sirlari",
+      "bmi-namunasi-tuzilma-va-mundarija",
+      "bitiruv-malakaviy-ishi-nizomi"
+    ]
+  },
   {
     id: 3,
     slug: "kurs-ishi-yozish",
@@ -189,8 +300,47 @@ export const services = [
     price: "300 000",
     priceNote: "dan boshlab",
     popular: false,
-    metaTitle: "Kurs ishi yozish xizmati | Ilmiyxizmat.uz",
-    metaDescription: "Kurs ishi yozish xizmati. Tez va sifatli, GOST standartida, barcha yo'nalishlar bo'yicha."
+    metaTitle: "Kurs ishi yozish xizmati – 300 000 so'mdan, 2-5 kunda | Ilmiyxizmat.uz",
+    metaDescription: "Kurs ishi yozish xizmati 300 000 so'mdan: 25-35 bet, 2-5 kunda, GOST standartida, jadval va grafiklar bilan. Barcha fan yo'nalishlari, bepul konsultatsiya.",
+    pricing: [
+      {
+        type: "Kurs ishi",
+        volume: "25-35 bet",
+        duration: "2-5 kun",
+        price: "300 000 so'mdan"
+      }
+    ],
+    faq: [
+      {
+        question: "Kurs ishi yozish narxi qancha?",
+        answer: "Narx 300 000 so'mdan boshlanadi. Yakuniy summa fan, hajm, amaliy qism (hisob-kitob, tahlil) va muddatga bog'liq."
+      },
+      {
+        question: "Kurs ishi qancha vaqtda tayyor bo'ladi?",
+        answer: "Odatda 2-5 kun. Hisob-kitob yoki tadqiqot qismi katta bo'lsa, muddat biroz uzayishi mumkin - bu buyurtma paytida kelishiladi."
+      },
+      {
+        question: "Kurs ishi necha bet bo'ladi?",
+        answer: "Odatda 25-35 bet, ikki bobdan iborat va kamida 15 ta manbaga tayanadi. Aniq hajm kafedrangiz uslubiy ko'rsatmasida belgilanadi."
+      },
+      {
+        question: "Kurs ishi GOST bo'yicha rasmiylashtiriladimi?",
+        answer: "Ha. Titul varag'i, mundarija, havolalar va adabiyotlar ro'yxati GOST standartida rasmiylashtiriladi. Kafedrangizning o'z talablari bo'lsa, ularni yuboring."
+      },
+      {
+        question: "Jadval va grafiklar ham qilinadimi?",
+        answer: "Ha, jadval, grafik va diagrammalar xizmat tarkibiga kiradi."
+      },
+      {
+        question: "O'qituvchi tuzatish so'rasa nima bo'ladi?",
+        answer: "O'qituvchi izohlari bo'yicha tuzatishlar bepul kiritiladi."
+      }
+    ],
+    relatedPosts: [
+      "gost-nima-ilmiy-ishlarda-gost-standarti",
+      "apa-7-format-va-gost-standarti-ilmiy-ishlar-uchun",
+      "antiplagiat-dasturidan-qanday-otish-mumkin"
+    ]
   },
   {
     id: 4,
@@ -208,8 +358,55 @@ export const services = [
     price: "2 000 000",
     priceNote: "dan boshlab",
     popular: true,
-    metaTitle: "Magistrlik dissertatsiyasi yozish | Ilmiyxizmat.uz",
-    metaDescription: "Magistrlik dissertatsiyasi yozish xizmati. Ilmiy yangilik, OAK talablari, nashrga yordam."
+    metaTitle: "Magistrlik dissertatsiyasi yozish – narx 2026 va talablar | Ilmiyxizmat.uz",
+    metaDescription: "Magistrlik dissertatsiyasi yozish 2 000 000 so'mdan: ilmiy yangilik, metodologiya, empirik tadqiqot, 80-100 bet, antiplagiat 80%+ va maqola nashriga yordam.",
+    pricing: [
+      {
+        type: "Magistrlik dissertatsiyasi",
+        volume: "80-100 bet",
+        duration: "2-4 hafta",
+        price: "2 000 000 so'mdan"
+      },
+      {
+        type: "Dissertatsiya mavzusida maqola (OAK jurnali)",
+        volume: "6-15 bet",
+        duration: "1-4 hafta",
+        price: "350 000 so'mdan",
+        link: "/xizmatlar/oak-jurnalga-chiqarish"
+      }
+    ],
+    faq: [
+      {
+        question: "Magistrlik dissertatsiyasi yozish narxi qancha?",
+        answer: "Narx 2 000 000 so'mdan boshlanadi. Yakuniy summa yo'nalish, empirik tadqiqot hajmi va muddatga qarab konsultatsiyada aniqlanadi."
+      },
+      {
+        question: "Dissertatsiya qancha vaqtda yoziladi?",
+        answer: "Odatda 2-4 hafta. Ish boblar bo'yicha bosqichma-bosqich topshiriladi, shuning uchun har bobni ilmiy rahbaringizga o'z vaqtida ko'rsata olasiz."
+      },
+      {
+        question: "Magistrlik dissertatsiyasiga qanday talablar qo'yiladi?",
+        answer: "Odatda 80-100 bet, uch bob va ilovalar, kamida 50 ta manba, 80% dan yuqori originallik hamda mavzu bo'yicha kamida ikkita ilmiy maqola talab qilinadi. Aniq talablar OTMingiz nizomida belgilanadi."
+      },
+      {
+        question: "Ilmiy maqolalar nashriga ham yordam berasizlarmi?",
+        answer: "Ha. Dissertatsiya mavzusida maqola tayyorlaymiz va OAK ro'yxatidagi jurnal yoki konferensiyada nashr qilishga yordam beramiz."
+      },
+      {
+        question: "Empirik tadqiqot qismi ham bajariladimi?",
+        answer: "Ha. Metodologiya, so'rovnoma yoki tajriba natijalarini tahlil qilish va xulosalarni asoslash xizmat tarkibiga kiradi."
+      },
+      {
+        question: "Ilmiy rahbar izohlari bo'yicha tuzatish kiritiladimi?",
+        answer: "Ha. Har bob topshirilgach, ilmiy rahbar izohlari bo'yicha tuzatishlar bepul kiritiladi."
+      }
+    ],
+    relatedPosts: [
+      "magistrlik-dissertatsiyasi-himoyasiga-tayyorgarlik",
+      "oak-jurnallari-ruyxati-va-ulardan-otish-talablari",
+      "antiplagiat-dasturidan-qanday-otish-mumkin",
+      "apa-7-format-va-gost-standarti-ilmiy-ishlar-uchun"
+    ]
   },
   {
     id: 5,
@@ -227,8 +424,51 @@ export const services = [
     price: "5 000 000",
     priceNote: "dan boshlab",
     popular: false,
-    metaTitle: "Doktorlik dissertatsiyasi bo'yicha yordam | Ilmiyxizmat.uz",
-    metaDescription: "Doktorlik (PhD, DSc) dissertatsiyasi uchun ilmiy maslahat va yordam xizmati."
+    metaTitle: "PhD va DSc dissertatsiyasi bo'yicha yordam – maqola, avtoreferat | Ilmiyxizmat.uz",
+    metaDescription: "Doktorlik (PhD, DSc) dissertatsiyasi bo'yicha ilmiy maslahat 5 000 000 so'mdan: mavzu tanlash, tadqiqot rejasi, OAK va Scopus maqolalari, avtoreferat tayyorlash.",
+    pricing: [
+      {
+        type: "PhD / DSc dissertatsiyasi bo'yicha yordam",
+        volume: "PhD: 120-150 bet, DSc: 200+ bet",
+        duration: "2-9 oy",
+        price: "5 000 000 so'mdan"
+      },
+      {
+        type: "Dissertatsiya mavzusida maqola (OAK jurnali)",
+        volume: "6-15 bet",
+        duration: "1-4 hafta",
+        price: "350 000 so'mdan",
+        link: "/xizmatlar/oak-jurnalga-chiqarish"
+      }
+    ],
+    faq: [
+      {
+        question: "Doktorlik dissertatsiyasi bo'yicha qanday yordam berasizlar?",
+        answer: "Mavzu tanlash, tadqiqot rejasi, ilmiy maqolalar tayyorlash va avtoreferat yozish bo'yicha ilmiy maslahat va yordam beramiz."
+      },
+      {
+        question: "Xizmat narxi qancha?",
+        answer: "Narx 5 000 000 so'mdan boshlanadi. Yakuniy summa daraja (PhD yoki DSc), yo'nalish va kerakli yordam hajmiga qarab kelishiladi."
+      },
+      {
+        question: "Qancha vaqt oladi?",
+        answer: "Ish hajmi va bosqichiga qarab 2 oydan 9 oygacha. Ish bosqichlarga bo'linadi va har bosqich alohida kelishiladi."
+      },
+      {
+        question: "PhD va DSc dissertatsiyasiga qanday talablar qo'yiladi?",
+        answer: "Odatda PhD 120-150 bet, DSc 200 betdan ortiq bo'ladi. Originallik 90% dan yuqori bo'lishi, mavzu bo'yicha kamida beshta ilmiy maqola chop etilgan bo'lishi va avtoreferat tayyorlanishi talab qilinadi."
+      },
+      {
+        question: "Scopus va OAK jurnallarida maqola chiqarishga yordam bormi?",
+        answer: "Ha. Maqolani tayyorlash, jurnal talablariga moslashtirish va nashr jarayonida yordam beramiz."
+      }
+    ],
+    relatedPosts: [
+      "scopus-va-web-of-science-ilmiy-maqola-nashr",
+      "oak-jurnallari-ruyxati-va-ulardan-otish-talablari",
+      "ozbekistonda-ilmiy-maqola-nashr-qilish-narxlari-2026",
+      "antiplagiat-dasturidan-qanday-otish-mumkin"
+    ]
   },
   {
     id: 6,
@@ -246,8 +486,62 @@ export const services = [
     price: "100 000",
     priceNote: "dan boshlab",
     popular: true,
-    metaTitle: "Ilmiy maqola yozish xizmati | Ilmiyxizmat.uz",
-    metaDescription: "Ilmiy maqola yozish xizmati 100 000 so'mdan boshlab. OAK jurnallari, Scopus va Web of Science uchun maqola tayyorlash, annotatsiya va bibliografiya."
+    metaTitle: "Ilmiy maqola yozish xizmati – narxlar 2026, OAK va Scopus jurnallari | Ilmiyxizmat.uz",
+    metaDescription: "Ilmiy maqola yozish 100 000 so'mdan, 2-5 kunda: OAK, Scopus va Web of Science talablari, 3 tilda annotatsiya, kalit so'zlar, bibliografiya va nashrga yordam.",
+    pricing: [
+      {
+        type: "Ilmiy maqola yozish",
+        volume: "6-15 bet",
+        duration: "2-5 kun",
+        price: "100 000 so'mdan"
+      },
+      {
+        type: "Maqola + OAK jurnalida nashr",
+        volume: "6-15 bet",
+        duration: "1-4 hafta",
+        price: "350 000 so'mdan",
+        link: "/xizmatlar/oak-jurnalga-chiqarish"
+      },
+      {
+        type: "Maqola + konferensiyada nashr (sertifikat)",
+        volume: "-",
+        duration: "2-10 kun",
+        price: "100 000 so'mdan",
+        link: "/xizmatlar/konferensiyaga-chiqarish"
+      }
+    ],
+    faq: [
+      {
+        question: "Ilmiy maqola yozish narxi qancha?",
+        answer: "Maqola yozish 100 000 so'mdan boshlanadi. OAK jurnalida nashr bilan birga 350 000 so'mdan, konferensiyada sertifikatli nashr bilan 100 000 so'mdan. Aniq narx hajm, til va jurnal talablariga bog'liq."
+      },
+      {
+        question: "Maqola qancha vaqtda tayyor bo'ladi?",
+        answer: "Maqola matni odatda 2-5 kunda tayyorlanadi. OAK jurnalida nashr 1-4 hafta, konferensiyada nashr 2-10 kun oladi."
+      },
+      {
+        question: "Scopus va Web of Science uchun ham maqola yozasizlarmi?",
+        answer: "Ha. Maqola tanlangan jurnal talablari bo'yicha tuziladi va rasmiylashtiriladi - xalqaro jurnallar ko'pincha APA 7 uslubini talab qiladi."
+      },
+      {
+        question: "Annotatsiya qaysi tillarda yoziladi?",
+        answer: "Annotatsiya va kalit so'zlar o'zbek, rus va ingliz tillarida tayyorlanadi - bu OAK jurnallarining odatiy talabi."
+      },
+      {
+        question: "Maqola necha bet bo'ladi?",
+        answer: "Odatda 6-15 bet. Aniq hajm jurnal yoki konferensiya talablarida belgilanadi."
+      },
+      {
+        question: "Maqolani jurnalda chiqarib ham berasizlarmi?",
+        answer: "Ha. OAK ro'yxatidagi jurnalga yoki xalqaro va respublika konferensiyasiga chiqarishda to'liq yordam beramiz - jurnal tanlashdan nashrgacha."
+      }
+    ],
+    relatedPosts: [
+      "ozbekistonda-ilmiy-maqola-nashr-qilish-narxlari-2026",
+      "oak-jurnallari-ruyxati-va-ulardan-otish-talablari",
+      "scopus-va-web-of-science-ilmiy-maqola-nashr",
+      "apa-7-format-va-gost-standarti-ilmiy-ishlar-uchun"
+    ]
   },
   {
     id: 7,
@@ -393,7 +687,21 @@ export const services = [
         question: "Mualliflik huquqi kimda qoladi?",
         answer: "Mualliflik to'liq sizda qoladi - kitob muqovasida va ISBN ma'lumotlarida sizning ismingiz ko'rsatiladi.",
       },
-    ],  },
+    ],
+    pricing: [
+      {
+        type: "Monografiya yozish va nashrga tayyorlash",
+        volume: "150-300 bet",
+        duration: "1-3 hafta",
+        price: "3 000 000 so'mdan"
+      }
+    ],
+    relatedPosts: [
+      "monografiya-nima-va-qanday-yoziladi",
+      "monografiya-namunasi-tuzilma-va-mundarija",
+      "gost-nima-ilmiy-ishlarda-gost-standarti"
+    ]
+  },
   {
     id: 8,
     slug: "oquv-qollanma-tayyorlash",
@@ -527,7 +835,21 @@ export const services = [
         question: "To'lovni bo'lib to'lash mumkinmi?",
         answer: "Ha. To'lov bosqichlarga bo'linadi: har bir bob yoki bosqich topshirilganda tegishli qismi to'lanadi.",
       },
-    ],  },
+    ],
+    pricing: [
+      {
+        type: "O'quv qo'llanma yozish va tayyorlash",
+        volume: "100+ bet",
+        duration: "1-3 hafta",
+        price: "2 500 000 so'mdan"
+      }
+    ],
+    relatedPosts: [
+      "oquv-qollanma-qanday-yoziladi-talablar-va-tuzilma",
+      "oquv-qollanma-yozish-va-ekspertizadan-otkazish-mygov",
+      "darslik-va-oquv-qollanma-orasidagi-farq"
+    ]
+  },
   {
     id: 16,
     slug: "darslik-yozish",
@@ -668,7 +990,21 @@ export const services = [
         question: "Mualliflik huquqi kimda qoladi?",
         answer: "Mualliflik to'liq sizda qoladi. Kitob muqovasida, titul varag'ida va ISBN ma'lumotlarida sizning ismingiz ko'rsatiladi.",
       },
-    ],  },
+    ],
+    pricing: [
+      {
+        type: "Darslik yozish va nashrga tayyorlash",
+        volume: "odatda 200-400 bet",
+        duration: "1-3 hafta (qo'lyozma)",
+        price: "2 500 000 so'mdan"
+      }
+    ],
+    relatedPosts: [
+      "darslik-va-oquv-qollanma-orasidagi-farq",
+      "oquv-qollanma-qanday-yoziladi-talablar-va-tuzilma",
+      "oquv-qollanma-yozish-va-ekspertizadan-otkazish-mygov"
+    ]
+  },
   {
     id: 9,
     slug: "tahrir-korrektura",
@@ -685,8 +1021,43 @@ export const services = [
     price: "100 000",
     priceNote: "dan boshlab",
     popular: false,
-    metaTitle: "Ilmiy ish tahrirlash va korrektura | Ilmiyxizmat.uz",
-    metaDescription: "Ilmiy ishlarni professional tahrirlash va korrektura xizmati."
+    metaTitle: "Ilmiy ishni tahrirlash va korrektura – 100 000 so'mdan | Ilmiyxizmat.uz",
+    metaDescription: "Dissertatsiya, BMI, maqola va monografiyani grammatik va uslubiy tahrirdan o'tkazamiz, formatlaymiz va manbalarni tekshiramiz. Narx 100 000 so'mdan.",
+    pricing: [
+      {
+        type: "Tahrir va korrektura",
+        volume: "hajmga qarab",
+        duration: "kelishiladi",
+        price: "100 000 so'mdan"
+      }
+    ],
+    faq: [
+      {
+        question: "Tahrir va korrektura nimalarni o'z ichiga oladi?",
+        answer: "Grammatik va imlo tekshiruvi, uslubiy tahrir (ilmiy uslubga moslashtirish), formatlash hamda manbalar va havolalarni tekshirish."
+      },
+      {
+        question: "Narx qanday hisoblanadi?",
+        answer: "Narx 100 000 so'mdan boshlanadi va asosan ish hajmi hamda matnning holatiga bog'liq. Faylni yuborsangiz, aniq narxni aytamiz."
+      },
+      {
+        question: "Qaysi ishlarni tahrirlaysizlar?",
+        answer: "Kurs ishi, BMI, magistrlik va doktorlik dissertatsiyasi, ilmiy maqola, monografiya va o'quv qo'llanmalar."
+      },
+      {
+        question: "Tahrirdan keyin ish formatlanadimi?",
+        answer: "Ha, formatlash xizmat tarkibiga kiradi. Faqat formatlash kerak bo'lsa, GOST yoki APA 7 bo'yicha rasmiylashtirish xizmatimizdan foydalanishingiz mumkin."
+      },
+      {
+        question: "O'zgarishlarni qanday ko'raman?",
+        answer: "Tuzatishlar haqida buyurtma paytida kelishiladi: tayyor tahrirlangan faylni olasiz, kerak bo'lsa asosiy o'zgarishlar bo'yicha izoh beramiz."
+      }
+    ],
+    relatedPosts: [
+      "gost-nima-ilmiy-ishlarda-gost-standarti",
+      "apa-7-format-va-gost-standarti-ilmiy-ishlar-uchun",
+      "antiplagiat-dasturidan-qanday-otish-mumkin"
+    ]
   },
   {
     id: 10,
@@ -704,8 +1075,43 @@ export const services = [
     price: "50 000",
     priceNote: "dan boshlab",
     popular: true,
-    metaTitle: "Antiplagiat tekshirish xizmati | Ilmiyxizmat.uz",
-    metaDescription: "Antiplagiat tekshirish xizmati to'liq hisobot bilan. Professional tekshiruv."
+    metaTitle: "Antiplagiat tekshirish – to'liq hisobot bilan, 50 000 so'mdan | Ilmiyxizmat.uz",
+    metaDescription: "Ishingizni antiplagiat tizimida tekshirib, originallik foizi, mos kelgan manbalar va tuzatish bo'yicha maslahat bilan to'liq hisobot beramiz. 50 000 so'mdan.",
+    pricing: [
+      {
+        type: "Antiplagiat tekshiruvi (hisobot bilan)",
+        volume: "hajmga qarab",
+        duration: "kelishiladi",
+        price: "50 000 so'mdan"
+      }
+    ],
+    faq: [
+      {
+        question: "Hisobotda nimalar bo'ladi?",
+        answer: "Originallik foizi, mos kelgan manbalar tafsiloti va originallikni oshirish bo'yicha maslahatlar."
+      },
+      {
+        question: "Antiplagiat tekshiruvi narxi qancha?",
+        answer: "50 000 so'mdan boshlanadi. Aniq narx ish hajmiga bog'liq."
+      },
+      {
+        question: "Qancha originallik talab qilinadi?",
+        answer: "Odatda kurs ishi uchun 60%+, BMI uchun 70%+, magistrlik dissertatsiyasi uchun 80%+, doktorlik dissertatsiyasi uchun 90%+. Aniq chegarani muassasangiz yoki jurnal belgilaydi."
+      },
+      {
+        question: "Foiz past chiqsa nima qilaman?",
+        answer: "Hisobotdagi mos kelgan qismlar bo'yicha tuzatish maslahatini beramiz. Matnni qayta ishlash kerak bo'lsa, tahrir xizmatimizdan foydalanishingiz mumkin."
+      },
+      {
+        question: "Ishim maxfiy qoladimi?",
+        answer: "Ha, yuborgan ishingiz uchinchi shaxslarga berilmaydi."
+      }
+    ],
+    relatedPosts: [
+      "antiplagiat-dasturidan-qanday-otish-mumkin",
+      "bitiruv-malakaviy-ishi-bmi-yozish-sirlari",
+      "magistrlik-dissertatsiyasi-himoyasiga-tayyorgarlik"
+    ]
   },
   {
     id: 11,
@@ -723,8 +1129,43 @@ export const services = [
     price: "150 000",
     priceNote: "dan boshlab",
     popular: false,
-    metaTitle: "APA 7 formatlash xizmati | Ilmiyxizmat.uz",
-    metaDescription: "APA 7 standartiga muvofiq formatlash xizmati. Havola va bibliografiya."
+    metaTitle: "APA 7 formatlash xizmati – havola va bibliografiya | Ilmiyxizmat.uz",
+    metaDescription: "Maqola va dissertatsiyani APA 7 bo'yicha formatlaymiz: matndagi havolalar, bibliografiya, jadval va rasmlar. Xalqaro jurnallar talablariga mos, 150 000 so'mdan.",
+    pricing: [
+      {
+        type: "APA 7 bo'yicha formatlash",
+        volume: "hajmga qarab",
+        duration: "kelishiladi",
+        price: "150 000 so'mdan"
+      }
+    ],
+    faq: [
+      {
+        question: "APA 7 formatlash nimalarni o'z ichiga oladi?",
+        answer: "Matn ichidagi havolalar (muallif, yil), bibliografiya ro'yxati, jadval va rasmlarni APA 7 qoidalari bo'yicha rasmiylashtirish."
+      },
+      {
+        question: "APA 7 qachon kerak bo'ladi?",
+        answer: "Ko'plab xalqaro jurnallar, jumladan Scopus va Web of Science bazasidagi jurnallar, maqolalarni APA 7 uslubida qabul qiladi. Mahalliy OTM va OAK jurnallari odatda GOST talab qiladi."
+      },
+      {
+        question: "Narxi qancha?",
+        answer: "150 000 so'mdan boshlanadi. Aniq narx matn hajmi va manbalar soniga bog'liq."
+      },
+      {
+        question: "GOST dan APA 7 ga o'tkazib berasizlarmi?",
+        answer: "Ha, GOST bo'yicha rasmiylashtirilgan havola va bibliografiyani APA 7 ga o'tkazamiz va aksincha."
+      },
+      {
+        question: "Jurnalning o'z talablari bo'lsa-chi?",
+        answer: "Jurnal talablarini yuboring - formatlash APA 7 asosida, jurnalning qo'shimcha talablarini hisobga olgan holda bajariladi."
+      }
+    ],
+    relatedPosts: [
+      "apa-7-format-va-gost-standarti-ilmiy-ishlar-uchun",
+      "scopus-va-web-of-science-ilmiy-maqola-nashr",
+      "gost-nima-ilmiy-ishlarda-gost-standarti"
+    ]
   },
   {
     id: 12,
@@ -742,8 +1183,43 @@ export const services = [
     price: "150 000",
     priceNote: "dan boshlab",
     popular: false,
-    metaTitle: "GOST formatlash xizmati | Ilmiyxizmat.uz",
-    metaDescription: "GOST standartlari bo'yicha rasmiylashtirish xizmati."
+    metaTitle: "GOST bo'yicha rasmiylashtirish – BMI, dissertatsiya, maqola | Ilmiyxizmat.uz",
+    metaDescription: "Ilmiy ishni GOST 7.32 bo'yicha rasmiylashtiramiz: mundarija, shrift va o'lchamlar, ilovalar, adabiyotlar ro'yxati. BMI, dissertatsiya va maqolalar uchun, 150 000 so'mdan.",
+    pricing: [
+      {
+        type: "GOST bo'yicha rasmiylashtirish",
+        volume: "hajmga qarab",
+        duration: "kelishiladi",
+        price: "150 000 so'mdan"
+      }
+    ],
+    faq: [
+      {
+        question: "GOST bo'yicha rasmiylashtirish nimalarni o'z ichiga oladi?",
+        answer: "GOST 7.32 asosida mundarija, shrift va o'lchamlar, hoshiyalar, sarlavhalar, ilovalar hamda adabiyotlar ro'yxatini rasmiylashtirish."
+      },
+      {
+        question: "Qaysi ishlar uchun GOST kerak?",
+        answer: "O'zbekistondagi OTMlarda kurs ishi, BMI, magistrlik dissertatsiyasi hamda ko'plab mahalliy va OAK jurnallaridagi maqolalar GOST bo'yicha rasmiylashtiriladi."
+      },
+      {
+        question: "Narxi qancha?",
+        answer: "150 000 so'mdan boshlanadi. Aniq narx ish hajmi va jadval, rasm, ilovalar soniga bog'liq."
+      },
+      {
+        question: "Kafedramning o'z uslubiy ko'rsatmasi bor. Uni hisobga olasizlarmi?",
+        answer: "Ha. Uslubiy ko'rsatmani yuboring - rasmiylashtirish GOST va kafedrangiz talablari bo'yicha bajariladi."
+      },
+      {
+        question: "Matn o'zgaradimi?",
+        answer: "Yo'q, rasmiylashtirishda faqat shakl tartibga solinadi. Matnni tahrirlash kerak bo'lsa, bu alohida tahrir xizmati."
+      }
+    ],
+    relatedPosts: [
+      "gost-nima-ilmiy-ishlarda-gost-standarti",
+      "apa-7-format-va-gost-standarti-ilmiy-ishlar-uchun",
+      "bmi-namunasi-tuzilma-va-mundarija"
+    ]
   },
   {
     id: 13,
@@ -761,8 +1237,43 @@ export const services = [
     price: "50 000",
     priceNote: "dan boshlab",
     popular: false,
-    metaTitle: "Annotatsiya va kalit so'z yozish | Ilmiyxizmat.uz",
-    metaDescription: "Annotatsiya va kalit so'z yozish xizmati. 3 tilda."
+    metaTitle: "Annotatsiya va kalit so'zlar – o'zbek, rus, ingliz tilida | Ilmiyxizmat.uz",
+    metaDescription: "Maqola va dissertatsiya uchun o'zbek, rus va ingliz tillarida annotatsiya hamda kalit so'zlar tayyorlaymiz. OAK va xalqaro jurnallar talablariga mos, 50 000 so'mdan.",
+    pricing: [
+      {
+        type: "Annotatsiya va kalit so'zlar (3 tilda)",
+        volume: "1 maqola",
+        duration: "kelishiladi",
+        price: "50 000 so'mdan"
+      }
+    ],
+    faq: [
+      {
+        question: "Annotatsiya qaysi tillarda yoziladi?",
+        answer: "O'zbek, rus va ingliz tillarida - OAK jurnallari odatda uchala tilda annotatsiya talab qiladi."
+      },
+      {
+        question: "Narxi qancha?",
+        answer: "50 000 so'mdan boshlanadi. Aniq narx tillar soni va maqola hajmiga bog'liq."
+      },
+      {
+        question: "Annotatsiya qanday tuziladi?",
+        answer: "Unda tadqiqot maqsadi, usullari, asosiy natijalari va xulosasi qisqa bayon qilinadi. Hajm jurnal talabiga moslanadi."
+      },
+      {
+        question: "Kalit so'zlar qanday tanlanadi?",
+        answer: "Maqola mavzusini aniq ifodalaydigan va ilmiy bazalarda qidiriladigan atamalar tanlanadi, odatda 5-10 ta."
+      },
+      {
+        question: "Maqolani ham yozib berasizlarmi?",
+        answer: "Ha, ilmiy maqola yozish xizmatimizda annotatsiya va kalit so'zlar narxga kiradi."
+      }
+    ],
+    relatedPosts: [
+      "oak-jurnallari-ruyxati-va-ulardan-otish-talablari",
+      "scopus-va-web-of-science-ilmiy-maqola-nashr",
+      "ozbekistonda-ilmiy-maqola-nashr-qilish-narxlari-2026"
+    ]
   },
   {
     id: 14,
@@ -780,8 +1291,50 @@ export const services = [
     price: "350 000",
     priceNote: "dan boshlab",
     popular: true,
-    metaTitle: "OAK jurnalga maqola chiqarish | Ilmiyxizmat.uz",
-    metaDescription: "OAK ro'yxatidagi jurnallarga maqola chiqarish xizmati."
+    metaTitle: "OAK jurnaliga maqola chiqarish – narx 2026, 1-4 haftada | Ilmiyxizmat.uz",
+    metaDescription: "OAK ro'yxatidagi jurnalga maqola chiqarish 350 000 so'mdan: ixtisoslikka mos jurnal tanlash, maqolani talablarga moslash, retsenziya va nashr. Muddat 1-4 hafta.",
+    pricing: [
+      {
+        type: "OAK jurnaliga maqola chiqarish",
+        volume: "6-15 bet",
+        duration: "1-4 hafta",
+        price: "350 000 so'mdan"
+      },
+      {
+        type: "Faqat maqola yozish",
+        volume: "6-15 bet",
+        duration: "2-5 kun",
+        price: "100 000 so'mdan",
+        link: "/xizmatlar/ilmiy-maqola-yozish"
+      }
+    ],
+    faq: [
+      {
+        question: "OAK jurnaliga maqola chiqarish narxi qancha?",
+        answer: "350 000 so'mdan boshlanadi. Yakuniy narx jurnal, maqola hajmi va maqola tayyor yoki yozilishi kerakligiga bog'liq."
+      },
+      {
+        question: "Maqola qancha vaqtda chiqadi?",
+        answer: "Odatda 1-4 hafta. Muddat jurnalning navbatdagi soni va retsenziya jarayoniga bog'liq."
+      },
+      {
+        question: "Jurnalni qanday tanlaysizlar?",
+        answer: "Ixtisosligingiz shifri va maqola mavzusiga mos, OAK ro'yxatidagi jurnallar orasidan tanlaymiz."
+      },
+      {
+        question: "Maqolam tayyor bo'lmasa-chi?",
+        answer: "Maqolani ham tayyorlab beramiz: matn, 3 tilda annotatsiya, kalit so'zlar va bibliografiya jurnal talablari bo'yicha."
+      },
+      {
+        question: "Retsenziya kerakmi?",
+        answer: "Ko'p jurnallar retsenziya talab qiladi - retsenziya olish jarayonida yordam xizmat tarkibiga kiradi."
+      }
+    ],
+    relatedPosts: [
+      "oak-jurnallari-ruyxati-va-ulardan-otish-talablari",
+      "ozbekistonda-ilmiy-maqola-nashr-qilish-narxlari-2026",
+      "apa-7-format-va-gost-standarti-ilmiy-ishlar-uchun"
+    ]
   },
   {
     id: 15,
@@ -799,8 +1352,43 @@ export const services = [
     price: "100 000",
     priceNote: "dan boshlab",
     popular: false,
-    metaTitle: "Konferensiyaga maqola chiqarish | Ilmiyxizmat.uz",
-    metaDescription: "Konferensiyaga maqola chiqarish xizmati sertifikat bilan."
+    metaTitle: "Konferensiyaga maqola chiqarish – sertifikat bilan, 2-10 kunda | Ilmiyxizmat.uz",
+    metaDescription: "Xalqaro va respublika konferensiyalariga maqola chiqarish 100 000 so'mdan: konferensiya tanlash, maqolani tayyorlash, sertifikat va to'plamda nashr. Muddat 2-10 kun.",
+    pricing: [
+      {
+        type: "Konferensiyaga maqola chiqarish (sertifikat bilan)",
+        volume: "-",
+        duration: "2-10 kun",
+        price: "100 000 so'mdan"
+      }
+    ],
+    faq: [
+      {
+        question: "Konferensiyaga maqola chiqarish narxi qancha?",
+        answer: "100 000 so'mdan boshlanadi. Narx konferensiya turi (xalqaro yoki respublika) va maqola tayyorlash kerakligiga bog'liq."
+      },
+      {
+        question: "Qancha vaqtda chiqadi?",
+        answer: "Odatda 2-10 kun - konferensiya o'tkazilish sanasi va to'plam chiqish muddatiga bog'liq."
+      },
+      {
+        question: "Sertifikat beriladimi?",
+        answer: "Ha, ishtirok sertifikati beriladi va maqola konferensiya to'plamida nashr qilinadi."
+      },
+      {
+        question: "Qanday konferensiyalar bor?",
+        answer: "Xalqaro va respublika miqyosidagi ilmiy-amaliy konferensiyalar. Mavzu va yo'nalishingizga mosini tanlaymiz."
+      },
+      {
+        question: "Konferensiya maqolasi bilan OAK jurnali maqolasining farqi nima?",
+        answer: "OAK jurnali maqolasi dissertatsiya himoyasi uchun asosiy nashrlar qatorida hisoblanadi va retsenziyadan o'tadi, konferensiya maqolasi esa tezroq chiqadi. Qaysi biri kerakligini talablaringizga qarab maslahat beramiz."
+      }
+    ],
+    relatedPosts: [
+      "ozbekistonda-ilmiy-maqola-nashr-qilish-narxlari-2026",
+      "oak-jurnallari-ruyxati-va-ulardan-otish-talablari",
+      "scopus-va-web-of-science-ilmiy-maqola-nashr"
+    ]
   }
 ];
 

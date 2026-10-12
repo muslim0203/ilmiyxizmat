@@ -2,12 +2,16 @@ import { useParams, Link } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
 import { useData } from '../../lib/useData';
 import { useSiteSettings } from '../../context/SiteSettingsContext';
+import { defaultSteps } from '../../data/services';
 import './ServiceDetail.css';
+
+const SITE_URL = 'https://www.ilmiyxizmat.uz';
 
 const ServiceDetail = () => {
     const { settings } = useSiteSettings();
     const { slug } = useParams();
     const { items: services, getBySlug } = useData('services');
+    const { items: blogPosts } = useData('blog');
     const service = getBySlug(slug);
 
     if (!service) {
@@ -23,6 +27,12 @@ const ServiceDetail = () => {
     }
 
     const otherServices = services.filter(s => s.id !== service.id).slice(0, 3);
+    const steps = service.steps?.length ? service.steps : defaultSteps;
+    const relatedPosts = (service.relatedPosts || [])
+        .map(postSlug => blogPosts.find(p => p.slug === postSlug))
+        .filter(Boolean);
+    const quoteUrl = `/buyurtma?xizmat=${service.slug}`;
+    const minPrice = Number(String(service.price).replace(/\s/g, ''));
 
     // Service JSON-LD schema
     const serviceJsonLd = {
@@ -30,24 +40,30 @@ const ServiceDetail = () => {
         "@type": "Service",
         "name": service.title,
         "description": service.metaDescription || service.description,
-        "url": `https://www.ilmiyxizmat.uz/xizmatlar/${service.slug}`,
+        "url": `${SITE_URL}/xizmatlar/${service.slug}`,
         "provider": {
             "@type": "Organization",
             "name": "Ilmiyxizmat.uz",
-            "url": "https://www.ilmiyxizmat.uz"
+            "url": SITE_URL
         },
         "areaServed": {
             "@type": "Country",
-            "name": "O'zbekiston"
+            "name": "Uzbekistan",
+            "identifier": "UZ"
         },
+        // Narx "dan boshlab" - shuning uchun aniq price emas, minPrice
         "offers": {
             "@type": "Offer",
-            "price": service.price.replace(/\s/g, ''),
+            "url": `${SITE_URL}/xizmatlar/${service.slug}`,
             "priceCurrency": "UZS",
-            "availability": "https://schema.org/InStock",
-            "priceValidUntil": "2026-12-31"
+            "priceSpecification": {
+                "@type": "PriceSpecification",
+                "minPrice": minPrice,
+                "priceCurrency": "UZS"
+            },
+            "availability": "https://schema.org/InStock"
         },
-        "serviceType": "Ilmiy xizmat"
+        "serviceType": service.shortTitle || service.title
     };
 
     // BreadcrumbList JSON-LD
@@ -59,19 +75,19 @@ const ServiceDetail = () => {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Bosh sahifa",
-                "item": "https://www.ilmiyxizmat.uz"
+                "item": SITE_URL
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Xizmatlar",
-                "item": "https://www.ilmiyxizmat.uz/xizmatlar"
+                "item": `${SITE_URL}/xizmatlar`
             },
             {
                 "@type": "ListItem",
                 "position": 3,
                 "name": service.title,
-                "item": `https://www.ilmiyxizmat.uz/xizmatlar/${service.slug}`
+                "item": `${SITE_URL}/xizmatlar/${service.slug}`
             }
         ]
     };
@@ -151,6 +167,61 @@ const ServiceDetail = () => {
                 </div>
             </section>
 
+            {/* Narx jadvali */}
+            {service.pricing?.length > 0 && (
+                <section className="section section-light">
+                    <div className="container">
+                        <h2 className="text-center mb-8">Narxlar va muddatlar</h2>
+                        <div className="service-pricing">
+                            <div className="service-pricing-scroll">
+                                <table className="service-pricing-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Xizmat turi</th>
+                                            <th scope="col">Hajm</th>
+                                            <th scope="col">Muddat</th>
+                                            <th scope="col">Narx</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {service.pricing.map((row, index) => (
+                                            <tr key={index}>
+                                                <td data-label="Xizmat turi">
+                                                    {row.link ? <Link to={row.link}>{row.type}</Link> : row.type}
+                                                </td>
+                                                <td data-label="Hajm">{row.volume}</td>
+                                                <td data-label="Muddat">{row.duration}</td>
+                                                <td data-label="Narx" className="service-pricing-price">{row.price}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div className="service-pricing-footer">
+                                <p>Yakuniy narx hajm, yo'nalish va muddatga qarab belgilanadi.</p>
+                                <Link to={quoteUrl} className="btn btn-gold">Aniq narx so'rash</Link>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            )}
+
+            {/* Ish bosqichlari */}
+            <section className="section">
+                <div className="container">
+                    <h2 className="text-center mb-8">Ish qanday bajariladi</h2>
+                    <ol className="service-steps">
+                        {steps.map((step, index) => (
+                            <li key={index} className="service-step">
+                                <span className="service-step-number">{index + 1}</span>
+                                <h3>{step.title}</h3>
+                                <p>{step.text}</p>
+                            </li>
+                        ))}
+                    </ol>
+                </div>
+            </section>
+
             {/* Batafsil ma'lumot - SEO uchun asosiy matn */}
             {service.content?.length > 0 && (
                 <section className="section service-article-section">
@@ -172,6 +243,39 @@ const ServiceDetail = () => {
                 </section>
             )}
 
+            {/* Namunalar (anonimlashtirilgan). Ma'lumot yo'q bo'lsa faqat dev da eslatma */}
+            {service.samples?.length > 0 ? (
+                <section className="section">
+                    <div className="container">
+                        <h2 className="text-center mb-8">Bajarilgan ishlardan namunalar</h2>
+                        <div className="service-samples">
+                            {service.samples.map((sample, index) => (
+                                <div key={index} className="service-sample">
+                                    <h3>{sample.title}</h3>
+                                    {sample.meta && <span className="service-sample-meta">{sample.meta}</span>}
+                                    {sample.description && <p>{sample.description}</p>}
+                                    {sample.file && (
+                                        <a href={sample.file} className="service-sample-link" target="_blank" rel="noopener noreferrer">
+                                            Namunani ko'rish →
+                                        </a>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            ) : import.meta.env.DEV && (
+                <section className="section">
+                    <div className="container">
+                        <div className="service-dev-note">
+                            Namunalar bloki bo'sh: <code>src/data/services.js</code> da
+                            <code>{` samples: [{ title, meta, description, file }]`}</code> qo'shing
+                            (faqat dev rejimida ko'rinadi).
+                        </div>
+                    </div>
+                </section>
+            )}
+
             {/* FAQ */}
             {service.faq?.length > 0 && (
                 <section className="section section-light">
@@ -183,6 +287,24 @@ const ServiceDetail = () => {
                                     <summary>{item.question}</summary>
                                     <p>{item.answer}</p>
                                 </details>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
+
+            {/* Foydali maqolalar */}
+            {relatedPosts.length > 0 && (
+                <section className="section">
+                    <div className="container">
+                        <h2 className="text-center mb-8">Foydali maqolalar</h2>
+                        <div className="service-related-posts">
+                            {relatedPosts.map(post => (
+                                <Link to={`/blog/${post.slug}`} key={post.slug} className="service-related-post">
+                                    <span className="service-related-category">{post.category}</span>
+                                    <h3>{post.title}</h3>
+                                    <span className="service-related-more">O'qish →</span>
+                                </Link>
                             ))}
                         </div>
                     </div>

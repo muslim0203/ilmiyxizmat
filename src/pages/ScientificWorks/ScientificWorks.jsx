@@ -24,8 +24,8 @@ const ScientificWorks = () => {
     return (
         <>
             <SEO
-                title="Ilmiy ish turlari - BMI, Dissertatsiya, Ilmiy maqola"
-                description="Ilmiy ish turlari haqida batafsil ma'lumot: Bitiruv malakaviy ishi (BMI), magistrlik dissertatsiyasi, doktorlik dissertatsiyasi, ilmiy maqola, monografiya, kurs ishi."
+                title="Ilmiy ish turlari va talablari: BMI, dissertatsiya, maqola (2026)"
+                description="Har bir ilmiy ish turiga talablar: hajm, antiplagiat foizi, manbalar soni va muddat. BMI, kurs ishi, magistrlik va doktorlik dissertatsiyasi, maqola, monografiya."
                 jsonLd={worksJsonLd}
             />
             <section className="page-header">
