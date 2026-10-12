@@ -503,7 +503,7 @@ export const blogPosts = [
 
             <h2>O'zbekistonda monografiya hajmi va talablari</h2>
             <ul>
-                <li><strong>Minimal hajm:</strong> Odatda 100–150 bet (ba'zan ko'proq)</li>
+                <li><strong>Hajm:</strong> Odatda 150–300 bet yoki kamida 8–10 bosma taboq</li>
                 <li><strong>Nashr tirajz:</strong> Kamida 300–500 nusxa</li>
                 <li><strong>ISBN raqami:</strong> Rasmiy nashr uchun majburiy</li>
                 <li><strong>Recenziya (taqriz):</strong> Kamida 2 ta ilmiy darajali mutaxassis taqrizi</li>
