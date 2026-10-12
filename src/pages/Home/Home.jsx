@@ -177,12 +177,20 @@ const Home = () => {
                     </div>
                     {otherServices.length > 0 && (
                         <div className="home-more-services">
-                            <span className="home-more-services-label">Boshqa xizmatlar:</span>
-                            {otherServices.map(service => (
-                                <Link to={`/xizmatlar/${service.slug}`} key={service.id} className="home-service-chip">
-                                    {service.icon} {service.shortTitle}
-                                </Link>
-                            ))}
+                            <h3 className="home-more-services-title">Boshqa xizmatlar</h3>
+                            <div className="home-more-grid">
+                                {otherServices.map(service => (
+                                    <Link to={`/xizmatlar/${service.slug}`} key={service.id} className="home-mini-card">
+                                        <span className="home-mini-icon">{service.icon}</span>
+                                        <span className="home-mini-body">
+                                            <span className="home-mini-title">{service.shortTitle}</span>
+                                            <span className="home-mini-price">
+                                                {service.price} so'm <span>{service.priceNote}</span>
+                                            </span>
+                                        </span>
+                                    </Link>
+                                ))}
+                            </div>
                         </div>
                     )}
                     <div className="text-center mt-8">
