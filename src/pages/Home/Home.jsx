@@ -107,7 +107,7 @@ const Home = () => {
         <>
             <SEO
                 title="Ilmiy ishlar yozish xizmati - Ilmiyxizmat.uz"
-                description="Ilmiyxizmat.uz - O'zbekistonda №1 ilmiy ishlar yozish xizmati. BMI yozish, magistrlik va doktorlik dissertatsiyasi, ilmiy maqola, kurs ishi tayyorlash. 5000+ bajarilgan ish, 98% mijozlar mamnuniyati. Bepul konsultatsiya!"
+                description="O'zbekistonda ilmiy ishlar yozish xizmati: BMI, magistrlik va doktorlik dissertatsiyasi, ilmiy maqola, kurs ishi. 5000+ bajarilgan ish. Bepul konsultatsiya!"
                 jsonLd={homeJsonLd}
             />
             {/* Hero Section */}

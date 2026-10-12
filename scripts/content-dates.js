@@ -54,7 +54,7 @@ const DETAIL_SOURCES = [
 
 // Maqola matniga aloqasi yo'q maydonlar: ular o'zgarsa dateModified siljimasligi
 // kerak (masalan "Mavzuga oid xizmat" bog'lanishi - bu shablon, maqola emas)
-const NON_CONTENT_KEYS = ['relatedService', 'draft'];
+const NON_CONTENT_KEYS = ['relatedService', 'draft', 'metaTitle', 'metaDescription'];
 const withoutNonContent = (item) =>
     Object.fromEntries(Object.entries(item).filter(([k]) => !NON_CONTENT_KEYS.includes(k)));
 

@@ -72,7 +72,7 @@ const BlogPost = () => {
         <>
             <SEO
                 title={post.metaTitle || post.title}
-                description={post.excerpt}
+                description={post.metaDescription || post.excerpt}
                 type="article"
                 article={{ publishedTime: post.date, modifiedTime: dateModified, author: "Ilmiyxizmat.uz" }}
                 jsonLd={articleJsonLd}

@@ -3,6 +3,7 @@
 // Ixtiyoriy maydonlar:
 //   relatedService: xizmat slug   - maqola oxiridagi "Mavzuga oid xizmat" bloki
 //   shortAnswer:    matn          - sahifa boshidagi "Qisqacha javob" bloki
+//   metaDescription: matn         - meta description (bo'lmasa excerpt; excerpt sahifada lead bo'lib qoladi)
 //   downloads:      [{ label, format, file, pending? }] - yuklab olinadigan namuna.
 //                   Faylni public/ ga qo'ying (masalan public/files/namuna/x.docx ->
 //                   file: "/files/namuna/x.docx") va pending ni olib tashlang.
@@ -269,6 +270,7 @@ export const blogPosts = [
         slug: "ozbekistonda-ilmiy-maqola-nashr-qilish-narxlari-2026",
         title: "O'zbekistonda ilmiy maqola nashr qilish narxlari (2026)",
         excerpt: "OAK, xalqaro va Scopus jurnallarida ilmiy maqola nashr qilish narxlari, jurnal turlari va narxga ta'sir qiluvchi omillar haqida to'liq ma'lumot – 2026 yil yangilangan ma'lumotlar.",
+        metaDescription: "OAK, xalqaro va Scopus jurnallarida ilmiy maqola nashr qilish narxlari (2026): jurnal turlari va narxga ta'sir qiluvchi omillar.",
         category: "Nashr",
         date: "2026-03-16",
         readTime: "8 daqiqa",
@@ -581,6 +583,7 @@ export const blogPosts = [
         slug: "gost-nima-ilmiy-ishlarda-gost-standarti",
         title: "GOST nima? Ilmiy ishlarda GOST standarti va qoidalari (2026)",
         excerpt: "GOST nima, ilmiy ishlarda qanday ishlatiladi, dissertatsiya va maqolalar uchun GOST talablari qanday? O'zbekiston va MDH davlatlarida GOST standartiga amal qilish bo'yicha qo'llanma.",
+        metaDescription: "GOST nima va ilmiy ishlarda qanday qo'llanadi: dissertatsiya, BMI va maqolalar uchun shrift, hoshiya, havolalar va adabiyotlar ro'yxati talablari.",
         category: "Formatlash",
         date: "2026-03-16",
         readTime: "6 daqiqa",
