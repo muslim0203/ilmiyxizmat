@@ -7,6 +7,8 @@ export default defineConfig(({ isSsrBuild }) => ({
   build: {
     // SEO uchun: source map off, chunklarni optimizatsiya
     sourcemap: false,
+    // prerender har sahifaga o'z CSS ini <link> qilib qo'yishi uchun
+    manifest: !isSsrBuild,
     rollupOptions: {
       output: {
         // manualChunks faqat brauzer build i uchun - SSR build ida react tashqi
