@@ -21,6 +21,25 @@ const ssrEntry  = join(rootDir, 'dist-ssr', 'entry-server.js');
 const HEAD_PLACEHOLDER = '<!--app-head-->';
 const HTML_PLACEHOLDER = '<!--app-html-->';
 const TEMPLATE_TITLE_RE = /[ \t]*<title>[\s\S]*?<\/title>\n?/;
+const TEMPLATE_ROBOTS_RE = /[ \t]*<meta name="robots"[^>]*>\n?/;
+
+// Ommaviy manzillardan tashqari maxsus fayllar
+const EXTRA_PAGES = [
+    // Vercel mavjud bo'lmagan har qanday URL uchun 404 status bilan shuni beradi
+    // (ilgari umumiy rewrite tufayli ular 200 + bosh sahifa bo'lib, soft-404 edi).
+    { route: '/__404', file: '404.html' },
+];
+
+/** Template + sahifa head/html -> to'liq HTML */
+function buildPage(template, head, html) {
+    let base = template;
+    // Template dagi zaxira <title> ni olib tashlaymiz - aks holda sahifada
+    // ikkita title bo'lib qoladi (biri bosh sahifaniki).
+    if (head.includes('<title')) base = base.replace(TEMPLATE_TITLE_RE, '');
+    // noindex sahifada template dagi "index, follow" ikkinchi robots teg bo'lmasin
+    if (head.includes('name="robots"')) base = base.replace(TEMPLATE_ROBOTS_RE, '');
+    return base.replace(HEAD_PLACEHOLDER, head).replace(HTML_PLACEHOLDER, html);
+}
 
 async function main() {
     if (!existsSync(ssrEntry)) {
@@ -44,16 +63,7 @@ async function main() {
     for (const { path: route } of routes) {
         try {
             const { html, head } = await render(route);
-
-            // Template dagi zaxira <title> ni olib tashlaymiz - aks holda sahifada
-            // ikkita title bo'lib qoladi (biri bosh sahifaniki).
-            const base = head.includes('<title')
-                ? template.replace(TEMPLATE_TITLE_RE, '')
-                : template;
-
-            const page = base
-                .replace(HEAD_PLACEHOLDER, head)
-                .replace(HTML_PLACEHOLDER, html);
+            const page = buildPage(template, head, html);
 
             const outFile = route === '/'
                 ? join(distDir, 'index.html')
@@ -67,10 +77,29 @@ async function main() {
         }
     }
 
+    for (const { route, file } of EXTRA_PAGES) {
+        try {
+            const { html, head } = await render(route);
+            writeFileSync(join(distDir, file), buildPage(template, head, html));
+            ok++;
+        } catch (err) {
+            failed.push({ route: file, message: err.message });
+        }
+    }
+
+    // /login va /admin/* uchun bo'sh SPA qobig'i (vercel.json rewrite). Bosh
+    // sahifa HTML i bilan berilganda admin sahifasida bosh sahifa kontenti va
+    // uning canonical i ko'rinib qolardi.
+    writeFileSync(join(distDir, 'spa.html'), buildPage(
+        template,
+        '<meta name="robots" content="noindex, nofollow" />',
+        '',
+    ));
+
     // SSR bundle deploy ga kerak emas
     rmSync(join(rootDir, 'dist-ssr'), { recursive: true, force: true });
 
-    console.log(`\n✅ Prerender: ${ok}/${routes.length} ta sahifa statik HTML ga aylantirildi.`);
+    console.log(`\n✅ Prerender: ${ok}/${routes.length + EXTRA_PAGES.length} ta sahifa statik HTML ga aylantirildi (+ spa.html).`);
 
     if (failed.length) {
         console.error(`\n❌ ${failed.length} ta sahifa render bo'lmadi:`);

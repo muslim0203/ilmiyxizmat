@@ -12,7 +12,8 @@ import { blogPosts }       from '../src/data/blogPosts.js';
 
 export const SITE_URL = 'https://www.ilmiyxizmat.uz';
 
-// { path, priority, changefreq }
+// { path, priority, changefreq, sitemap? }
+// sitemap: false - prerender qilinadi, lekin sitemap ga kirmaydi (noindex sahifalar)
 export const routes = [
     { path: '/',                priority: '1.0', changefreq: 'daily'   },
     { path: '/xizmatlar',       priority: '0.9', changefreq: 'weekly'  },
@@ -25,8 +26,8 @@ export const routes = [
     { path: '/aloqa',           priority: '0.8', changefreq: 'monthly' },
     { path: '/savol-javob',     priority: '0.7', changefreq: 'weekly'  },
     { path: '/ai-maqola',       priority: '0.6', changefreq: 'weekly'  },
-    { path: '/privacy-policy',  priority: '0.3', changefreq: 'yearly'  },
-    { path: '/terms',           priority: '0.3', changefreq: 'yearly'  },
+    { path: '/privacy-policy',  priority: '0.3', changefreq: 'yearly', sitemap: false },
+    { path: '/terms',           priority: '0.3', changefreq: 'yearly', sitemap: false },
 
     ...services.map(s => ({
         path: `/xizmatlar/${s.slug}`,

@@ -9,13 +9,21 @@ import { writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { routes, SITE_URL } from './routes.js';
+import { readDates } from './content-dates.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const today = new Date().toISOString().slice(0, 10);
+// lastmod = sahifa kontenti oxirgi marta o'zgargan sana (content-dates.js)
+const dates = readDates();
 
-const body = routes.map(({ path, priority, changefreq }) => `  <url>
+const missing = (path) => {
+    throw new Error(`contentDates.json da ${path} yo'q - avval node scripts/content-dates.js`);
+};
+
+const sitemapRoutes = routes.filter(r => r.sitemap !== false);
+
+const body = sitemapRoutes.map(({ path, priority, changefreq }) => `  <url>
     <loc>${SITE_URL}${path === '/' ? '/' : path}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${dates[path]?.modified ?? missing(path)}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
   </url>`).join('\n');
@@ -35,4 +43,4 @@ for (const dir of ['public', 'dist']) {
     }
 }
 
-console.log(`✅ Sitemap: ${routes.length} ta URL yozildi (${SITE_URL}).`);
+console.log(`✅ Sitemap: ${sitemapRoutes.length} ta URL yozildi (${SITE_URL}).`);

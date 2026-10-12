@@ -7,6 +7,3 @@ Disallow: /login
 
 # Sitemaps
 Sitemap: https://www.ilmiyxizmat.uz/sitemap.xml
-
-# Crawl-delay
-Crawl-delay: 1

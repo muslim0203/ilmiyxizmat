@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { sanitizeHtml } from '../../lib/sanitizeHtml';
 import SEO from '../../components/SEO/SEO';
 import { useData } from '../../lib/useData';
+import contentDates from '../../data/contentDates.json';
 import './BlogPost.css';
 
 const BlogPost = () => {
@@ -23,6 +24,10 @@ const BlogPost = () => {
 
     const otherPosts = blogPosts.filter(p => p.id !== post.id).slice(0, 3);
 
+    // Haqiqiy o'zgarish sanasi - scripts/content-dates.js kontent hash i bo'yicha yuritadi
+    const modified = contentDates[`/blog/${post.slug}`]?.modified;
+    const dateModified = modified && modified > post.date ? modified : post.date;
+
     // Article JSON-LD schema
     const articleJsonLd = {
         "@context": "https://schema.org",
@@ -31,7 +36,7 @@ const BlogPost = () => {
         "description": post.excerpt,
         "url": `https://www.ilmiyxizmat.uz/blog/${post.slug}`,
         "datePublished": post.date,
-        "dateModified": post.date,
+        "dateModified": dateModified,
         "author": {
             "@type": "Organization",
             "name": "Ilmiyxizmat.uz",
@@ -87,7 +92,7 @@ const BlogPost = () => {
                 title={post.title}
                 description={post.excerpt}
                 type="article"
-                article={{ publishedTime: post.date, author: "Ilmiyxizmat.uz" }}
+                article={{ publishedTime: post.date, modifiedTime: dateModified, author: "Ilmiyxizmat.uz" }}
                 jsonLd={[articleJsonLd, breadcrumbJsonLd]}
             />
 
@@ -108,6 +113,7 @@ const BlogPost = () => {
                     <h1>{post.title}</h1>
                     <div className="post-meta">
                         <span>📅 {post.date}</span>
+                        {dateModified !== post.date && <span>🔄 Yangilangan: {dateModified}</span>}
                         <span>⏱️ {post.readTime}</span>
                     </div>
                 </div>

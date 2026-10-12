@@ -29,7 +29,7 @@ const SEO = ({
             {/* Primary Meta Tags */}
             <title>{fullTitle}</title>
             <meta name="description" content={metaDescription} />
-            <link rel="canonical" href={canonicalUrl} />
+            {!noindex && <link rel="canonical" href={canonicalUrl} />}
             {noindex && <meta name="robots" content="noindex, nofollow" />}
 
             {/* Open Graph / Facebook */}
@@ -52,6 +52,9 @@ const SEO = ({
             {/* Article specific */}
             {article && article.publishedTime && (
                 <meta property="article:published_time" content={article.publishedTime} />
+            )}
+            {article && article.modifiedTime && (
+                <meta property="article:modified_time" content={article.modifiedTime} />
             )}
             {article && article.author && (
                 <meta property="article:author" content={article.author} />

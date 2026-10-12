@@ -1,0 +1,230 @@
+{
+  "/": {
+    "hash": "64a23eda2722e477",
+    "modified": "2026-08-21"
+  },
+  "/ai-maqola": {
+    "hash": "2b4f08e8ea755d19",
+    "modified": "2026-08-20"
+  },
+  "/aloqa": {
+    "hash": "e8ac924cba473d86",
+    "modified": "2026-08-20"
+  },
+  "/biz-haqimizda": {
+    "hash": "3e06c4d149d11aaa",
+    "modified": "2026-08-20"
+  },
+  "/blog": {
+    "hash": "325f50249ff370bd",
+    "modified": "2026-08-21"
+  },
+  "/blog/antiplagiat-dasturidan-qanday-otish-mumkin": {
+    "hash": "dcb8ffa4445fa8e5",
+    "modified": "2026-03-02"
+  },
+  "/blog/apa-7-format-va-gost-standarti-ilmiy-ishlar-uchun": {
+    "hash": "5887a971807ecb2c",
+    "modified": "2026-03-02"
+  },
+  "/blog/bitiruv-malakaviy-ishi-bmi-yozish-sirlari": {
+    "hash": "e3ad7f5baeb3a843",
+    "modified": "2026-08-21"
+  },
+  "/blog/bitiruv-malakaviy-ishi-nizomi": {
+    "hash": "8fc4c09d10209649",
+    "modified": "2026-08-21"
+  },
+  "/blog/bmi-namunasi-tuzilma-va-mundarija": {
+    "hash": "eee46483ddbe3e45",
+    "modified": "2026-08-21"
+  },
+  "/blog/bmi-nima-bitiruv-malakaviy-ishi-haqida-tolik-malumot": {
+    "hash": "915002994d5d8eaa",
+    "modified": "2026-08-21"
+  },
+  "/blog/darslik-va-oquv-qollanma-orasidagi-farq": {
+    "hash": "3e39059e9e6bbd81",
+    "modified": "2026-08-21"
+  },
+  "/blog/gost-nima-ilmiy-ishlarda-gost-standarti": {
+    "hash": "90bd6c4ab672b1cd",
+    "modified": "2026-08-20"
+  },
+  "/blog/magistrlik-dissertatsiyasi-himoyasiga-tayyorgarlik": {
+    "hash": "5fa47d23cc7a7742",
+    "modified": "2026-03-16"
+  },
+  "/blog/monografiya-namunasi-tuzilma-va-mundarija": {
+    "hash": "1571ecd1dca369e1",
+    "modified": "2026-08-21"
+  },
+  "/blog/monografiya-nima-va-qanday-yoziladi": {
+    "hash": "94a89464fbcbd09e",
+    "modified": "2026-08-21"
+  },
+  "/blog/oak-jurnallari-ruyxati-va-ulardan-otish-talablari": {
+    "hash": "26cbe5c7c836776b",
+    "modified": "2026-03-02"
+  },
+  "/blog/oquv-qollanma-qanday-yoziladi-talablar-va-tuzilma": {
+    "hash": "afa4f1baafff82f6",
+    "modified": "2026-08-21"
+  },
+  "/blog/oquv-qollanma-yozish-va-ekspertizadan-otkazish-mygov": {
+    "hash": "ac81446692e24488",
+    "modified": "2026-08-21"
+  },
+  "/blog/ozbekistonda-ilmiy-maqola-nashr-qilish-narxlari-2026": {
+    "hash": "e335833e2a6e884b",
+    "modified": "2026-03-16"
+  },
+  "/blog/scopus-va-web-of-science-ilmiy-maqola-nashr": {
+    "hash": "3d1c32b23657cb62",
+    "modified": "2026-03-02"
+  },
+  "/buyurtma": {
+    "hash": "a17595f49c4056f7",
+    "modified": "2026-08-21"
+  },
+  "/ilmiy-ishlar": {
+    "hash": "c3d44277952921a6",
+    "modified": "2026-08-21"
+  },
+  "/ilmiy-ishlar/bitiruv-malakaviy-ishi-bmi": {
+    "hash": "49cac190a7d8e93c",
+    "modified": "2026-08-21"
+  },
+  "/ilmiy-ishlar/darslik": {
+    "hash": "07a808f00f16a44f",
+    "modified": "2026-08-21"
+  },
+  "/ilmiy-ishlar/doktorlik-dissertatsiyasi": {
+    "hash": "e3ae295265de6491",
+    "modified": "2026-08-21"
+  },
+  "/ilmiy-ishlar/ilmiy-maqola": {
+    "hash": "7207daeb1aca7e31",
+    "modified": "2026-08-21"
+  },
+  "/ilmiy-ishlar/kurs-ishi": {
+    "hash": "4c23856234470d94",
+    "modified": "2026-08-21"
+  },
+  "/ilmiy-ishlar/magistrlik-dissertatsiyasi": {
+    "hash": "20b526c4bc7b8f17",
+    "modified": "2026-08-21"
+  },
+  "/ilmiy-ishlar/metodik-qollanma": {
+    "hash": "ccb9b7699958bb85",
+    "modified": "2026-08-21"
+  },
+  "/ilmiy-ishlar/monografiya": {
+    "hash": "be26c26f94b7b578",
+    "modified": "2026-08-21"
+  },
+  "/ilmiy-ishlar/oquv-qollanma": {
+    "hash": "412cff59226062c6",
+    "modified": "2026-08-21"
+  },
+  "/narxlar": {
+    "hash": "3e5aa5591a92f512",
+    "modified": "2026-08-21"
+  },
+  "/nashr": {
+    "hash": "f8904f7d11827b4d",
+    "modified": "2026-08-21"
+  },
+  "/nashr/konferensiyalar": {
+    "hash": "6ea8843e120a5ae1",
+    "modified": "2026-08-21"
+  },
+  "/nashr/oak-jurnallar": {
+    "hash": "468b5e43ac2c3d51",
+    "modified": "2026-08-21"
+  },
+  "/nashr/sertifikatli-nashr": {
+    "hash": "1556be6c9c2cf4bc",
+    "modified": "2026-08-21"
+  },
+  "/privacy-policy": {
+    "hash": "6bf0ecd3fa0aca5b",
+    "modified": "2026-02-07"
+  },
+  "/savol-javob": {
+    "hash": "4d4c422f995e3759",
+    "modified": "2026-02-06"
+  },
+  "/terms": {
+    "hash": "fb6e194259c47cf3",
+    "modified": "2026-02-06"
+  },
+  "/xizmatlar": {
+    "hash": "0f5ddde729ebdf2b",
+    "modified": "2026-08-21"
+  },
+  "/xizmatlar/annotatsiya-kalit-soz": {
+    "hash": "1e7838711e15c38d",
+    "modified": "2026-02-06"
+  },
+  "/xizmatlar/antiplagiat-tekshirish": {
+    "hash": "f6ff2c6e8fed69f1",
+    "modified": "2026-02-06"
+  },
+  "/xizmatlar/apa-7-formatlash": {
+    "hash": "387bc245dff1e7b4",
+    "modified": "2026-02-06"
+  },
+  "/xizmatlar/bmi-yozish": {
+    "hash": "1d5802c5d8bec0ab",
+    "modified": "2026-08-21"
+  },
+  "/xizmatlar/darslik-yozish": {
+    "hash": "27fdb713ddd17f27",
+    "modified": "2026-08-21"
+  },
+  "/xizmatlar/doktorlik-dissertatsiyasi-yordam": {
+    "hash": "9e2e93f19cb4f411",
+    "modified": "2026-02-06"
+  },
+  "/xizmatlar/gost-formatlash": {
+    "hash": "ca5f465dd78f86a1",
+    "modified": "2026-02-06"
+  },
+  "/xizmatlar/ilmiy-ish-yozish": {
+    "hash": "48b0eb250c8585dd",
+    "modified": "2026-02-06"
+  },
+  "/xizmatlar/ilmiy-maqola-yozish": {
+    "hash": "fff70d8f1f7105a8",
+    "modified": "2026-08-20"
+  },
+  "/xizmatlar/konferensiyaga-chiqarish": {
+    "hash": "d4f528117593b5a5",
+    "modified": "2026-08-21"
+  },
+  "/xizmatlar/kurs-ishi-yozish": {
+    "hash": "82ee8d0c5e04ecbd",
+    "modified": "2026-02-06"
+  },
+  "/xizmatlar/magistrlik-dissertatsiyasi-yozish": {
+    "hash": "ee5242ec11d968f2",
+    "modified": "2026-02-06"
+  },
+  "/xizmatlar/monografiya-tayyorlash": {
+    "hash": "bb8707c97234bdf4",
+    "modified": "2026-08-21"
+  },
+  "/xizmatlar/oak-jurnalga-chiqarish": {
+    "hash": "a145faa8a8039f93",
+    "modified": "2026-03-16"
+  },
+  "/xizmatlar/oquv-qollanma-tayyorlash": {
+    "hash": "de89933ecaca0860",
+    "modified": "2026-08-21"
+  },
+  "/xizmatlar/tahrir-korrektura": {
+    "hash": "c22a758e20b25c23",
+    "modified": "2026-02-06"
+  }
+}

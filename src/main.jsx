@@ -5,6 +5,7 @@ import { HelmetProvider } from '@dr.pogodin/react-helmet'
 import { SiteSettingsProvider } from './context/SiteSettingsContext.jsx'
 import { installGoogleAdsClickTracking } from './analytics/googleAdsConversion.js'
 import App from './App.jsx'
+import '@fontsource-variable/inter'
 import './index.css'
 
 installGoogleAdsClickTracking()
