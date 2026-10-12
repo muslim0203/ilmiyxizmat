@@ -21,7 +21,7 @@ const ScrollToTop = () => {
   return null;
 };
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const app = (
   <React.StrictMode>
     <HelmetProvider>
       <SiteSettingsProvider>
@@ -31,5 +31,17 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </BrowserRouter>
       </SiteSettingsProvider>
     </HelmetProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 )
+
+const container = document.getElementById('root')
+
+// Prerender qilingan sahifani hydrate qilamiz: createRoot server HTML ni o'chirib,
+// lazy chunk kelguncha "Yuklanmoqda..." ko'rsatib, so'ng qayta chizardi - LCP
+// shu ikkinchi chizilishga tushib ~2s kechikardi. 404.html va admin qobig'i
+// (spa.html) manzilga mos server HTML emas - ular oddiy render qilinadi.
+if (container.hasChildNodes() && !container.hasAttribute('data-client-only')) {
+  ReactDOM.hydrateRoot(container, app)
+} else {
+  ReactDOM.createRoot(container).render(app)
+}

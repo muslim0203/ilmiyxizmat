@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
 import { useData } from '../../lib/useData';
@@ -8,12 +8,18 @@ import './Order.css';
 const Order = () => {
     const { settings } = useSiteSettings();
     const { items: services } = useData('services');
-    // Xizmat sahifasidagi "Aniq narx so'rash" -> /buyurtma?xizmat=<slug>
     const [searchParams] = useSearchParams();
-    const preselected = services.find(s => s.slug === searchParams.get('xizmat'));
     const [formData, setFormData] = useState({
-        name: '', phone: '', service: preselected?.shortTitle || '', deadline: '', description: ''
+        name: '', phone: '', service: '', deadline: '', description: ''
     });
+
+    // Xizmat sahifasidagi "Aniq narx so'rash" -> /buyurtma?xizmat=<slug>.
+    // Mount dan keyin qo'yiladi: prerender HTML i query siz, hydrate mos kelishi uchun.
+    const preselected = services.find(s => s.slug === searchParams.get('xizmat'))?.shortTitle;
+    useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        if (preselected) setFormData(prev => (prev.service ? prev : { ...prev, service: preselected }));
+    }, [preselected]);
 
     const handleSubmit = (e) => {
         e.preventDefault();

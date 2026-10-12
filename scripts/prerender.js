@@ -129,7 +129,11 @@ async function main() {
     for (const { route, file } of EXTRA_PAGES) {
         try {
             const { html, head } = await render(route);
-            writeFileSync(join(distDir, file), buildPage(template, head, html));
+            // 404.html har qanday manzil uchun beriladi - HTML URL ga mos emas,
+            // shuning uchun main.jsx uni hydrate emas, qayta render qiladi
+            const page = buildPage(template, head, html)
+                .replace('<div id="root">', '<div id="root" data-client-only>');
+            writeFileSync(join(distDir, file), page);
             ok++;
         } catch (err) {
             failed.push({ route: file, message: err.message });
