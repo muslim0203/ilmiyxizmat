@@ -143,7 +143,7 @@ const BlogPost = () => {
                             <p className="post-cta-price">{relatedService.price} so'm {relatedService.priceNote}</p>
                             <div className="post-cta-actions">
                                 <Link to={`/xizmatlar/${relatedService.slug}`} className="btn btn-gold">Xizmat haqida batafsil</Link>
-                                <Link to={`/buyurtma?xizmat=${relatedService.slug}`} className="btn btn-white">Narxni bilish</Link>
+                                <Link to="/buyurtma" state={{ xizmat: relatedService.slug }} className="btn btn-white">Narxni bilish</Link>
                             </div>
                         </div>
                     ) : (

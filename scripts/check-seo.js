@@ -5,7 +5,7 @@
  *   - sahifada title / description / canonical soni 1 emas
  *   - canonical sahifaning o'z manzili emas (www, https, oxirida / siz)
  *   - noindex sahifada canonical bor, yoki robots teg ikki marta
- *   - ichki havola redirect, apex/http, oxirida "/" yoki mavjud bo'lmagan sahifaga olib boradi
+ *   - ichki havola redirect, apex/http, oxirida "/", query string yoki mavjud bo'lmagan sahifaga olib boradi
  *   - sitemap da redirect, noindex yoki mavjud bo'lmagan URL
  * OGOHLANTIRISH: bir nechta sahifada bir xil title/description, description uzunligi.
  *
@@ -132,6 +132,9 @@ for (const [path, p] of pages) {
         if (!href.startsWith('/') || href.startsWith('//')) continue;
 
         const target = href.split(/[?#]/)[0];
+        // UI holati uchun query string har biri yangi crawlable URL yaratadi
+        // (Search Console: "canonical tegli variant") - router state ishlating
+        if (href.includes('?')) { addProblem(`"${href}" - query string li ichki havola (yangi URL varianti)`, path); continue; }
         if (target !== '/' && target.endsWith('/')) { addProblem(`"${href}" - oxirida "/" (308 redirect)`, path); continue; }
         if (redirectSources.has(target)) { addProblem(`"${href}" - redirect, to'g'risi "${redirectSources.get(target)}"`, path); continue; }
         if (/\.[a-z0-9]+$/i.test(target)) {

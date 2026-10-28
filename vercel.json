@@ -2,32 +2,99 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/blog/apa-7-format", "destination": "/blog/apa-7-format-va-gost-standarti-ilmiy-ishlar-uchun", "permanent": true },
-    { "source": "/blog/gost-format", "destination": "/blog/gost-nima-ilmiy-ishlarda-gost-standarti", "permanent": true },
-    { "source": "/blog/antiplagiat-foizi", "destination": "/blog/antiplagiat-dasturidan-qanday-otish-mumkin", "permanent": true },
-    { "source": "/blog/bmi-nima", "destination": "/blog/bmi-nima-bitiruv-malakaviy-ishi-haqida-tolik-malumot", "permanent": true },
-    { "source": "/blog/ilmiy-maqola-qanday-yoziladi", "destination": "/ilmiy-ishlar/ilmiy-maqola", "permanent": true },
-    { "source": "/blog/monografiya-nima", "destination": "/blog/monografiya-nima-va-qanday-yoziladi", "permanent": true },
-    { "source": "/blog/oak-jurnal-talablari", "destination": "/blog/oak-jurnallari-ruyxati-va-ulardan-otish-talablari", "permanent": true },
-    { "source": "/blog/annotatsiya-kalit-soz", "destination": "/xizmatlar/annotatsiya-kalit-soz", "permanent": true }
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "ilmiy-xizmat.vercel.app"
+        }
+      ],
+      "destination": "https://www.ilmiyxizmat.uz/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/blog/apa-7-format",
+      "destination": "/blog/apa-7-format-va-gost-standarti-ilmiy-ishlar-uchun",
+      "permanent": true
+    },
+    {
+      "source": "/blog/gost-format",
+      "destination": "/blog/gost-nima-ilmiy-ishlarda-gost-standarti",
+      "permanent": true
+    },
+    {
+      "source": "/blog/antiplagiat-foizi",
+      "destination": "/blog/antiplagiat-dasturidan-qanday-otish-mumkin",
+      "permanent": true
+    },
+    {
+      "source": "/blog/bmi-nima",
+      "destination": "/blog/bmi-nima-bitiruv-malakaviy-ishi-haqida-tolik-malumot",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ilmiy-maqola-qanday-yoziladi",
+      "destination": "/ilmiy-ishlar/ilmiy-maqola",
+      "permanent": true
+    },
+    {
+      "source": "/blog/monografiya-nima",
+      "destination": "/blog/monografiya-nima-va-qanday-yoziladi",
+      "permanent": true
+    },
+    {
+      "source": "/blog/oak-jurnal-talablari",
+      "destination": "/blog/oak-jurnallari-ruyxati-va-ulardan-otish-talablari",
+      "permanent": true
+    },
+    {
+      "source": "/blog/annotatsiya-kalit-soz",
+      "destination": "/xizmatlar/annotatsiya-kalit-soz",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/login", "destination": "/spa" },
-    { "source": "/admin", "destination": "/spa" },
-    { "source": "/admin/:path*", "destination": "/spa" }
+    {
+      "source": "/login",
+      "destination": "/spa"
+    },
+    {
+      "source": "/admin",
+      "destination": "/spa"
+    },
+    {
+      "source": "/admin/:path*",
+      "destination": "/spa"
+    }
   ],
   "headers": [
     {
       "source": "/assets/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     },
     {
       "source": "/(sitemap.xml|robots.txt)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
     },
     {
       "source": "/(login|admin|admin/.*)",
-      "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }]
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
     }
   ]
 }

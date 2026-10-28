@@ -32,7 +32,10 @@ const ServiceDetail = () => {
     const relatedPosts = (service.relatedPosts || [])
         .map(postSlug => blogPosts.find(p => p.slug === postSlug))
         .filter(Boolean);
-    const quoteUrl = `/buyurtma?xizmat=${service.slug}`;
+    // Tanlangan xizmat URL da emas, router state da: query string li havola har
+    // xizmat uchun yangi crawlable URL yaratib, Search Console da "canonical
+    // tegli variant" bo'lib chiqardi
+    const quoteState = { xizmat: service.slug };
     const minPrice = Number(String(service.price).replace(/\s/g, ''));
 
     // Service JSON-LD schema
@@ -165,7 +168,7 @@ const ServiceDetail = () => {
                             </div>
                             <div className="service-pricing-footer">
                                 <p>Yakuniy narx hajm, yo'nalish va muddatga qarab belgilanadi.</p>
-                                <Link to={quoteUrl} className="btn btn-gold">Aniq narx so'rash</Link>
+                                <Link to="/buyurtma" state={quoteState} className="btn btn-gold">Aniq narx so'rash</Link>
                             </div>
                         </div>
                     </div>

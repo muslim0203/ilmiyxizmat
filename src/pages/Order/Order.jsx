@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useLocation } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import { useData } from '../../lib/useData';
@@ -10,13 +10,16 @@ const Order = () => {
     const { settings } = useSiteSettings();
     const { items: services } = useData('services');
     const [searchParams] = useSearchParams();
+    const location = useLocation();
     const [formData, setFormData] = useState({
         name: '', phone: '', service: '', deadline: '', description: ''
     });
 
-    // Xizmat sahifasidagi "Aniq narx so'rash" -> /buyurtma?xizmat=<slug>.
-    // Mount dan keyin qo'yiladi: prerender HTML i query siz, hydrate mos kelishi uchun.
-    const preselected = services.find(s => s.slug === searchParams.get('xizmat'))?.shortTitle;
+    // Xizmat/blog sahifasidagi "Aniq narx so'rash" router state da { xizmat: slug }
+    // yuboradi; ?xizmat= faqat eski havolalar uchun qo'llab-quvvatlanadi.
+    // Mount dan keyin qo'yiladi: prerender HTML i bu holatsiz, hydrate mos kelishi uchun.
+    const selectedSlug = location.state?.xizmat || searchParams.get('xizmat');
+    const preselected = services.find(s => s.slug === selectedSlug)?.shortTitle;
     useEffect(() => {
         // eslint-disable-next-line react-hooks/set-state-in-effect
         if (preselected) setFormData(prev => (prev.service ? prev : { ...prev, service: preselected }));
