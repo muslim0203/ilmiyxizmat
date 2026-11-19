@@ -4,6 +4,7 @@ import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import { useData } from '../../lib/useData';
 import { useSiteSettings } from '../../context/SiteSettingsContext';
 import { defaultSteps } from '../../data/services';
+import { getOrderContact, serviceContacts } from '../../data/orderContacts';
 import './ServiceDetail.css';
 
 const SITE_URL = 'https://www.ilmiyxizmat.uz';
@@ -36,6 +37,9 @@ const ServiceDetail = () => {
     // xizmat uchun yangi crawlable URL yaratib, Search Console da "canonical
     // tegli variant" bo'lib chiqardi
     const quoteState = { xizmat: service.slug };
+    // BMI, kurs ishi kabi xizmatlar buyurtmasi alohida xodimga boradi
+    const contact = getOrderContact(service.slug, settings);
+    const hasOwnContact = Boolean(serviceContacts[service.slug]);
     const minPrice = Number(String(service.price).replace(/\s/g, ''));
 
     // Service JSON-LD schema
@@ -105,7 +109,7 @@ const ServiceDetail = () => {
                             <span className="price">{service.price} so'm</span>
                             <span className="note">{service.priceNote}</span>
                         </div>
-                        <Link to="/buyurtma" className="btn btn-gold btn-lg">Buyurtma berish</Link>
+                        <Link to="/buyurtma" state={quoteState} className="btn btn-gold btn-lg">Buyurtma berish</Link>
                     </div>
                 </div>
             </section>
@@ -129,8 +133,11 @@ const ServiceDetail = () => {
                                 <span className="price">{service.price} so'm</span>
                                 <span className="note">{service.priceNote}</span>
                             </div>
-                            <Link to="/buyurtma" className="btn btn-gold btn-lg">Buyurtma</Link>
-                            <a href={settings.telegramUrl} className="btn btn-outline btn-lg" target="_blank" rel="noopener noreferrer">Telegram</a>
+                            <Link to="/buyurtma" state={quoteState} className="btn btn-gold btn-lg">Buyurtma</Link>
+                            <a href={contact.telegramUrl} className="btn btn-outline btn-lg" target="_blank" rel="noopener noreferrer">Telegram</a>
+                            {hasOwnContact && (
+                                <a href={`tel:${contact.phoneRaw}`} className="btn btn-outline btn-lg">Qo'ng'iroq: {contact.phone}</a>
+                            )}
                         </div>
                     </div>
                 </div>

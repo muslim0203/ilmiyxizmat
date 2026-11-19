@@ -4,6 +4,7 @@ import SEO from '../../components/SEO/SEO';
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import { useData } from '../../lib/useData';
 import { useSiteSettings } from '../../context/SiteSettingsContext';
+import { getOrderContact } from '../../data/orderContacts';
 import './Order.css';
 
 const Order = () => {
@@ -25,12 +26,16 @@ const Order = () => {
         if (preselected) setFormData(prev => (prev.service ? prev : { ...prev, service: preselected }));
     }, [preselected]);
 
+    // Tanlangan xizmatning mas'ul kontakti (BMI, kurs ishi - alohida xodim)
+    const chosenSlug = services.find(s => s.shortTitle === formData.service)?.slug;
+    const contact = getOrderContact(chosenSlug, settings);
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const text = encodeURIComponent(
             `🆕 YANGI BUYURTMA\n\n👤 Ism: ${formData.name}\n📞 Telefon: ${formData.phone}\n📋 Xizmat: ${formData.service}\n📅 Muddat: ${formData.deadline}\n📝 Tavsif: ${formData.description}`
         );
-        window.open(`${settings.telegramUrl}?text=${text}`, '_blank');
+        window.open(`${contact.telegramUrl}?text=${text}`, '_blank');
     };
 
     return (
@@ -94,8 +99,8 @@ const Order = () => {
                             </ul>
                             <div className="order-contact">
                                 <h4>Yoki to'g'ridan-to'g'ri bog'laning:</h4>
-                                <a href={settings.telegramUrl} className="btn btn-outline btn-lg">Telegram</a>
-                                <a href={`tel:${settings.phoneRaw}`} className="btn btn-outline btn-lg">Qo'ng'iroq</a>
+                                <a href={contact.telegramUrl} className="btn btn-outline btn-lg">Telegram</a>
+                                <a href={`tel:${contact.phoneRaw}`} className="btn btn-outline btn-lg">Qo'ng'iroq</a>
                             </div>
                         </div>
                     </div>
